@@ -28,7 +28,7 @@ import matplotlib
 import matplotlib.patheffects as PathEffects
 import sys
 
-sys.path.append('/home/jason/projects/glaciome/glaciome1D')
+sys.path.append('/Users/psummers8/Documents/glaciome1D')
 from glaciome1D import constants, glaciome
 
 import os
@@ -51,7 +51,7 @@ import pickle
 constant = constants()
 
 #%%
-run_simulations = 'n'
+run_simulations = 'y'
 
 if run_simulations == 'y':
         
@@ -80,8 +80,10 @@ if run_simulations == 'y':
     data.B = 0
     data.Uc = 0
     data.steadystate(method='lm')
-    data.save('quasistatic_Bdot_-0.60.pickle')
-        
+    print('saving?')
+    data.save('quasistatic_Bdot_-0.60.pickle')       
+else:
+    print('you are not running simulations, plotting old data')
 
         
         
@@ -142,7 +144,7 @@ def set_up_figure():
     
     ax3 = plt.axes([left, bot, ax_width, ax_height])
     ax3.set_xlabel('Longitudinal coordinate [km]')
-    ax3.set_ylabel('$g^\prime$ [a$^{-1}$]')
+    ax3.set_ylabel('$g^prime$ [a$^{-1}$]')
     ax3.set_ylim([0, 10])
     ax3.set_xlim([0,xmax])
     txt = ax3.text(0.05*text_pos_scale,1-0.05*text_pos_scale,'c',transform=ax3.transAxes,va='top',ha='left')
@@ -151,7 +153,7 @@ def set_up_figure():
     
     ax4 = plt.axes([left+ax_width+xgap, bot, ax_width, ax_height])
     ax4.set_xlabel('Longitudinal coordinate [km]')
-    ax4.set_ylabel('$\mu_w$')
+    ax4.set_ylabel('$mu_w$')
     ax4.set_ylim([0, 1])
     ax4.set_xlim([0,xmax])
     ax4.text(0.05*text_pos_scale,1-0.05*text_pos_scale,'d',transform=ax4.transAxes,va='top',ha='left')
@@ -212,7 +214,7 @@ def plot_figure(data, axes, color_id, linestyle):
         
         ax5.plot(np.append(y-y[-1],y)*1e-3,np.append(u_transverse,u_transverse[-1::-1])/constant.daysYear,color=cmap(color_id[j]),linestyle=linestyle)
 
-        ax5.legend(('$\chi=0$','$\chi=0.25$','$\chi=0.50$','$\chi=0.75$','$\chi=1$'),loc='upper right',framealpha=0)
+        ax5.legend(('$chi=0$','$chi=0.25$','$chi=0.50$','$chi=0.75$','$chi=1$'),loc='upper right',framealpha=0)
 
 #%%
 files = sorted(glob.glob('./*.pickle'))

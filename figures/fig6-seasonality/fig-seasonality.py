@@ -12,7 +12,7 @@ import matplotlib
 
 import sys
 
-sys.path.append('/home/jason/projects/glaciome/glaciome1D')
+sys.path.append('/Users/psummers8/Documents/glaciome1D')
 import glaciome1D
 import matplotlib.patheffects as PathEffects
 

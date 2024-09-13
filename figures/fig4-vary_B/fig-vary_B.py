@@ -20,7 +20,7 @@ import matplotlib
 
 import sys
 
-sys.path.append('/home/jason/projects/glaciome/glaciome1D')
+sys.path.append('/Users/psummers8/Documents/glaciome1D')
 from glaciome1D import glaciome, constants
 import matplotlib.patheffects as PathEffects
 
