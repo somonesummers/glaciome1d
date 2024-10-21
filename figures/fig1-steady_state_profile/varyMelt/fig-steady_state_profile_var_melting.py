@@ -64,15 +64,16 @@ if run_simulations == 'y':
     dt = 0.01# 1/(n_pts-1)/10 # time step [a]; needs to be quite small for this to work
 
     # specifying fjord geometry
-    X_fjord = np.linspace(0,400e3,101)
-    B_linear = -0.5*constant.daysYear * (1-X_fjord/np.max(X_fjord)) - 0.1*constant.daysYear #can't be 0 anywhere or else blows up
+    X_fjord = np.linspace(0e3,400e3,101)
+    B_linear = -0.1*constant.daysYear * (1-X_fjord/np.max(X_fjord)) - 0.5*constant.daysYear #can't be 0 anywhere or else blows up
+    print('B_linear:',B_linear)
     Wt = 4000
     W_fjord = Wt + 0/10000*X_fjord
     B = -0.6*constant.daysYear
     
     # first run to steady state
-    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_linear, X_fjord, W_fjord)
-    data.update_B(X_fjord,B_linear)
+    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B, X_fjord, W_fjord)
+    # data.update_B(X_fjord,B_linear)
     
     data.steadystate(method='lm')
     data.save('steady-state_Bvar.pickle')

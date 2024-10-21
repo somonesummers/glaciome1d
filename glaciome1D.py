@@ -607,8 +607,9 @@ class glaciome:
         exx = np.diff(self.U)/(self.dx*self.L)
         gamma = 1 + exx/(self.gg-exx)
         
-        g_loc = constant.secsYear*np.sqrt(self.pressure(H)*gamma/(constant.rho*self.param.d**2*self.param.Hscale))*(1-self.param.muS/mu)/(self.param.b)
-        
+        sqrt_term = self.pressure(H)*gamma/(constant.rho*self.param.d**2*self.param.Hscale)
+        sqrt_term[sqrt_term < 0] = 0
+        g_loc = constant.secsYear*np.sqrt(sqrt_term)*(1-self.param.muS/mu)/(self.param.b)
         g_loc[g_loc<0] = 0
         
         self.g_loc = g_loc # dimensional [a^{-1}]
@@ -738,15 +739,17 @@ class glaciome:
         dy = y[1] # grid spacing
         
         mu = muW*(1-2*y/W) # variation in mu across the fjord, assuming quasi-static flow
-    
         y_c = W/2*(1-self.param.muS/muW) # critical value of y for which mu is no longer greater 
         # than muS; although flow occurs below this critical value, it is needed for 
         # computing g_loc (below)
         
         g_loc = np.zeros(len(y))
+        mu[-1] = -1e-8
         g_loc[y<y_c] = constant.secsYear*np.sqrt(self.pressure(H)/(constant.rho*d**2))*(mu[y<y_c]-self.param.muS)/(mu[y<y_c]*self.param.b) # local granular fluidity
-       
-        
+        if(mu[y<y_c].size > 0 and np.min(np.abs(mu[y<y_c])) == 0):
+            print('mu has zero', mu[y<y_c])
+            print('Full mu', mu)
+            print('y_c', y_c)
         # Compute residual for the granular fluidity. we set dg/dy = 0 at
         # y = 0 and at y = W/2. Because mu is known, this does not need to be done
         # iteratively (as it is done in the along-flow direction.)    
