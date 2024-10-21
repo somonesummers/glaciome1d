@@ -41,9 +41,9 @@ font = {'family' : 'normal',
 
 matplotlib.rc('font', **font)
 
-import cmasher as cmr
+# import cmasher as cmr
 
-cmap = cmr.get_sub_cmap('viridis', 0, 0.95)
+# cmap = cmr.get_sub_cmap('viridis', 0, 0.95)
 
 import glob
 import pickle
@@ -214,7 +214,7 @@ def plot_figure(data, axes, color_id, linestyle):
         u_slip = U_ind-u_mean#np.mean(u_transverse)
         u_transverse += u_slip + (data.Ut - data.Uc)
         
-        ax5.plot(np.append(y-y[-1],y)*1e-3,np.append(u_transverse,u_transverse[-1::-1])/constant.daysYear,color=cmap(color_id[j]),linestyle=linestyle)
+        ax5.plot(np.append(y-y[-1],y)*1e-3,np.append(u_transverse,u_transverse[-1::-1])/constant.daysYear,linestyle=linestyle)
 
         ax5.legend(('$chi=0$','$chi=0.25$','$chi=0.50$','$chi=0.75$','$chi=1$'),loc='upper right',framealpha=0)
 

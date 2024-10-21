@@ -36,9 +36,9 @@ Uc = 0.6e4 # glacier calving rate [m/a]; treated as a constant
 Ht = 600 # terminus thickness
 n = 101 # number of time steps
 dt = 0.01# 1/(n_pts-1)/10 # time step [a]; needs to be quite small for this to work
-
+B_const = -0.6*constant.daysYear
 # specifying fjord geometry
-X_fjord = np.linspace(-200e3,200e3,101)
+X_fjord = np.linspace(0,400e3,101)
 Wt = 4000
 W_fjord = Wt + 0/10000*X_fjord
 
@@ -46,7 +46,7 @@ W_fjord = Wt + 0/10000*X_fjord
 # set up basic figure
 axes, color_id = basic_figure(n, dt)
 
-data = glaciome(n_pts, dt, L, Ut, Uc, Ht, X_fjord, W_fjord)
+data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
 
 start = time.time()
 
