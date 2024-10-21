@@ -5,6 +5,12 @@ from scipy.optimize import root, fsolve
 from scipy.interpolate import interp1d
 from scipy.integrate import simpson, cumtrapz, trapz
 
+from matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
 from matplotlib import pyplot as plt
 import matplotlib
 
@@ -285,7 +291,15 @@ class glaciome:
         
         self.redimensionalize()
     
-        
+    def update_B(self, X ,B):
+        '''
+        Allow passing of variable melt rates in arbitrary grid, interpolated to staggered grid of melange
+        '''
+        self.B_interpolator = interp1d(X, B, fill_value='extrapolate')  # x and B would be the coordinates and melt rate from the ocean model, in dimensional units
+        self.B = np.asarray([self.B_interpolator(x) for x in self.X_]) # creates an array of melt rates on the staggered grid
+
+
+
     def regrid(self, n_pts):
         '''
         It is sometimes helpful to spin up the model with a coarse grid (e.g., 
@@ -883,13 +897,13 @@ def basic_figure(n,dt):
     
     ax3 = plt.axes([left, bot+1.25*ygap, ax_width, ax_height])
     ax3.set_xlabel('Longitudinal coordinate [m]')
-    ax3.set_ylabel('$g^\prime$ [a$^{-1}]$')
+    ax3.set_ylabel('$g^o$ [a$^{-1}]$')
     ax3.set_ylim([0, 5])
     ax3.set_xlim([0,xmax])
     
     ax4 = plt.axes([left+ax_width+xgap, bot+1.25*ygap, ax_width, ax_height])
     ax4.set_xlabel('Longitudinal coordinate [m]')
-    ax4.set_ylabel('$\mu_w$')
+    ax4.set_ylabel('$mu_w$')
     ax4.set_ylim([0, 1])
     ax4.set_xlim([0,xmax])
     
@@ -912,8 +926,6 @@ def basic_figure(n,dt):
     axes = (ax1, ax2, ax3, ax4, ax5, ax_cbar)
     
     return(axes, color_id)
-
-
 
 
 #%%

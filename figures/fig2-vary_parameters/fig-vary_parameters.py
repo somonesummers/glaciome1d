@@ -47,11 +47,11 @@ constant = constants()
 
 
 #%% 
-run_simulations = 'n'
+run_simulations = 'y'
 
 if run_simulations == 'y':
     
-    shutil.copyfile('../fig1-steady_state_profile/steady-state_Bdot_-0.60.pickle','./steady-state_Bdot_-0.60.pickle')
+    shutil.copyfile('../../steady-state_Bdot_-0.60.pickle','./steady-state_Bdot_-0.60.pickle')
     
     n_pts = 51 # number of grid points
     L = 1e4 # ice melange length
@@ -157,7 +157,7 @@ def set_up_figure():
     
     ax3 = plt.axes([left, bot, ax_width, ax_height])
     ax3.set_xlabel('Longitudinal coordinate [km]')
-    ax3.set_ylabel('$g^\prime$ [a$^{-1}$]')
+    ax3.set_ylabel('$g^\\prime$ [a$^{-1}$]')
     ax3.set_ylim([0, 10])
     ax3.set_xlim([0,xmax])
     txt = ax3.text(0.05*text_pos_scale,1-0.05*text_pos_scale,'c',transform=ax3.transAxes,va='top',ha='left')
@@ -165,7 +165,7 @@ def set_up_figure():
     
     ax4 = plt.axes([left+ax_width+xgap, bot, ax_width, ax_height])
     ax4.set_xlabel('Longitudinal coordinate [km]')
-    ax4.set_ylabel('$\mu_w$')
+    ax4.set_ylabel('$\\mu_w$')
     ax4.set_ylim([0, 1])
     ax4.set_xlim([0,xmax])
     ax4.text(0.05*text_pos_scale,1-0.05*text_pos_scale,'d',transform=ax4.transAxes,va='top',ha='left')

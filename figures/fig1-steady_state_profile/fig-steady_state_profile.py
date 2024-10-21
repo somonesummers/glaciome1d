@@ -55,7 +55,7 @@ run_simulations = 'y'
 
 if run_simulations == 'y':
         
-    n_pts = 51 # number of grid points
+    n_pts = 21 # number of grid points
     L = 1e4 # ice melange length
     Ut = 0.6e4 # glacier terminus velocity [m/a]; treated as a constant
     Uc = 0.6e4 # glacier calving rate [m/a]; treated as a constant
@@ -217,6 +217,7 @@ def plot_figure(data, axes, color_id, linestyle):
         ax5.legend(('$chi=0$','$chi=0.25$','$chi=0.50$','$chi=0.75$','$chi=1$'),loc='upper right',framealpha=0)
 
 #%%
+print('made to plotting')
 files = sorted(glob.glob('./*.pickle'))
 files = files[0:2]
 file = files[1]
@@ -225,6 +226,7 @@ axes, color_id = set_up_figure()
 linestyle = ['--','-']
 for j in np.arange(len(files)-1, -1, -1):
     with open(files[j], 'rb') as file:
+        print(file)
         data = pickle.load(file)
         file.close()
     
@@ -242,3 +244,5 @@ ax2.legend(['steady-state','quasi-static'], loc='upper center', bbox_to_anchor=(
 ax2.plot(np.array([data.L,100000])*1e-3,np.array([0,0]),'k')
     
 plt.savefig('fig-steady-state_profile.pdf',format='pdf',dpi=300)
+
+# %%
