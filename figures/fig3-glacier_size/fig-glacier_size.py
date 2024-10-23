@@ -69,12 +69,7 @@ if run_simulations == 'y':
             data.Uc = Uc
             data.Ht = Ht
             data.W_fjord = terminus_width[j] + 0/10000*X_fjord
-        # data.diagnostic(method='lm')
-        # data.steadystate(method='lm')
         
-        # data.regrid(51)
-        
-        #data.diagnostic(method='lm')
         data.steadystate(method='lm')
         
         

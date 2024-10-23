@@ -69,7 +69,7 @@ if run_simulations == 'y':
     data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B[0], X_fjord, W_fjord)
     
 
-    for j in np.arange(2,len(B)):
+    for j in np.arange(0,2):
             
         data.B = B[j]
         data.steadystate(method='lm')
@@ -81,8 +81,6 @@ if run_simulations == 'y':
 
 #%%
 files = sorted(glob.glob('*.pickle'))
-#files = files[10:]
-#files = files[::5]
 
 
 n = len(files)
