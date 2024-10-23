@@ -71,8 +71,9 @@ if run_simulations == 'y':
     B = -0.6*constant.daysYear
     
     # first run to steady state
-    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_linear, X_fjord, W_fjord)
-    data.update_B(X_fjord,B_linear)
+    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B, X_fjord, W_fjord)
+    data.X_externalGrid = np.linspace(0,20e3,101)
+    data.B_externalGrid = np.linspace(0,-0.4*constant.daysYear,101) + -0.2*constant.daysYear
     
     data.steadystate(method='lm')
     data.save('steady-state_Bvar.pickle')
