@@ -68,7 +68,7 @@ if run_simulations == 'y':
     
     file_extensions = ['','_varymuS','_varyd','_varyb','_varyA']
 
-    for j in np.arange(2,3):   
+    for j in np.array([1,3,4]):#np.arange(2,3):   
         
         B = -0.6*constant.daysYear
         data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B, X_fjord, W_fjord)
