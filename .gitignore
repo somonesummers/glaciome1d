@@ -4,3 +4,5 @@
 *.npz
 *.png
 *.npy
+.DS_Store
+*.DS_Store
