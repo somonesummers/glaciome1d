@@ -1,0 +1,35 @@
+Melt Rates [m/day]: [-1.5, -0.8]
+Solving prognostic equations.
+CFL: 1.0144
+Step: 0
+	Adjust dt to 3.023 days
+	Time per step: 3.18 s
+	Simulation time: 0.008 yr
+	Length: 12521.23 m
+	dL/dt: -18734.96 m/yr
+	Volume: 2.3050 km^3
+	dV/dt: 36.00 km^3/yr
+	H_L: 25.00 m
+	H_0: 63.46 m
+	CFL: 1.0000
+		****** WARNING ******
+		Very far from equalib
+Saving intermediate: tempfile_00000.pickle
+CFL: 1.0172
+CFL: 1.0361
+CFL: 1.0561
+CFL: 1.0765
+CFL: 1.0970
+Step: 5
+	Adjust dt to 2.756 days
+	Time per step: 10.99 s
+	Simulation time: 0.050 yr
+	Length: 11868.26 m
+	dL/dt: -15778.71 m/yr
+	Volume: 2.1385 km^3
+	dV/dt: -3.77 km^3/yr
+	H_L: 25.00 m
+	H_0: 61.03 m
+	CFL: 1.0000
+		****** WARNING ******
+		Very far from equalib

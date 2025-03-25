@@ -20,7 +20,8 @@ import matplotlib
 
 import sys
 
-sys.path.append('/hdd/glaciome/models/glaciome1D')
+sys.path.append('/Users/psummers8/Documents/glaciome1D_old')
+# sys.path.insert(0, '')
 from glaciome1D import glaciome, constants
 import matplotlib.patheffects as PathEffects
 
@@ -28,7 +29,7 @@ import matplotlib.patheffects as PathEffects
 
 matplotlib.rc('lines',linewidth=1) 
 
-font = {'family' : 'normal',
+font = {'family' : 'serif',
         'weight' : 'normal',
         'size'   : 8}
 

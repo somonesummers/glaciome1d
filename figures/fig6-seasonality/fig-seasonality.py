@@ -12,7 +12,8 @@ import matplotlib
 
 import sys
 
-sys.path.append('/hdd/glaciome/models/glaciome1D')
+# sys.path.append('/hdd/glaciome/models/glaciome1D')
+sys.path.insert(0, '')
 import glaciome1D
 import matplotlib.patheffects as PathEffects
 
@@ -23,7 +24,7 @@ from scipy.signal import correlation_lags
 
 matplotlib.rc('lines',linewidth=1) 
 
-font = {'family' : 'normal',
+font = {'family' : 'serif',
         'weight' : 'normal',
         'size'   : 8}
 

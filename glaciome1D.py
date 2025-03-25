@@ -55,7 +55,6 @@ class parameters:
         self.muS = 0.3 # static yield coefficient
         self.muW_ = 0.6 # initial guess for the effective coefficient of friction along the fjord walls
         self.muW_max = 100 # maximum value for muW 
-        
 param = parameters()
 
 
@@ -67,7 +66,7 @@ class glaciome:
     steady-state solves.
     '''
     
-    def __init__(self, n_pts, dt, L, Ut, Uc, Ht, B, X_fjord, W_fjord):
+    def __init__(self, n_pts, dt, L, Ut, Uc, Ht, B, X_fjord, W_fjord, H0 = None, muRelax = None):
         '''
         Initialize an object at t=0.
 
@@ -111,7 +110,10 @@ class glaciome:
 
         # create initial thickness profile
         self.HL = self.param.d
-        self.H0 = 3*self.HL
+        if(H0 == None):
+            self.H0 = 3*self.HL
+        else:
+            self.H0 = H0
         self.H = self.H0 + (self.HL-self.H0)*self.x_
         
         # specify glacier terminus thickness, velocity, and calving rate, and 
@@ -129,6 +131,8 @@ class glaciome:
         self.gg = self.param.deps/self.muW[0]*np.ones(len(self.H))
         self.g_loc = self.param.deps/self.muW[0]*np.ones(len(self.H))
         
+        #Damping Parameters
+        self.muRelax = muRelax
         
         # set time step and initial time
         self.dt = dt
@@ -137,14 +141,14 @@ class glaciome:
         self.tauX = 0 # drag force N/m; later divide by L to cast in terms of a stress; note units have 1/s^2, but it will be divided by gravity so it's okay
         
         self.transient = 1 # 1=transient simulation, 0=steady-state solve. Use steady-state solve with caution!
-        
+        print('Inital H: %s' % self.H)
         
         
     def nondimensionalize(self):
         '''
         Use scaling parameters to nondimensionalize the variables.        
         '''
-        
+        # print('nondimensionalize')
         if self.L <= 100:
             print('Variables are already dimensionless. Skipping.')
             
@@ -179,7 +183,7 @@ class glaciome:
         '''
         Use scaling parameters to re-dimensionalize the variables.        
         '''
-        
+        # print('redimensionalize')
         if self.L >= 100:
             print('Variables are already dimensional. Skipping.')
             
@@ -216,7 +220,7 @@ class glaciome:
         geometry. Default is to use the 'lm' solver; 'hybr' is faster but often
         has convergence issues.
         '''
-        
+        print('diagnostic')
         self.nondimensionalize()
         
         UggmuW = np.concatenate((self.U,self.gg,self.muW)) # starting point for solving the differential equations
@@ -249,7 +253,9 @@ class glaciome:
         muW, thickness, and length. Default is to use the 'lm' solver; 'hybr' 
         is faster but often has convergence issues.
         '''
-        
+        # print('prognostic')
+        if((np.max(self.U)*self.dt/(self.dx*self.L)) > 1.0):
+            print('\t\tCFL: ' + "{:.4f}".format(np.max(self.U)*self.dt/(self.dx*self.L)))
         self.nondimensionalize()
         
         # The previous thickness and length are required.
@@ -259,9 +265,9 @@ class glaciome:
         self.X[0] += (self.Ut-self.Uc)*self.dt # use an explicit time step to find new position X0
         
 
-            
-        UggmuWHL = np.concatenate((self.U,self.gg,self.muW,self.H,[self.L])) # starting point for solving the differential equations
         
+        UggmuWHL = np.concatenate((self.U,self.gg,self.muW,self.H,[self.L])) # starting point for solving the differential equations
+        # print('pre',UggmuWHL)
         if method=='hybr':
             result = root(self.__solve_prognostic, UggmuWHL, (H_prev, L_prev), method=method, options={'maxfev':int(1e6)})
         elif method=='lm':
@@ -272,12 +278,20 @@ class glaciome:
             print('success: ' + str(result.success))
             print('message: ' + result.message)
             print('')
-        
-        self.U = result.x[:len(self.x)]
-        self.gg = result.x[len(self.x):2*len(self.x)-1]
-        self.muW = result.x[2*len(self.x)-1:3*len(self.x)-1]
-        self.H = result.x[3*len(self.x)-1:-1]
-        self.L = result.x[-1]
+        # print('result',result.x)
+        if self.muRelax == None:
+            self.U = result.x[:len(self.x)]
+            self.gg = result.x[len(self.x):2*len(self.x)-1]
+            self.muW = result.x[2*len(self.x)-1:3*len(self.x)-1]
+            self.H = result.x[3*len(self.x)-1:-1]
+            self.L = result.x[-1]
+        else:
+            result.x = self.muRelax * result.x + (1- self.muRelax) * UggmuWHL
+            self.U = result.x[:len(self.x)]
+            self.gg = result.x[len(self.x):2*len(self.x)-1]
+            self.muW = result.x[2*len(self.x)-1:3*len(self.x)-1]
+            self.H = result.x[3*len(self.x)-1:-1]
+            self.L = result.x[-1]
         
         self.X = self.X*self.param.Lscale
         self.X_ = self.X_*self.param.Lscale
@@ -326,10 +340,10 @@ class glaciome:
         Run a bunch of prognostic steps until the length and thickness are no
         longer changing.
         '''
-        
+        # print('steadystate')
         L_old = self.L
         
-        k = 1 # initiate counter
+        k = 0 # initiate counter
         t = 0
         t_old = 0
         dLdt = 1000 # initializing with some large value
@@ -347,12 +361,11 @@ class glaciome:
         
         
         flag = int(0)
-        
+        k_step = int(5)
+
         while flag < 3:
-            
-            self.prognostic(method=method)
-            
             t += self.dt
+            self.prognostic(method=method)
             
             # calculate rate of volume change
             X_ = np.concatenate(([self.X[0]], self.X_, [self.X[-1]]))
@@ -361,23 +374,33 @@ class glaciome:
             V = simpson(H*W, X_)*1e-9
         
             dVdt = (V-V_old)/self.dt
-              
-            if (k%10) == 0:
+            
+            if((1.5*self.H[-1]-0.5*self.H[-2]) < 24):
+                print('\t WARNING LOW H_L: ' + "{:.2f}".format(1.5*self.H[-1]-0.5*self.H[-2]) + ' m')
+            print('CFL: ' + "{:.4f}".format(np.max(self.U)*self.dt/(self.dx*self.L)))
+            if (k%k_step) == 0:
                 
                 t_step = time.time()
                 
-                print('Step: ' + str(int(k)) )
-                print('Time per step: ' + "{:.2f}".format((t_step-t_step_old)/10) + ' s')
-                print('Simulation time: ' + "{:.3f}".format(t) + ' yr')
-                print('Length: ' + "{:.2f}".format(self.L) + ' m')
-                print('dL/dt: ' + "{:.2f}".format((self.L-L_old)/(t-t_old)) + ' m/yr') # over 10 time steps
-                print('Volume: ' + "{:.4f}".format(V) + ' km^3')
-                print('dV/dt: ' + "{:.2f}".format(dVdt) + ' km^3/yr' )
-                print('H_L: ' + "{:.2f}".format(1.5*self.H[-1]-0.5*self.H[-2]) + ' m') 
-                print('H_0: ' + "{:.2f}".format(self.H0) + ' m') 
-                print('CFL: ' + "{:.4f}".format(np.max(self.U)*self.dt/(self.dx*self.L)))
-                print(' ')
+
+                self.dt = (self.dx*self.L)/np.max(self.U) * 1.0 #set this to what you want in CLF
                 
+                print('Step: ' + str(int(k)) )
+                print('\tAdjust dt to %.4g days' % (self.dt * self.constants.daysYear))
+                print('\tTime per step: ' + "{:.2f}".format((t_step-t_step_old)/k_step) + ' s')
+                print('\tSimulation time: ' + "{:.3f}".format(t) + ' yr')
+                print('\tLength: ' + "{:.2f}".format(self.L) + ' m')
+                print('\tdL/dt: ' + "{:.2f}".format((self.L-L_old)/(t-t_old)) + ' m/yr') # over k_step time steps
+                print('\tVolume: ' + "{:.4f}".format(V) + ' km^3')
+                print('\tdV/dt: ' + "{:.2f}".format(dVdt) + ' km^3/yr' )
+                print('\tH_L: ' + "{:.2f}".format(1.5*self.H[-1]-0.5*self.H[-2]) + ' m') 
+                print('\tH_0: ' + "{:.2f}".format(self.H0) + ' m') 
+                print('\tCFL: ' + "{:.4f}".format(np.max(self.U)*self.dt/(self.dx*self.L)))
+
+                if( np.abs(self.L-L_old)/(t-t_old) > 10e3 or np.abs(dVdt) > 5):
+                    print('\t\t****** WARNING ******')
+                    print('\t\tVery far from equalib')
+
                 dLdt = (self.L-L_old)/(t-t_old)
                 
                 if np.abs(dLdt) < 10:
@@ -387,7 +410,10 @@ class glaciome:
                 
                 t_old = t
                 t_step_old = t_step
-        
+            if (k%10 == 0):
+                tmpFileName = 'tempfile_%05i.pickle' % k
+                print('Saving intermediate: %s' %tmpFileName)
+                self.save(tmpFileName)        
             V_old = V
             
             k += 1
@@ -417,7 +443,7 @@ class glaciome:
         -------
         res : residual of differential equations
         '''
-        
+        # print('__solve_diagnostic')
         # extract current values of U, gg, and muW
         self.U = UggmuW[:len(self.x)]
         self.gg = UggmuW[len(self.x):2*len(self.x)-1]
@@ -456,7 +482,7 @@ class glaciome:
         -------
         res : residual of differential equations
         '''
-        
+        # print('__solve_prognostic')
         # extract current value for U, gg, H, L
         self.U = UggmuWHL[:len(self.x)]
         self.gg = UggmuWHL[len(self.x):2*len(self.x)-1]
@@ -530,7 +556,7 @@ class glaciome:
         -------
         res : residual of the velocity differential equation
         '''
-        
+        # print('calc_u')
         # extract variables from the model object
         H = self.H
         gg = self.gg
@@ -587,7 +613,7 @@ class glaciome:
         -------
         res : residual of the granular fluidity differential equation
         '''
-        
+        # print('calc_gg')
         # extract variables from the model object
         H = self.H
         L = self.L
@@ -659,7 +685,7 @@ class glaciome:
         -------
         res : residual for the thickness differential equation
         '''
-        
+        # print('calc_h')
         # extract variables from the model object
         x_ = self.x_
         dx = self.dx
@@ -721,7 +747,9 @@ class glaciome:
         u_mean : mean velocity across the profile, assuming no slip along the boundary [dimensionless]
     
         '''
-        
+        # print('transverse')
+        # when 2 version are running, this takes a very long time, not sure why
+
         # extract W, muW, and H at the location of interest
         W = np.interp(x, self.x_, self.W)
         muW = np.interp(x, self.x, self.muW)
@@ -734,7 +762,9 @@ class glaciome:
             d = d*self.param.Hscale
         
         
-        n_pts = 101 # number of points in half-width
+        n_pts = 101 # number of points in half-width ORGINAL
+        # n_pts = 51 #number of points for Paul's attempt at faster runtimes, helps at first, but hurts run stability?
+        # n_pts = 21 #number of points for Paul's attempt at super fast runtimes
         y = np.linspace(0,W/2,n_pts) # location of points
         
         dy = y[1] # grid spacing
@@ -819,7 +849,7 @@ class glaciome:
         -------
         ee_chi : second invariant of the strain rate tensor [1/yr]
         '''
-        
+        # print('__second_invariant')
         ee_chi = np.sqrt((np.diff(self.U)/self.dx)**2) # note: dU/dx = -dW/dz
 
         return(ee_chi)
@@ -899,19 +929,19 @@ def basic_figure(n,dt):
     
     ax3 = plt.axes([left, bot+1.25*ygap, ax_width, ax_height])
     ax3.set_xlabel('Longitudinal coordinate [m]')
-    ax3.set_ylabel('$g^\prime$ [a$^{-1}]$')
+    ax3.set_ylabel('$g^\\prime$ [a$^{-1}]$')
     ax3.set_ylim([0, 5])
     ax3.set_xlim([0,xmax])
     
     ax4 = plt.axes([left+ax_width+xgap, bot+1.25*ygap, ax_width, ax_height])
     ax4.set_xlabel('Longitudinal coordinate [m]')
-    ax4.set_ylabel('$\mu_w$')
+    ax4.set_ylabel('$\\mu_w$')
     ax4.set_ylim([0, 1])
     ax4.set_xlim([0,xmax])
     
     ax5 = plt.axes([left+2*(ax_width+xgap), bot+1.25*ygap, 0.75*ax_width, 2*ax_height+ygap])
     ax5.set_xlabel('Transverse coordinate [m]')
-    ax5.set_ylabel(r'Speed at $\chi=0.5$ [m/d]')
+    ax5.set_ylabel(r'Speed at $\\chi=0.5$ [m/d]')
     ax5.set_xlim([-4000,4000])
     ax5.set_ylim([0,vmax])
     

@@ -11,7 +11,8 @@ from matplotlib import pyplot as plt
 import pickle
 
 import sys
-sys.path.append('/home/jason/projects/glaciome/glaciome1D')
+# sys.path.append('/home/jason/projects/glaciome/glaciome1D')
+sys.path.insert(0, '')
 from glaciome1D import constants, glaciome
 
 import matplotlib.patheffects as PathEffects

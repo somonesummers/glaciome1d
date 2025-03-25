@@ -42,11 +42,13 @@ X_fjord = np.linspace(-200e3,200e3,101)
 Wt = 4000
 W_fjord = Wt + 0/10000*X_fjord
 
+B_const = -0.6*constant.daysYear
+B_linear = -0.6*constant.daysYear * (1-X_fjord/np.max(X_fjord))
 
 # set up basic figure
 axes, color_id = basic_figure(n, dt)
 
-data = glaciome(n_pts, dt, L, Ut, Uc, Ht, X_fjord, W_fjord)
+data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
 
 start = time.time()
 
