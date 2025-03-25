@@ -2,3 +2,5 @@
 *.pdf
 *.pyc
 *.npz
+*.png
+*.npy
