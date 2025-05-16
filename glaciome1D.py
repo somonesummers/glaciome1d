@@ -142,8 +142,11 @@ class glaciome:
         
         self.transient = 1 # 1=transient simulation, 0=steady-state solve. Use steady-state solve with caution!
         print('Inital H: %s' % self.H)
-        
-        
+    
+    def __str__(self):
+        return f"glaciome obj with L={self.L}, H0={self.H0}, avg B ={np.round(np.mean(self.B/365.0),4)} W0={self.W0}, Uc={self.Uc}, Ut={self.Ut}, T={np.round(self.t*365)}, dt={self.dt*365}"
+
+
     def nondimensionalize(self):
         '''
         Use scaling parameters to nondimensionalize the variables.        
@@ -174,7 +177,8 @@ class glaciome:
             self.B = self.B/self.param.Bscale
             
             self.dt = self.dt/self.param.Tscale
-            
+            self.t = self.t/self.param.Tscale
+
             self.gg = self.gg*self.param.Lscale/self.param.Uscale
             self.g_loc = self.g_loc*self.param.Lscale/self.param.Uscale
     
@@ -209,6 +213,7 @@ class glaciome:
             self.B = self.B*self.param.Bscale
             
             self.dt = self.dt*self.param.Tscale
+            self.t = self.t*self.param.Tscale
             
             self.gg = self.gg*self.param.Uscale/self.param.Lscale
             self.g_loc = self.g_loc*self.param.Uscale/self.param.Lscale
@@ -254,8 +259,9 @@ class glaciome:
         is faster but often has convergence issues.
         '''
         # print('prognostic')
-        if((np.max(self.U)*self.dt/(self.dx*self.L)) > 1.0):
+        if((np.max(self.U)*self.dt/(self.dx*self.L)) > 4.0):
             print('\t\tCFL: ' + "{:.4f}".format(np.max(self.U)*self.dt/(self.dx*self.L)))
+        
         self.nondimensionalize()
         
         # The previous thickness and length are required.
@@ -300,7 +306,10 @@ class glaciome:
         self.t += self.dt
         
         self.redimensionalize()
-    
+
+        #Sometime things break. Warn about them here
+        if((1.5*self.H[-1]-0.5*self.H[-2]) < 24):
+                print('\t WARNING LOW H_L: ' + "{:.2f}".format(1.5*self.H[-1]-0.5*self.H[-2]) + ' m')
     
 
     
@@ -383,7 +392,7 @@ class glaciome:
                 t_step = time.time()
                 
 
-                self.dt = (self.dx*self.L)/np.max(self.U) * 1.0 #set this to what you want in CLF
+                self.dt = (self.dx*self.L)/np.max(self.U) * 3.0 #set this to what you want in CLF
                 
                 print('Step: ' + str(int(k)) )
                 print('\tAdjust dt to %.4g days' % (self.dt * self.constants.daysYear))

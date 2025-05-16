@@ -27,17 +27,14 @@ from matplotlib import pyplot as plt
 import matplotlib
 import matplotlib.patheffects as PathEffects
 import sys
-from numpy import random
 
-# sys.path.append('/hdd/glaciome/models/glaciome1D')
-# sys.path.insert(0, '')
-sys.path.append('/Users/psummers8/Documents/glaciome1D')
+sys.path.append('/Users/psummers8/Documents/glaciome1D/')
 from glaciome1D import constants, glaciome
 
 
 matplotlib.rc('lines',linewidth=1) 
 
-font = {'family' : 'serif',
+font = {'family' : 'normal',
         'weight' : 'normal',
         'size'   : 8}
 
@@ -57,49 +54,32 @@ run_simulations = 'y'
 
 if run_simulations == 'y':
         
-    n_pts = 21 # number of grid points
-    L = 1.1e4 # ice melange length
+    n_pts = 51 # number of grid points
+    L = 1e4 # ice melange length
     Ut = 0.6e4 # glacier terminus velocity [m/a]; treated as a constant
     Uc = 0.6e4 # glacier calving rate [m/a]; treated as a constant
     Ht = 600 # terminus thickness
     n = 101 # number of time steps
     dt = 0.01# 1/(n_pts-1)/10 # time step [a]; needs to be quite small for this to work
-    H0_manual = 148 #posit H0 start value, set to None to use default
 
     # specifying fjord geometry
-    X_fjord = np.linspace(0e3,400e3,101)
+    X_fjord = np.linspace(-200e3,200e3,101)
     Wt = 4000
     W_fjord = Wt + 0/10000*X_fjord
     B = -0.6*constant.daysYear
     
     # first run to steady state
-    # data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B, X_fjord, W_fjord,H0 = H0_manual)
-    # # print(data.d)
-    # data.X_externalGrid = np.linspace(0,30e3,101)
-    # data.B_externalGrid = np.linspace(-0.6*constant.daysYear,-0.6*constant.daysYear,101)
-    # data.steadystate(method='lm')
-    # data.save('steady-state_Bdot_-0.60.pickle')
+    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B, X_fjord, W_fjord)
     
-    files = glob.glob('./varMelt_Bdot_-0.65.pickle')
-    with open(files[0], 'rb') as file:
-        data = pickle.load(file)
-        file.close()
-    # then vary melting
-    random.seed(2)
-    # x_b = np.linspace(0,30e3,101)
-    # b_0 = np.linspace(-0.65*constant.daysYear,-0.35*constant.daysYear,101)
-    # b_b = np.linspace(-0.65*constant.daysYear,-0.35*constant.daysYear,101) + (random.rand(101)*0.1-0.05)*constant.daysYear
-    b_mitgcm = np.load('./meltRatesB.npy')
-    x_mitgcm = np.load('./meltRatesX.npy')
-
-    plt.figure()
-    plt.plot(x_mitgcm,b_mitgcm)
-    plt.show()
-    plt.close()
-    data.X_externalGrid = x_mitgcm
-    data.B_externalGrid = b_mitgcm*constant.daysYear
     data.steadystate(method='lm')
-    data.save('MITgcmRun.pickle')
+    data.save('steady-state_Bdot_-0.60.pickle')
+    
+    # then turn off calving and melting
+    data.transient = 1
+    data.B = 0
+    data.Uc = 0
+    data.steadystate(method='lm')
+    data.save('quasistatic_Bdot_-0.60.pickle')
         
 
         
@@ -236,11 +216,10 @@ def plot_figure(data, axes, color_id, linestyle):
 #%%
 files = sorted(glob.glob('./*.pickle'))
 files = files[0:2]
-print(files)
-file = files[0]
+file = files[1]
 
 axes, color_id = set_up_figure()
-linestyle = ['-','--']
+linestyle = ['--','-']
 for j in np.arange(len(files)-1, -1, -1):
     with open(files[j], 'rb') as file:
         data = pickle.load(file)
@@ -251,7 +230,7 @@ for j in np.arange(len(files)-1, -1, -1):
         L=data.L
         
 ax1, ax2, ax3, ax4, ax5 = axes
-ax2.legend(['steady-state','var-melt'], loc='upper center', bbox_to_anchor=(0.5, 1.3), ncol=5, frameon=True)
+ax2.legend(['steady-state','quasi-static'], loc='upper center', bbox_to_anchor=(0.5, 1.3), ncol=5, frameon=True)
 
 # glacier_x = np.array([-1000,0,0,-1000])
 # glacier_y = np.array([-data.Ht*constant.rho/constant.rho_w,-data.Ht*constant.rho/constant.rho_w,data.Ht*(1-constant.rho/constant.rho_w),data.Ht*(1-constant.rho/constant.rho_w)+5])
