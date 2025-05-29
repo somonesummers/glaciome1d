@@ -216,7 +216,7 @@ def plot_figure(data, axes, color_id, linestyle, label):
         # ax5.legend(('$\chi=0.0$','$\chi=0.5$','$\chi=1.0$'))
 
 #%%
-files = sorted(glob.glob('./*.pickle'))
+files = sorted(glob.glob('./steady-state*.pickle'))
 #file = files[1]
 F = np.zeros(len(files))
 Q = np.zeros(len(files))

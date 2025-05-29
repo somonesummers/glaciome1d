@@ -1,11 +1,12 @@
 import numpy as np
 import os
+import sys
 # from glaciome1D_dimensional import glaciome, basic_figure, plot_basic_figure, constants
 sys.path.append('/Users/psummers8/Documents/glaciome1D')
 from glaciome1D import glaciome, basic_figure, plot_basic_figure, constants
 from scipy.integrate import trapz
 import pickle
-import time
+import glob
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
@@ -37,176 +38,41 @@ Wt = 4000
 W_fjord = Wt + 0/10000*X_fjord
 
 B_const = -0.6*constant.daysYear
-B_linear = -0.6*constant.daysYear * (1-X_fjord/np.max(X_fjord))
 
-# set up basic figure
-axes, color_id = basic_figure(n, dt)
 
-data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
+## Run to steady state
+if(False):
+    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
 
-start = time.time()
+    data.steadystate(method='hybr')
+    data.save('steadystate.pickle')
 
-data.diagnostic()
-plot_basic_figure(data, axes, color_id, 0)
-data.dt = 0.1
-# data.steadystate()
+files = sorted(glob.glob('../steadystate.pickle'))
 
-# j = 1
-# while j<50:
-#     print(j)
-#     data.prognostic(method='hybr')
-#     plot_basic_figure(data, axes, color_id, 50)
-#     j+=1
+for j in np.arange(0,len(files)):
+    file = open(files[j], 'rb')
+    data = pickle.load(file)
+    file.close()
 
-data.steadystate(method='hybr')
-plot_basic_figure(data, axes, color_id, 100)
-stop = time.time()
+#Reset to time = 0
+data.t = 0
+dt = 10.0/365.0 # 10 days
+data.dt = dt
 
-print(stop-start)
+for i in range(37): 
+    data.X_externalGrid = X_fjord
+    data.B_externalGrid = np.ones_like(X_fjord) * (-0.6 - .2 * np.sin(i*2*np.pi/(36.5))) * constant.daysYear
+    data.param.muS = 0.25 - .05 * np.sin(i*2*np.pi/(36.5))
+    data.prognostic(method='hybr') # lm or hybr
+    if(i % 1 == 0):
+        print(f"Step {i:03d} with H0:{data.H0:7.2f} m and L:{data.L:9.2f} m")
+        data.save(f'bVarMelt{i:05d}.pickle')
 
-#%%
-data.diagnostic()
-plot_basic_figure(data, axes, color_id, 0)
-
-for j in np.arange(1,50):
-    print(j)
-    data.prognostic()
-    plot_basic_figure(data, axes, color_id, j)
+print("Done!")
 
 
 
-#%%
-start = time.time()
-data.steadystate()
-stop = time.time()
-print(stop-start)
-
-axes, color_id = basic_figure(n, dt)
-plot_basic_figure(data, axes, color_id, 10)
-
-data.B = 0
-data.Uc = 0
-data.steadystate()
-plot_basic_figure(data, axes, color_id, 0)
-
-
-#%%
-axes, color_id = basic_figure(9, 0.01)
-plot_basic_figure(data, axes, color_id, 0)
-grid = np.linspace(31,101,8)
-
-for j in np.arange(0,len(grid)):
-    data.refine_grid(int(grid[j]))
-    data.transient = 1
-    k = 0
-    while k<10:
-        data.prognostic()
-        k += 1
-    data.transient = 0
-    data.prognostic()
-    plot_basic_figure(data, axes, color_id, j+1)
-
-
-# #%%
-# print('Solving diagnostic equations.')
-# data.diagnostic()
-# plot_basic_figure(data, axes, color_id, 0)
-
-# #data.param.deps = 0.01 
-# #data.diagnostic()
-# #plot_basic_figure(data, axes, color_id, 100)
 
 
 
-# #%%
-# # run prognostic simulations
-# start = time.time()
-# L_old = data.L
-# dL = 1000 # just initiating the change in length with some large value
 
-# t = 0
-# k = 0
-
-# print('Solving prognostic equations.')
-
-# #for k in np.arange(1,n):
-# while np.abs(dL)>20:      
-#     data.dt = 0.25*data.dx*data.L/np.max(data.U)
-#     t += data.dt
-#     k += 1
-#     data.prognostic()
-    
-#     X_ = np.concatenate(([data.X[0]],data.X_,[data.X[-1]]))
-#     H = np.concatenate(([data.H0],data.H,[1.5*data.H[-1]-0.5*data.H[-2]]))
-
-    
-     
-#     if (k % 10) == 0:        
-#         plot_basic_figure(data, axes, color_id, 0)
-#         print('Time: ' + "{:.4f}".format(t) + ' years')   
-#         print('Length: ' + "{:.2f}".format(data.L) + ' m')
-#         print('Change in length: ' + "{:.2f}".format(data.L-L_old) + ' m') # over 10 time steps
-#         print('Volume: ' + "{:.4f}".format(trapz(H, X_)*4000/1e9) + ' km^3')
-#         print('H_L: ' + "{:.2f}".format(1.5*data.H[-1]-0.5*data.H[-2]) + ' m') 
-#         print('CFL: ' + "{:.4f}".format(data.U[0]*data.dt/data.X[1]))
-#         print(' ')
-#         dL = data.L-L_old
-#         L_old = data.L
-#     # data.save(k)
-
-    
-# stop = time.time()
-
-# print((stop-start)/60)           
-
-# data.transient = 0
-# data.prognostic()
-# plot_basic_figure(data, axes, color_id, 100)
-
-# #data.save('steady_B-0pt6_W' + str(Wt) + '_dwdx0.1.pickle')
-# #%%
-# data.refine_grid(21)
-
-# start = time.time()
-# L_old = data.L
-# dL = 1000 # just initiating the change in length with some large value
-
-# t = 0
-# k = 0
-
-# print('Solving prognostic equations.')
-
-# #for k in np.arange(1,n):
-# while np.abs(dL)>20:      
-#     data.dt = 0.25*data.dx*data.L/np.max(data.U)
-#     t += data.dt
-#     k += 1
-    
-#     data.prognostic()
-    
-#     X_ = np.concatenate(([data.X[0]],data.X_,[data.X[-1]]))
-#     H = np.concatenate(([data.H0],data.H,[1.5*data.H[-1]-0.5*data.H[-2]]))
-
-    
-     
-#     if (k % 10) == 0:        
-#         plot_basic_figure(data, axes, color_id, 0)
-#         print('Time: ' + "{:.4f}".format(t) + ' years')   
-#         print('Length: ' + "{:.2f}".format(data.L) + ' m')
-#         print('Change in length: ' + "{:.2f}".format(data.L-L_old) + ' m') # over 10 time steps
-#         print('Volume: ' + "{:.4f}".format(trapz(H, X_)*4000/1e9) + ' km^3')
-#         print('H_L: ' + "{:.2f}".format(1.5*data.H[-1]-0.5*data.H[-2]) + ' m') 
-#         print('CFL: ' + "{:.4f}".format(data.U[0]*data.dt/data.X[1]))
-#         print(' ')
-#         dL = data.L-L_old
-#         L_old = data.L
-#     # data.save(k)
-
-    
-# stop = time.time()
-
-# print((stop-start)/60)           
-
-# data.transient = 0
-# data.prognostic()
-# plot_basic_figure(data, axes, color_id, 100)

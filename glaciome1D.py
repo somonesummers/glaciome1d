@@ -419,6 +419,7 @@ class glaciome:
                 
                 t_old = t
                 t_step_old = t_step
+                
             if (k%10 == 0):
                 tmpFileName = 'tempfile_%05i.pickle' % k
                 print('Saving intermediate: %s' %tmpFileName)
@@ -950,7 +951,7 @@ def basic_figure(n,dt):
     
     ax5 = plt.axes([left+2*(ax_width+xgap), bot+1.25*ygap, 0.75*ax_width, 2*ax_height+ygap])
     ax5.set_xlabel('Transverse coordinate [m]')
-    ax5.set_ylabel(r'Speed at $\\chi=0.5$ [m/d]')
+    ax5.set_ylabel("Speed at $\\chi=0.5$ [m/d]")
     ax5.set_xlim([-4000,4000])
     ax5.set_ylim([0,vmax])
     
