@@ -144,7 +144,10 @@ class glaciome:
         print('Inital H: %s' % self.H)
     
     def __str__(self):
-        return f"glaciome obj with L={self.L}, H0={self.H0}, avg B ={np.round(np.mean(self.B/365.0),4)} W0={self.W0}, Uc={self.Uc}, Ut={self.Ut}, T={np.round(self.t*365)}, dt={self.dt*365}"
+        return f'''glaciome obj with L={self.L/1e3:.2f} km, H0={self.H0:.1f} m, 
+                min/avg/maxB={np.min(self.B/365.0):.2f}/{np.mean(self.B/365.0):.2f}/{np.max(self.B/365.0):.2f} m/d, 
+                W0={self.W0:.0f} m, muS={self.param.muS:.2f}, Uc={self.Uc} m/y, Ut={self.Ut} m/r, 
+                T={np.round(self.t*365)}, dt={self.dt*365:.2f} days'''
 
 
     def nondimensionalize(self):
@@ -419,7 +422,7 @@ class glaciome:
                 
                 t_old = t
                 t_step_old = t_step
-                
+
             if (k%10 == 0):
                 tmpFileName = 'tempfile_%05i.pickle' % k
                 print('Saving intermediate: %s' %tmpFileName)
