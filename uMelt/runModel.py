@@ -15,18 +15,32 @@ import glob
 
 @author: 
     Paul Summers
-    May 2025
-    Example of running glaciome1d
+    August 2025
+    Example of running glaciome1d, now with umelt shape
 
 """
 
+def meltRate(strength,n):
+    x = np.linspace(0,1,n)
+    baseLine = .6 -.4*x
+    arc = .5 + 50*(x-.46)**6
+
+    min = .4
+    max = .6587
+    if(strength < min):
+        return baseLine*strength/min
+    elif(strength < max):
+        r = (strength - min)/(max-min)
+        return baseLine*(1-r) + arc*(r)
+    else:
+        return arc*strength/max
 
 # basic parameters needed for setting up the model; later will modify this so that 
 # the fjord geometry can be passed through
 constant = constants()
 
 n_pts = 21 # number of grid points
-L = 1e4 # ice melange length
+L = 15e3 # ice melange length
 Ut = 0.6e4 # glacier terminus velocity [m/a]; treated as a constant
 Uc = 0.6e4 # glacier calving rate [m/a]; treated as a constant
 Ht = 600 # terminus thickness
@@ -37,20 +51,20 @@ dt = 0.01# 1/(n_pts-1)/10 # time step [a]; needs to be quite small for this to w
 X_fjord = np.linspace(-200e3,200e3,101)
 Wt = 5600
 W_fjord = Wt + 0/10000*X_fjord
-
-B_const = -0.3*constant.daysYear
+B_const = -0.4 * constant.daysYear
 
 
 ## Run to steady state
 if(False):
-    # data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
-    files = sorted(glob.glob('tempfile_00020.pickle'))
-    for j in np.arange(0,len(files)):
-        file = open(files[j], 'rb')
-        data = pickle.load(file)
-    file.close()
-    data.W_fjord = W_fjord
-    data.steadystate(method='hybr')
+    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
+    # files = sorted(glob.glob('steadystate.pickle'))
+    # for j in np.arange(0,len(files)):
+    #     file = open(files[j], 'rb')
+    #     data = pickle.load(file)
+    # # file.close()
+    # data.X_externalGrid = data.X
+    # data.B_externalGrid = -1*meltRate(B_const,n_pts) * constant.daysYear
+    data.steadystate()
     data.save('steadystate.pickle')
 
 files = sorted(glob.glob('steadystate.pickle'))
@@ -60,39 +74,32 @@ for j in np.arange(0,len(files)):
     data = pickle.load(file)
     file.close()
 
+data.W_fjord = 5600 + 0*data.X_fjord
+
 #Reset to time = 0
 data.t = 0
-dt = 10/365.0 # 5 days
+dt = 10/365.0 # [years]
 data.dt = dt
 
-yearsToSimulate = 5
+yearsToSimulate = 3
 endTime = int(yearsToSimulate/dt)
 time = np.arange(endTime)*dt
-iList = np.arange(0,endTime,1) #view 1 year
-BSin = np.sin(iList*2*np.pi/(36.5)) - np.sqrt(3)/2
-BSin[BSin < 0 ] = 0
-BSin = BSin/np.max(BSin)
-Bview = (-0.3 - .15 * BSin)
-muSin = np.sin(iList*2*np.pi/(36.5)) - 1/2
-muSin[muSin < 0] = 0
-muSin = muSin/np.max(muSin)
-muSview = 0.3 - .05 * muSin
-
+iList = np.arange(0,endTime,1) 
+# print(iList)
+Bview = np.linspace(.4,.7,endTime)
+# print(Bview)
 plt.plot(time,Bview,color='red')
-ax_2 =plt.gca().twinx()
-ax_2.plot(time,muSview,color='aqua')
-plt.xlabel('Time [year]')
+plt.xlabel('Time [years]')
 plt.show()
 plt.close()
 
 for i in iList: # 5 years 
-    data.X_externalGrid = X_fjord
-    data.B_externalGrid = np.ones_like(X_fjord) * Bview[i] * constant.daysYear
-    data.param.muS = muSview[i]
-    data.prognostic(method='hybr') # lm or hybr
+    data.X_externalGrid = data.X
+    data.B_externalGrid = -1*meltRate(Bview[i],n_pts) * constant.daysYear
+    data.prognostic(method='lm') # lm or hybr
     if(i % 1 == 0):
         print(f"Step {i:03d} with H0:{data.H0:7.2f} m and L:{data.L:9.2f} m")
-        data.save(f'muHalfStep{i:05d}.pickle')
+        data.save(f'uMelt{i:05d}.pickle')
 
 print("Done!")
 

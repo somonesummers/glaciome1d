@@ -146,7 +146,8 @@ class glaciome:
     def __str__(self):
         return f'''glaciome obj with L={self.L/1e3:.2f} km, H0={self.H0:.1f} m, 
                 min/avg/maxB={np.min(self.B/365.0):.2f}/{np.mean(self.B/365.0):.2f}/{np.max(self.B/365.0):.2f} m/d, 
-                W0={self.W0:.0f} m, muS={self.param.muS:.2f}, Uc={self.Uc} m/y, Ut={self.Ut} m/r, 
+                W0={self.W0:.0f} m, muS={self.param.muS:.2f}, 
+                X0={self.X[0]/1e3:.2f} km,Uc={self.Uc} m/y, Ut={self.Ut} m/y, 
                 T={np.round(self.t*365)}, dt={self.dt*365:.2f} days'''
 
 
@@ -270,11 +271,10 @@ class glaciome:
         # The previous thickness and length are required.
         H_prev = self.H
         L_prev = self.L
-        
-        self.X[0] += (self.Ut-self.Uc)*self.dt # use an explicit time step to find new position X0
-        
 
-        
+        termBump = (self.Ut-self.Uc)*self.dt + self.X[0]/self.param.Lscale
+        # self.X[0] += (self.Ut-self.Uc)*self.dt # use an explicit time step to find new position X0
+
         UggmuWHL = np.concatenate((self.U,self.gg,self.muW,self.H,[self.L])) # starting point for solving the differential equations
         # print('pre',UggmuWHL)
         if method=='hybr':
@@ -288,26 +288,18 @@ class glaciome:
             print('message: ' + result.message)
             print('')
         # print('result',result.x)
-        if self.muRelax == None:
-            self.U = result.x[:len(self.x)]
-            self.gg = result.x[len(self.x):2*len(self.x)-1]
-            self.muW = result.x[2*len(self.x)-1:3*len(self.x)-1]
-            self.H = result.x[3*len(self.x)-1:-1]
-            self.L = result.x[-1]
-        else:
-            result.x = self.muRelax * result.x + (1- self.muRelax) * UggmuWHL
-            self.U = result.x[:len(self.x)]
-            self.gg = result.x[len(self.x):2*len(self.x)-1]
-            self.muW = result.x[2*len(self.x)-1:3*len(self.x)-1]
-            self.H = result.x[3*len(self.x)-1:-1]
-            self.L = result.x[-1]
+        self.U = result.x[:len(self.x)]
+        self.gg = result.x[len(self.x):2*len(self.x)-1]
+        self.muW = result.x[2*len(self.x)-1:3*len(self.x)-1]
+        self.H = result.x[3*len(self.x)-1:-1]
+        self.L = result.x[-1]
         
-        self.X = self.X*self.param.Lscale
-        self.X_ = self.X_*self.param.Lscale
-        
+        self.X = self.X*self.param.Lscale + termBump*self.param.Lscale
+        self.X_ = self.X_*self.param.Lscale + termBump*self.param.Lscale
+
         # Update the time stored within the model object.
         self.t += self.dt
-        
+
         self.redimensionalize()
 
         #Sometime things break. Warn about them here

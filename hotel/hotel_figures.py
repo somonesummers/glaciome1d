@@ -47,7 +47,7 @@ for j in [0,100]:
 
     plt.suptitle(f"Mélange Uc: {data.Uc}")
     plt.tight_layout()
-    plt.savefig("fFTestFigure{data.Uc}.png",format='png',dpi=150)
+plt.savefig("fFTestFigure{data.Uc}.png",format='png',dpi=150)
 plt.show()
 plt.close()
 
