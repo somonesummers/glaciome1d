@@ -78,27 +78,28 @@ for j in np.arange(0,len(files)):
 
 #Reset to time = 0
 data.t = 0
-dt = 10/365.0 # [years]
+dt = 5/365.0 # [years]
 data.dt = dt
 
-yearsToSimulate = 10
+yearsToSimulate = 5
 endTime = int(yearsToSimulate/dt)
 time = np.arange(endTime)*dt
 iList = np.arange(0,endTime,1) 
 
-BSin = np.sin(iList*2*np.pi/(36.5)) - np.sqrt(3)/2 #season cycle
+BSin = -np.sin(iList*2*np.pi*(dt)) - 1/2 #season cycle
 BSin[BSin < 0 ] = 0
 BSin = BSin/np.max(BSin)
-Bview = (0.3 + .3 * BSin)
+Bview = (0.35 + .3 * BSin)
 
 
 
 # print(iList)
-Bview = np.linspace(.35,.7,endTime)
+# Bview = np.linspace(.35,.7,endTime)
 # print(Bview)
-plt.plot(time,Bview,color='red')
-plt.xlabel('Time [years]')
+plt.plot(time*constant.daysYear,Bview,color='red')
+plt.xlabel('Time [days]')
 plt.ylabel('Average Melt Rate [m/day]')
+plt.savefig(f'meltTimeForcing.png',format='png',dpi=150)
 plt.show()
 plt.close()
 
@@ -107,7 +108,7 @@ for i in iList: # 5 years
     data.B_externalGrid = -1*meltRate(Bview[i],n_pts) * constant.daysYear
     data.prognostic(method='lm') # lm or hybr
     if(i % 1 == 0):
-        print(f"Step {i:03d} with H0:{data.H0:7.2f} m and L:{data.L:9.2f} m")
+        print(f"Step {i:03d} with H0:{data.H0:7.2f} m and L:{data.L:9.2f} m, day {time[i]*constant.daysYear:0.2f} and melt {Bview[i]:0.2f} m/day")
         data.save(f'uSeason{i:05d}.pickle')
 
 print("Done!")
