@@ -67,7 +67,7 @@ if(False):
     data.steadystate()
     data.save('steadystate.pickle')
 
-files = sorted(glob.glob('steadystate.pickle'))
+files = sorted(glob.glob('chkpt035uMelt.pickle'))
 
 for j in np.arange(0,len(files)):
     file = open(files[j], 'rb')
@@ -81,15 +81,16 @@ data.t = 0
 dt = 10/365.0 # [years]
 data.dt = dt
 
-yearsToSimulate = 3
+yearsToSimulate = 15
 endTime = int(yearsToSimulate/dt)
 time = np.arange(endTime)*dt
 iList = np.arange(0,endTime,1) 
 # print(iList)
-Bview = np.linspace(.4,.7,endTime)
+Bview = np.linspace(.35,.7,endTime)
 # print(Bview)
 plt.plot(time,Bview,color='red')
 plt.xlabel('Time [years]')
+plt.ylabel('Average Melt Rate [m/day]')
 plt.show()
 plt.close()
 
