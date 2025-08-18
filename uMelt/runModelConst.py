@@ -4,6 +4,7 @@ import os
 import sys
 # from glaciome1D_dimensional import glaciome, basic_figure, plot_basic_figure, constants
 sys.path.append('/Users/psummers8/Documents/glaciome1D')
+sys.path.append('/storage/home/hcoda1/2/psummers8/glaciome1d')
 from glaciome1D import glaciome, basic_figure, plot_basic_figure, constants
 from scipy.integrate import trapz
 import pickle
