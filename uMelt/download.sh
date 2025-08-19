@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -e
+
+if [ $# -lt 1 ]; then
+  echo 1>&2 "$0: not enough arguments, need to specifiy experiment name"
+  exit 2
+fi
+
+for EXP in "$@"
+do
+  echo $EXP
+  if [ ! -d "$EXP" ]; then
+    echo "$EXP does not exist locally, mkdir and downloading."
+    mkdir $EXP
+  else
+    echo " $EXP exists locally, syncing from PACE"
+  fi
+  
+  #Sometimes one login is slower, can flip between here
+  echo ' contents of file'
+  rsync -azh --info=progress2 psummers8@login-phoenix-rh9.pace.gatech.edu:~/glaciome1d/uMelt/$EXP/ $EXP/
+
+  # rsync -ah --info=progress2 psummers8@login-phoenix-rh9.pace.gatech.edu:~/MITgcmSandbox/experiments/$EXP/output* $EXP/
+  # rsync -ah --info=progress2 psummers8@login-phoenix-rh9.pace.gatech.edu:~/MITgcmSandbox/experiments/$EXP/input/ $EXP/input
+  # rsync -ah --info=progress2 psummers8@login-phoenix-rh9.pace.gatech.edu:~/MITgcmSandbox/experiments/$EXP/results/ $EXP/results
+
+  # echo "===== Running plotting now ====="
+  # bash plotAll.sh $EXP
+done
