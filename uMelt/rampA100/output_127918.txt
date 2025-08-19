@@ -1,0 +1,2834 @@
+---------------------------------------
+Begin Slurm Prolog: Aug-18-2025 15:56:22
+Job ID:    127918
+User ID:   psummers8
+Account:   gts-arobel3-atlas
+Job name:  rampA100
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+/storage/home/hcoda1/2/psummers8/glaciome1d/glaciome1D.py:643: RuntimeWarning: invalid value encountered in sqrt
+  g_loc = constant.secsYear*np.sqrt(self.pressure(H)*gamma/(constant.rho*self.param.d**2*self.param.Hscale))*(1-self.param.muS/mu)/(self.param.b)
+/storage/home/hcoda1/2/psummers8/glaciome1d/glaciome1D.py:784: RuntimeWarning: divide by zero encountered in divide
+  g_loc[y<y_c] = constant.secsYear*np.sqrt(self.pressure(H)/(constant.rho*d**2))*(mu[y<y_c]-self.param.muS)/(mu[y<y_c]*self.param.b) # local granular fluidity
+/storage/home/hcoda1/2/psummers8/glaciome1d/glaciome1D.py:784: RuntimeWarning: invalid value encountered in sqrt
+  g_loc[y<y_c] = constant.secsYear*np.sqrt(self.pressure(H)/(constant.rho*d**2))*(mu[y<y_c]-self.param.muS)/(mu[y<y_c]*self.param.b) # local granular fluidity
+Step 000 with H0:  97.10 m and L: 21220.70 m
+Step 001 with H0:  96.75 m and L: 21150.58 m
+Step 002 with H0:  96.45 m and L: 21088.74 m
+Step 003 with H0:  96.15 m and L: 21027.47 m
+Step 004 with H0:  95.86 m and L: 20967.73 m
+Step 005 with H0:  95.57 m and L: 20909.55 m
+Step 006 with H0:  95.29 m and L: 20853.00 m
+Step 007 with H0:  95.01 m and L: 20798.10 m
+Step 008 with H0:  94.73 m and L: 20744.83 m
+Step 009 with H0:  94.46 m and L: 20693.17 m
+Step 010 with H0:  94.19 m and L: 20643.09 m
+Step 011 with H0:  93.92 m and L: 20594.54 m
+Step 012 with H0:  93.66 m and L: 20547.48 m
+Step 013 with H0:  93.40 m and L: 20501.85 m
+Step 014 with H0:  93.14 m and L: 20457.63 m
+Step 015 with H0:  92.88 m and L: 20414.76 m
+Step 016 with H0:  92.63 m and L: 20373.19 m
+Step 017 with H0:  92.37 m and L: 20332.89 m
+Step 018 with H0:  92.12 m and L: 20293.81 m
+Step 019 with H0:  91.87 m and L: 20255.91 m
+Step 020 with H0:  91.63 m and L: 20219.16 m
+Step 021 with H0:  91.38 m and L: 20183.51 m
+Step 022 with H0:  91.13 m and L: 20148.94 m
+Step 023 with H0:  90.89 m and L: 20115.39 m
+Step 024 with H0:  90.65 m and L: 20082.84 m
+Step 025 with H0:  90.40 m and L: 20051.26 m
+Step 026 with H0:  90.16 m and L: 20020.60 m
+Step 027 with H0:  89.92 m and L: 19990.83 m
+Step 028 with H0:  89.69 m and L: 19961.91 m
+Step 029 with H0:  89.45 m and L: 19933.80 m
+Step 030 with H0:  89.21 m and L: 19906.48 m
+Step 031 with H0:  88.98 m and L: 19879.90 m
+Step 032 with H0:  88.74 m and L: 19854.02 m
+Step 033 with H0:  88.51 m and L: 19828.81 m
+Step 034 with H0:  88.27 m and L: 19804.22 m
+Step 035 with H0:  88.04 m and L: 19780.24 m
+Step 036 with H0:  87.81 m and L: 19756.80 m
+Step 037 with H0:  87.58 m and L: 19733.88 m
+Step 038 with H0:  87.35 m and L: 19711.45 m
+Step 039 with H0:  87.12 m and L: 19689.45 m
+Step 040 with H0:  86.90 m and L: 19667.87 m
+Step 041 with H0:  86.67 m and L: 19646.66 m
+Step 042 with H0:  86.45 m and L: 19625.79 m
+Step 043 with H0:  86.22 m and L: 19605.23 m
+Step 044 with H0:  86.00 m and L: 19584.95 m
+Step 045 with H0:  85.77 m and L: 19564.92 m
+Step 046 with H0:  85.55 m and L: 19545.11 m
+Step 047 with H0:  85.33 m and L: 19525.51 m
+Step 048 with H0:  85.11 m and L: 19501.31 m
+Step 049 with H0:  84.89 m and L: 19467.66 m
+Step 050 with H0:  84.68 m and L: 19427.21 m
+Step 051 with H0:  84.46 m and L: 19382.08 m
+Step 052 with H0:  84.24 m and L: 19333.87 m
+Step 053 with H0:  84.03 m and L: 19283.79 m
+Step 054 with H0:  83.81 m and L: 19232.76 m
+Step 055 with H0:  83.59 m and L: 19181.43 m
+Step 056 with H0:  83.38 m and L: 19130.28 m
+Step 057 with H0:  83.15 m and L: 19079.67 m
+Step 058 with H0:  82.93 m and L: 19029.83 m
+Step 059 with H0:  82.71 m and L: 18980.94 m
+Step 060 with H0:  82.48 m and L: 18933.12 m
+Step 061 with H0:  82.26 m and L: 18886.46 m
+Step 062 with H0:  82.03 m and L: 18841.01 m
+Step 063 with H0:  81.80 m and L: 18796.79 m
+Step 064 with H0:  81.57 m and L: 18753.81 m
+Step 065 with H0:  81.34 m and L: 18712.07 m
+Step 066 with H0:  81.10 m and L: 18671.55 m
+Step 067 with H0:  80.87 m and L: 18632.23 m
+Step 068 with H0:  80.64 m and L: 18594.06 m
+Step 069 with H0:  80.40 m and L: 18556.99 m
+Step 070 with H0:  80.17 m and L: 18520.96 m
+Step 071 with H0:  79.93 m and L: 18485.91 m
+Step 072 with H0:  79.70 m and L: 18451.77 m
+Step 073 with H0:  79.47 m and L: 18418.47 m
+Step 074 with H0:  79.23 m and L: 18385.91 m
+Step 075 with H0:  79.00 m and L: 18354.02 m
+Step 076 with H0:  78.77 m and L: 18322.71 m
+Step 077 with H0:  78.55 m and L: 18291.90 m
+Step 078 with H0:  78.32 m and L: 18261.50 m
+Step 079 with H0:  78.09 m and L: 18231.42 m
+Step 080 with H0:  77.87 m and L: 18201.59 m
+Step 081 with H0:  77.65 m and L: 18171.92 m
+Step 082 with H0:  77.44 m and L: 18142.34 m
+Step 083 with H0:  77.22 m and L: 18112.77 m
+Step 084 with H0:  77.01 m and L: 18083.16 m
+Step 085 with H0:  76.80 m and L: 18053.43 m
+Step 086 with H0:  76.60 m and L: 18023.52 m
+Step 087 with H0:  76.40 m and L: 17993.39 m
+Step 088 with H0:  76.20 m and L: 17962.98 m
+Step 089 with H0:  76.00 m and L: 17932.26 m
+Step 090 with H0:  75.81 m and L: 17901.18 m
+Step 091 with H0:  75.62 m and L: 17869.70 m
+Step 092 with H0:  75.44 m and L: 17837.81 m
+Step 093 with H0:  75.26 m and L: 17805.48 m
+Step 094 with H0:  75.08 m and L: 17772.67 m
+Step 095 with H0:  74.91 m and L: 17739.39 m
+Step 096 with H0:  74.74 m and L: 17705.62 m
+Step 097 with H0:  74.57 m and L: 17671.34 m
+Step 098 with H0:  74.41 m and L: 17636.54 m
+Step 099 with H0:  74.25 m and L: 17601.24 m
+Step 100 with H0:  74.09 m and L: 17565.42 m
+Step 101 with H0:  73.94 m and L: 17529.10 m
+Step 102 with H0:  73.79 m and L: 17492.26 m
+Step 103 with H0:  73.64 m and L: 17454.91 m
+Step 104 with H0:  73.50 m and L: 17417.07 m
+Step 105 with H0:  73.36 m and L: 17378.74 m
+Step 106 with H0:  73.23 m and L: 17339.92 m
+Step 107 with H0:  73.10 m and L: 17300.63 m
+Step 108 with H0:  72.97 m and L: 17260.87 m
+Step 109 with H0:  72.85 m and L: 17220.66 m
+Step 110 with H0:  72.72 m and L: 17180.00 m
+Step 111 with H0:  72.61 m and L: 17138.90 m
+Step 112 with H0:  72.49 m and L: 17097.38 m
+Step 113 with H0:  72.38 m and L: 17055.43 m
+Step 114 with H0:  72.27 m and L: 17013.08 m
+Step 115 with H0:  72.17 m and L: 16970.32 m
+Step 116 with H0:  72.07 m and L: 16927.16 m
+Step 117 with H0:  71.97 m and L: 16883.61 m
+Step 118 with H0:  71.87 m and L: 16839.68 m
+Step 119 with H0:  71.78 m and L: 16795.38 m
+Step 120 with H0:  71.69 m and L: 16750.70 m
+Step 121 with H0:  71.61 m and L: 16705.65 m
+Step 122 with H0:  71.53 m and L: 16660.23 m
+Step 123 with H0:  71.45 m and L: 16614.46 m
+Step 124 with H0:  71.37 m and L: 16568.33 m
+Step 125 with H0:  71.30 m and L: 16521.84 m
+Step 126 with H0:  71.23 m and L: 16475.00 m
+Step 127 with H0:  71.16 m and L: 16427.83 m
+Step 128 with H0:  71.09 m and L: 16380.36 m
+Step 129 with H0:  71.03 m and L: 16332.52 m
+Step 130 with H0:  70.96 m and L: 16284.09 m
+Step 131 with H0:  70.89 m and L: 16234.88 m
+Step 132 with H0:  70.82 m and L: 16184.88 m
+Step 133 with H0:  70.75 m and L: 16134.12 m
+Step 134 with H0:  70.68 m and L: 16082.66 m
+Step 135 with H0:  70.61 m and L: 16030.58 m
+Step 136 with H0:  70.54 m and L: 15977.94 m
+Step 137 with H0:  70.47 m and L: 15924.79 m
+Step 138 with H0:  70.40 m and L: 15871.18 m
+Step 139 with H0:  70.34 m and L: 15817.16 m
+Step 140 with H0:  70.27 m and L: 15762.75 m
+Step 141 with H0:  70.20 m and L: 15707.98 m
+Step 142 with H0:  70.13 m and L: 15652.85 m
+Step 143 with H0:  70.07 m and L: 15597.39 m
+Step 144 with H0:  70.00 m and L: 15541.58 m
+Step 145 with H0:  69.94 m and L: 15485.43 m
+Step 146 with H0:  69.88 m and L: 15428.92 m
+Step 147 with H0:  69.82 m and L: 15372.05 m
+Step 148 with H0:  69.76 m and L: 15314.80 m
+Step 149 with H0:  69.70 m and L: 15257.16 m
+Step 150 with H0:  69.64 m and L: 15199.10 m
+Step 151 with H0:  69.59 m and L: 15140.61 m
+Step 152 with H0:  69.53 m and L: 15081.67 m
+Step 153 with H0:  69.48 m and L: 15022.25 m
+Step 154 with H0:  69.43 m and L: 14962.35 m
+Step 155 with H0:  69.38 m and L: 14901.94 m
+Step 156 with H0:  69.34 m and L: 14840.99 m
+Step 157 with H0:  69.30 m and L: 14779.50 m
+Step 158 with H0:  69.26 m and L: 14717.45 m
+Step 159 with H0:  69.22 m and L: 14654.80 m
+Step 160 with H0:  69.19 m and L: 14591.56 m
+Step 161 with H0:  69.16 m and L: 14527.69 m
+Step 162 with H0:  69.14 m and L: 14463.19 m
+Step 163 with H0:  69.11 m and L: 14398.03 m
+Step 164 with H0:  69.09 m and L: 14332.20 m
+Step 165 with H0:  69.08 m and L: 14265.68 m
+Step 166 with H0:  69.07 m and L: 14198.46 m
+Step 167 with H0:  69.07 m and L: 14130.50 m
+Step 168 with H0:  69.07 m and L: 14061.80 m
+Step 169 with H0:  69.07 m and L: 13992.34 m
+Step 170 with H0:  69.08 m and L: 13922.13 m
+Step 171 with H0:  69.09 m and L: 13851.22 m
+Step 172 with H0:  69.09 m and L: 13779.45 m
+Step 173 with H0:  69.10 m and L: 13706.52 m
+Step 174 with H0:  69.10 m and L: 13632.22 m
+Step 175 with H0:  69.10 m and L: 13556.47 m
+Step 176 with H0:  69.10 m and L: 13479.31 m
+Step 177 with H0:  69.11 m and L: 13400.81 m
+Step 178 with H0:  69.11 m and L: 13321.08 m
+Step 179 with H0:  69.11 m and L: 13240.19 m
+Step 180 with H0:  69.11 m and L: 13158.22 m
+Step 181 with H0:  69.11 m and L: 13075.23 m
+Step 182 with H0:  69.12 m and L: 12991.25 m
+Step 183 with H0:  69.12 m and L: 12906.32 m
+Step 184 with H0:  69.13 m and L: 12820.44 m
+Step 185 with H0:  69.14 m and L: 12733.62 m
+Step 186 with H0:  69.15 m and L: 12645.83 m
+Step 187 with H0:  69.17 m and L: 12557.05 m
+Step 188 with H0:  69.19 m and L: 12467.25 m
+Step 189 with H0:  69.21 m and L: 12376.39 m
+Step 190 with H0:  69.24 m and L: 12284.42 m
+Step 191 with H0:  69.28 m and L: 12191.28 m
+Step 192 with H0:  69.33 m and L: 12096.93 m
+Step 193 with H0:  69.38 m and L: 12001.29 m
+Step 194 with H0:  69.44 m and L: 11904.35 m
+Step 195 with H0:  69.50 m and L: 11806.10 m
+Step 196 with H0:  69.57 m and L: 11706.36 m
+Step 197 with H0:  69.63 m and L: 11604.75 m
+Step 198 with H0:  69.70 m and L: 11500.94 m
+Step 199 with H0:  69.76 m and L: 11394.79 m
+Step 200 with H0:  69.83 m and L: 11286.29 m
+Step 201 with H0:  69.91 m and L: 11175.48 m
+Step 202 with H0:  69.98 m and L: 11062.42 m
+Step 203 with H0:  70.06 m and L: 10947.18 m
+Step 204 with H0:  70.14 m and L: 10829.80 m
+Step 205 with H0:  70.22 m and L: 10710.31 m
+Step 206 with H0:  70.31 m and L: 10588.71 m
+Step 207 with H0:  70.41 m and L: 10464.98 m
+Step 208 with H0:  70.51 m and L: 10339.09 m
+Step 209 with H0:  70.62 m and L: 10211.03 m
+Step 210 with H0:  70.73 m and L: 10080.76 m
+Step 211 with H0:  70.85 m and L:  9947.76 m
+Step 212 with H0:  70.97 m and L:  9811.50 m
+Step 213 with H0:  71.11 m and L:  9671.56 m
+Step 214 with H0:  71.27 m and L:  9527.71 m
+Step 215 with H0:  71.45 m and L:  9379.77 m
+Step 216 with H0:  71.66 m and L:  9227.60 m
+Step 217 with H0:  71.89 m and L:  9071.08 m
+Step 218 with H0:  72.15 m and L:  8910.11 m
+Step 219 with H0:  72.44 m and L:  8744.59 m
+Step 220 with H0:  72.77 m and L:  8573.88 m
+Step 221 with H0:  73.13 m and L:  8397.43 m
+Step 222 with H0:  73.53 m and L:  8214.94 m
+Step 223 with H0:  73.96 m and L:  8026.30 m
+Step 224 with H0:  74.43 m and L:  7831.57 m
+Step 225 with H0:  74.94 m and L:  7630.85 m
+Step 226 with H0:  75.49 m and L:  7423.47 m
+Step 227 with H0:  76.05 m and L:  7209.11 m
+Step 228 with H0:  76.61 m and L:  6987.84 m
+Step 229 with H0:  77.11 m and L:  6759.85 m
+Step 230 with H0:  77.44 m and L:  6524.39 m
+		CFL: 4.2201
+Step 231 with H0:  77.41 m and L:  6280.81 m
+		CFL: 4.4933
+Step 232 with H0:  76.84 m and L:  6027.66 m
+		CFL: 4.8027
+Step 233 with H0:  75.68 m and L:  5761.17 m
+		CFL: 5.1490
+Step 234 with H0:  74.00 m and L:  5477.26 m
+		CFL: 5.5476
+Step 235 with H0:  71.88 m and L:  5170.15 m
+		CFL: 6.0142
+Step 236 with H0:  69.40 m and L:  4833.65 m
+		CFL: 6.5844
+Step 237 with H0:  66.57 m and L:  4459.48 m
+		CFL: 7.3074
+Step 238 with H0:  63.35 m and L:  4036.16 m
+		CFL: 8.2694
+Step 239 with H0:  59.69 m and L:  3547.35 m
+		CFL: 9.6507
+Step 240 with H0:  55.62 m and L:  2964.56 m
+		CFL: 11.9300
+Step 241 with H0:  48.50 m and L:  2247.90 m
+		CFL: 15.7815
+Step 242 with H0:  52.18 m and L:  1414.52 m
+		CFL: 25.0501
+Step 243 with H0:  49.73 m and L:   694.63 m
+		CFL: 50.9911
+Step 244 with H0:  50.92 m and L:   321.52 m
+		CFL: 110.1627
+	 WARNING LOW H_L: 18.07 m
+Step 245 with H0:  56.35 m and L:   169.71 m
+		CFL: 208.7221
+	 WARNING LOW H_L: 13.92 m
+Step 246 with H0:  59.74 m and L:    98.35 m
+		CFL: 360.1889
+Variables are already dimensionless. Skipping.
+Step 247 with H0:1194.77 m and L:983459.13 m
+		CFL: 360.1895
+Variables are already dimensional. Skipping.
+Step 248 with H0:  54.08 m and L: 16474.18 m
+	 WARNING LOW H_L: -3.16 m
+Step 249 with H0:   0.17 m and L: 20257.32 m
+	 WARNING LOW H_L: -3.16 m
+Step 250 with H0:   0.17 m and L: 20257.54 m
+	 WARNING LOW H_L: -3.17 m
+Step 251 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 252 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 253 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 254 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 255 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 256 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 257 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 258 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 259 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 260 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 261 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 262 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 263 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 264 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 265 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 266 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 267 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 268 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 269 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 270 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 271 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 272 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 273 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 274 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 275 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 276 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 277 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 278 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 279 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 280 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 281 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 282 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 283 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 284 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 285 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 286 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 287 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 288 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 289 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 290 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 291 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 292 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 293 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 294 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 295 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 296 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 297 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 298 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 299 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 300 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 301 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 302 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 303 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 304 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 305 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 306 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 307 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 308 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 309 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 310 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 311 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 312 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 313 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 314 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 315 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 316 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 317 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 318 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 319 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 320 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 321 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 322 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 323 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 324 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 325 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 326 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 327 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 328 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 329 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 330 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 331 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 332 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 333 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 334 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 335 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 336 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 337 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 338 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 339 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 340 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 341 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 342 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 343 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 344 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 345 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 346 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 347 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 348 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 349 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 350 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 351 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 352 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 353 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 354 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 355 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 356 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 357 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 358 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 359 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 360 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 361 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 362 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 363 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 364 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 365 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 366 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 367 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 368 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 369 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 370 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 371 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 372 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 373 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 374 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 375 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 376 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 377 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 378 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 379 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 380 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 381 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 382 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 383 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 384 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 385 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 386 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 387 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 388 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 389 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 390 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 391 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 392 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 393 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 394 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 395 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 396 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 397 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 398 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 399 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 400 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 401 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 402 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 403 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 404 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 405 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 406 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 407 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 408 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 409 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 410 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 411 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 412 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 413 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 414 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 415 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 416 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 417 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 418 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 419 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 420 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 421 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 422 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 423 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 424 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 425 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 426 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 427 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 428 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 429 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 430 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 431 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 432 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 433 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 434 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 435 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 436 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 437 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 438 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 439 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 440 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 441 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 442 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 443 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 444 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 445 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 446 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 447 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 448 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 449 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 450 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 451 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 452 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 453 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 454 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 455 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 456 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 457 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 458 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 459 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 460 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 461 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 462 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 463 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 464 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 465 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 466 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 467 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 468 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 469 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 470 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 471 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 472 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 473 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 474 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 475 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 476 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 477 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 478 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 479 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 480 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 481 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 482 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 483 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 484 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 485 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 486 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 487 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 488 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 489 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 490 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 491 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 492 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 493 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 494 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 495 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 496 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 497 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 498 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 499 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 500 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 501 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 502 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 503 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 504 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 505 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 506 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 507 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 508 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 509 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 510 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 511 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 512 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 513 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 514 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 515 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 516 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 517 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 518 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 519 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 520 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 521 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 522 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 523 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 524 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 525 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 526 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 527 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 528 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 529 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 530 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 531 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 532 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 533 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 534 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 535 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 536 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 537 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 538 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 539 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 540 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 541 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 542 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 543 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 544 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 545 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 546 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 547 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 548 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 549 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 550 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 551 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 552 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 553 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 554 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 555 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 556 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 557 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 558 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 559 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 560 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 561 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 562 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 563 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 564 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 565 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 566 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 567 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 568 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 569 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 570 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 571 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 572 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 573 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 574 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 575 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 576 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 577 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 578 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 579 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 580 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 581 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 582 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 583 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 584 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 585 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 586 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 587 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 588 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 589 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 590 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 591 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 592 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 593 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 594 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 595 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 596 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 597 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 598 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 599 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 600 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 601 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 602 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 603 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 604 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 605 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 606 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 607 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 608 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 609 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 610 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 611 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 612 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 613 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 614 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 615 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 616 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 617 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 618 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 619 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 620 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 621 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 622 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 623 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 624 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 625 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 626 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 627 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 628 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 629 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 630 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 631 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 632 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 633 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 634 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 635 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 636 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 637 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 638 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 639 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 640 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 641 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 642 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 643 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 644 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 645 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 646 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 647 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 648 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 649 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 650 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 651 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 652 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 653 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 654 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 655 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 656 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 657 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 658 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 659 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 660 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 661 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 662 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 663 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 664 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 665 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 666 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 667 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 668 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 669 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 670 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 671 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 672 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 673 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 674 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 675 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 676 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 677 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 678 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 679 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 680 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 681 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 682 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 683 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 684 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 685 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 686 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 687 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 688 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 689 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 690 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 691 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 692 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 693 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 694 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 695 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 696 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 697 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 698 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 699 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 700 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 701 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 702 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 703 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 704 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 705 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 706 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 707 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 708 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 709 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 710 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 711 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 712 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 713 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 714 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 715 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 716 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 717 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 718 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 719 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 720 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 721 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 722 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 723 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 724 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 725 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 726 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 727 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 728 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 729 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 730 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 731 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 732 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 733 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 734 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 735 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 736 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 737 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 738 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 739 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 740 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 741 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 742 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 743 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 744 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 745 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 746 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 747 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 748 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 749 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 750 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 751 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 752 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 753 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 754 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 755 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 756 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 757 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 758 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 759 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 760 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 761 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 762 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 763 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 764 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 765 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 766 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 767 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 768 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 769 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 770 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 771 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 772 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 773 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 774 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 775 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 776 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 777 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 778 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 779 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 780 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 781 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 782 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 783 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 784 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 785 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 786 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 787 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 788 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 789 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 790 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 791 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 792 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 793 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 794 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 795 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 796 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 797 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 798 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 799 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 800 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 801 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 802 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 803 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 804 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 805 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 806 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 807 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 808 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 809 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 810 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 811 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 812 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 813 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 814 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 815 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 816 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 817 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 818 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 819 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 820 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 821 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 822 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 823 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 824 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 825 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 826 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 827 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 828 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 829 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 830 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 831 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 832 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 833 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 834 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 835 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 836 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 837 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 838 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 839 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 840 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 841 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 842 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 843 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 844 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 845 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 846 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 847 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 848 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 849 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 850 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 851 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 852 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 853 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 854 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 855 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 856 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 857 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 858 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 859 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 860 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 861 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 862 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 863 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 864 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 865 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 866 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 867 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 868 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 869 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 870 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 871 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 872 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 873 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 874 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 875 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 876 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 877 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 878 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 879 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 880 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 881 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 882 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 883 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 884 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 885 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 886 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 887 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 888 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 889 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 890 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 891 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 892 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 893 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 894 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 895 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 896 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 897 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 898 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 899 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 900 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 901 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 902 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 903 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 904 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 905 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 906 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 907 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 908 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 909 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 910 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 911 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 912 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 913 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 914 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 915 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 916 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 917 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 918 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 919 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 920 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 921 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 922 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 923 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 924 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 925 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 926 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 927 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 928 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 929 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 930 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 931 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 932 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 933 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 934 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 935 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 936 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 937 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 938 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 939 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 940 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 941 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 942 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 943 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 944 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 945 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 946 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 947 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 948 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 949 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 950 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 951 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 952 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 953 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 954 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 955 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 956 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 957 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 958 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 959 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 960 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 961 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 962 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 963 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 964 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 965 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 966 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 967 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 968 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 969 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 970 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 971 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 972 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 973 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 974 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 975 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 976 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 977 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 978 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 979 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 980 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 981 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 982 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 983 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 984 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 985 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 986 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 987 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 988 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 989 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 990 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 991 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 992 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 993 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 994 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 995 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 996 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 997 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 998 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 999 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1000 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1001 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1002 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1003 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1004 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1005 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1006 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1007 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1008 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1009 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1010 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1011 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1012 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1013 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1014 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1015 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1016 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1017 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1018 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1019 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1020 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1021 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1022 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1023 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1024 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1025 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1026 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1027 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1028 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1029 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1030 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1031 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1032 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1033 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1034 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1035 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1036 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1037 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1038 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1039 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1040 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1041 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1042 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1043 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1044 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1045 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1046 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1047 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1048 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1049 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1050 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1051 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1052 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1053 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1054 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1055 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1056 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1057 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1058 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1059 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1060 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1061 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1062 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1063 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1064 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1065 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1066 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1067 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1068 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1069 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1070 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1071 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1072 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1073 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1074 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1075 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1076 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1077 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1078 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1079 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1080 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1081 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1082 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1083 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1084 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1085 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1086 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1087 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1088 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1089 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1090 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1091 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1092 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1093 with H0:   0.51 m and L:307862.32 m
+		CFL: 10.8949
+	 WARNING LOW H_L: -3.17 m
+Step 1094 with H0:   0.51 m and L:307862.32 m
+Done!
+---------------------------------------
+Begin Slurm Epilog: Aug-18-2025 17:42:31
+Job ID:        127918
+User ID:       psummers8
+Account:       gts-arobel3-atlas
+Job name:      rampA100
+Resources:     cpu=1,mem=1G,node=1
+Rsrc Used:     cput=01:46:08,vmem=0,walltime=01:46:08,mem=198844K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-006-30-1
+---------------------------------------
