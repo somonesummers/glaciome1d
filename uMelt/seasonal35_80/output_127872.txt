@@ -1,0 +1,1233 @@
+---------------------------------------
+Begin Slurm Prolog: Aug-18-2025 15:49:37
+Job ID:    127872
+User ID:   psummers8
+Account:   gts-arobel3-atlas
+Job name:  seasonal35_80
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+/storage/home/hcoda1/2/psummers8/glaciome1d/glaciome1D.py:643: RuntimeWarning: invalid value encountered in sqrt
+  g_loc = constant.secsYear*np.sqrt(self.pressure(H)*gamma/(constant.rho*self.param.d**2*self.param.Hscale))*(1-self.param.muS/mu)/(self.param.b)
+Step 000 with H0:  97.10 m and L: 21220.70 m, day 0.00 and melt 0.35 m/day
+Step 001 with H0:  97.18 m and L: 21227.04 m, day 5.00 and melt 0.35 m/day
+Step 002 with H0:  97.25 m and L: 21233.35 m, day 10.01 and melt 0.35 m/day
+Step 003 with H0:  97.33 m and L: 21239.64 m, day 15.01 and melt 0.35 m/day
+Step 004 with H0:  97.40 m and L: 21245.90 m, day 20.01 and melt 0.35 m/day
+Step 005 with H0:  97.48 m and L: 21252.14 m, day 25.02 and melt 0.35 m/day
+Step 006 with H0:  97.55 m and L: 21258.34 m, day 30.02 and melt 0.35 m/day
+Step 007 with H0:  97.62 m and L: 21264.51 m, day 35.02 and melt 0.35 m/day
+Step 008 with H0:  97.70 m and L: 21270.66 m, day 40.03 and melt 0.35 m/day
+Step 009 with H0:  97.77 m and L: 21276.77 m, day 45.03 and melt 0.35 m/day
+Step 010 with H0:  97.84 m and L: 21282.85 m, day 50.03 and melt 0.35 m/day
+Step 011 with H0:  97.92 m and L: 21288.90 m, day 55.04 and melt 0.35 m/day
+Step 012 with H0:  97.99 m and L: 21294.91 m, day 60.04 and melt 0.35 m/day
+Step 013 with H0:  98.06 m and L: 21300.89 m, day 65.04 and melt 0.35 m/day
+Step 014 with H0:  98.13 m and L: 21306.84 m, day 70.05 and melt 0.35 m/day
+Step 015 with H0:  98.20 m and L: 21312.76 m, day 75.05 and melt 0.35 m/day
+Step 016 with H0:  98.27 m and L: 21318.64 m, day 80.05 and melt 0.35 m/day
+Step 017 with H0:  98.34 m and L: 21324.48 m, day 85.06 and melt 0.35 m/day
+Step 018 with H0:  98.41 m and L: 21330.29 m, day 90.06 and melt 0.35 m/day
+Step 019 with H0:  98.48 m and L: 21336.07 m, day 95.07 and melt 0.35 m/day
+Step 020 with H0:  98.55 m and L: 21341.81 m, day 100.07 and melt 0.35 m/day
+Step 021 with H0:  98.61 m and L: 21347.52 m, day 105.07 and melt 0.35 m/day
+Step 022 with H0:  98.68 m and L: 21353.19 m, day 110.08 and melt 0.35 m/day
+Step 023 with H0:  98.75 m and L: 21358.82 m, day 115.08 and melt 0.35 m/day
+Step 024 with H0:  98.81 m and L: 21364.42 m, day 120.08 and melt 0.35 m/day
+Step 025 with H0:  98.88 m and L: 21369.98 m, day 125.09 and melt 0.35 m/day
+Step 026 with H0:  98.95 m and L: 21375.51 m, day 130.09 and melt 0.35 m/day
+Step 027 with H0:  99.01 m and L: 21381.00 m, day 135.09 and melt 0.35 m/day
+Step 028 with H0:  99.08 m and L: 21386.46 m, day 140.10 and melt 0.35 m/day
+Step 029 with H0:  99.14 m and L: 21391.88 m, day 145.10 and melt 0.35 m/day
+Step 030 with H0:  99.21 m and L: 21397.27 m, day 150.10 and melt 0.35 m/day
+Step 031 with H0:  99.27 m and L: 21402.62 m, day 155.11 and melt 0.35 m/day
+Step 032 with H0:  99.34 m and L: 21407.93 m, day 160.11 and melt 0.35 m/day
+Step 033 with H0:  99.40 m and L: 21413.21 m, day 165.11 and melt 0.35 m/day
+Step 034 with H0:  99.46 m and L: 21418.46 m, day 170.12 and melt 0.35 m/day
+Step 035 with H0:  99.52 m and L: 21423.67 m, day 175.12 and melt 0.35 m/day
+Step 036 with H0:  99.59 m and L: 21428.84 m, day 180.12 and melt 0.35 m/day
+Step 037 with H0:  99.65 m and L: 21433.98 m, day 185.13 and melt 0.35 m/day
+Step 038 with H0:  99.71 m and L: 21439.09 m, day 190.13 and melt 0.35 m/day
+Step 039 with H0:  99.77 m and L: 21444.17 m, day 195.13 and melt 0.35 m/day
+Step 040 with H0:  99.83 m and L: 21449.20 m, day 200.14 and melt 0.35 m/day
+Step 041 with H0:  99.89 m and L: 21454.21 m, day 205.14 and melt 0.35 m/day
+Step 042 with H0:  99.95 m and L: 21459.18 m, day 210.14 and melt 0.35 m/day
+Step 043 with H0:  99.81 m and L: 21425.93 m, day 215.15 and melt 0.38 m/day
+Step 044 with H0:  99.28 m and L: 20975.07 m, day 220.15 and melt 0.44 m/day
+Step 045 with H0:  98.44 m and L: 20273.66 m, day 225.15 and melt 0.50 m/day
+Step 046 with H0:  97.26 m and L: 19497.14 m, day 230.16 and melt 0.56 m/day
+Step 047 with H0:  95.74 m and L: 18717.10 m, day 235.16 and melt 0.61 m/day
+Step 048 with H0:  93.90 m and L: 17964.49 m, day 240.16 and melt 0.65 m/day
+Step 049 with H0:  91.67 m and L: 17289.45 m, day 245.17 and melt 0.69 m/day
+Step 050 with H0:  89.11 m and L: 16685.87 m, day 250.17 and melt 0.73 m/day
+Step 051 with H0:  86.23 m and L: 16144.52 m, day 255.17 and melt 0.75 m/day
+Step 052 with H0:  83.10 m and L: 15660.01 m, day 260.18 and melt 0.78 m/day
+Step 053 with H0:  79.77 m and L: 15229.01 m, day 265.18 and melt 0.79 m/day
+Step 054 with H0:  76.32 m and L: 14847.54 m, day 270.18 and melt 0.80 m/day
+Step 055 with H0:  72.84 m and L: 14510.85 m, day 275.19 and melt 0.80 m/day
+Step 056 with H0:  69.47 m and L: 14219.00 m, day 280.19 and melt 0.80 m/day
+Step 057 with H0:  66.36 m and L: 13971.02 m, day 285.20 and melt 0.78 m/day
+Step 058 with H0:  63.67 m and L: 13765.05 m, day 290.20 and melt 0.77 m/day
+Step 059 with H0:  61.47 m and L: 13599.01 m, day 295.20 and melt 0.74 m/day
+Step 060 with H0:  59.79 m and L: 13471.57 m, day 300.21 and melt 0.71 m/day
+Step 061 with H0:  58.57 m and L: 13382.56 m, day 305.21 and melt 0.67 m/day
+Step 062 with H0:  57.73 m and L: 13360.35 m, day 310.21 and melt 0.63 m/day
+Step 063 with H0:  57.22 m and L: 13430.92 m, day 315.22 and melt 0.58 m/day
+Step 064 with H0:  57.04 m and L: 13614.77 m, day 320.22 and melt 0.53 m/day
+Step 065 with H0:  57.21 m and L: 13951.43 m, day 325.22 and melt 0.47 m/day
+Step 066 with H0:  57.78 m and L: 14530.29 m, day 330.23 and melt 0.41 m/day
+Step 067 with H0:  58.79 m and L: 15138.49 m, day 335.23 and melt 0.35 m/day
+Step 068 with H0:  59.76 m and L: 15695.79 m, day 340.23 and melt 0.35 m/day
+Step 069 with H0:  60.70 m and L: 16206.70 m, day 345.24 and melt 0.35 m/day
+Step 070 with H0:  61.59 m and L: 16674.30 m, day 350.24 and melt 0.35 m/day
+Step 071 with H0:  62.43 m and L: 17100.73 m, day 355.24 and melt 0.35 m/day
+Step 072 with H0:  63.22 m and L: 17487.32 m, day 360.25 and melt 0.35 m/day
+Step 073 with H0:  63.98 m and L: 17834.77 m, day 365.25 and melt 0.35 m/day
+Step 074 with H0:  64.68 m and L: 18143.23 m, day 370.25 and melt 0.35 m/day
+Step 075 with H0:  65.35 m and L: 18412.38 m, day 375.26 and melt 0.35 m/day
+Step 076 with H0:  65.98 m and L: 18641.56 m, day 380.26 and melt 0.35 m/day
+Step 077 with H0:  66.58 m and L: 18830.05 m, day 385.26 and melt 0.35 m/day
+Step 078 with H0:  67.14 m and L: 18977.52 m, day 390.27 and melt 0.35 m/day
+Step 079 with H0:  67.67 m and L: 19084.46 m, day 395.27 and melt 0.35 m/day
+Step 080 with H0:  68.17 m and L: 19152.50 m, day 400.27 and melt 0.35 m/day
+Step 081 with H0:  68.64 m and L: 19184.73 m, day 405.28 and melt 0.35 m/day
+Step 082 with H0:  69.08 m and L: 19185.81 m, day 410.28 and melt 0.35 m/day
+Step 083 with H0:  69.49 m and L: 19161.76 m, day 415.28 and melt 0.35 m/day
+Step 084 with H0:  69.89 m and L: 19119.42 m, day 420.29 and melt 0.35 m/day
+Step 085 with H0:  70.26 m and L: 19065.72 m, day 425.29 and melt 0.35 m/day
+Step 086 with H0:  70.61 m and L: 19006.91 m, day 430.29 and melt 0.35 m/day
+Step 087 with H0:  70.94 m and L: 18948.12 m, day 435.30 and melt 0.35 m/day
+Step 088 with H0:  71.26 m and L: 18893.08 m, day 440.30 and melt 0.35 m/day
+Step 089 with H0:  71.57 m and L: 18844.25 m, day 445.30 and melt 0.35 m/day
+Step 090 with H0:  71.87 m and L: 18802.98 m, day 450.31 and melt 0.35 m/day
+Step 091 with H0:  72.15 m and L: 18769.80 m, day 455.31 and melt 0.35 m/day
+Step 092 with H0:  72.43 m and L: 18744.66 m, day 460.32 and melt 0.35 m/day
+Step 093 with H0:  72.70 m and L: 18727.15 m, day 465.32 and melt 0.35 m/day
+Step 094 with H0:  72.96 m and L: 18716.67 m, day 470.32 and melt 0.35 m/day
+Step 095 with H0:  73.21 m and L: 18712.50 m, day 475.33 and melt 0.35 m/day
+Step 096 with H0:  73.47 m and L: 18713.90 m, day 480.33 and melt 0.35 m/day
+Step 097 with H0:  73.71 m and L: 18720.13 m, day 485.33 and melt 0.35 m/day
+Step 098 with H0:  73.96 m and L: 18730.53 m, day 490.34 and melt 0.35 m/day
+Step 099 with H0:  74.20 m and L: 18744.47 m, day 495.34 and melt 0.35 m/day
+Step 100 with H0:  74.43 m and L: 18761.39 m, day 500.34 and melt 0.35 m/day
+Step 101 with H0:  74.67 m and L: 18780.80 m, day 505.35 and melt 0.35 m/day
+Step 102 with H0:  74.90 m and L: 18802.26 m, day 510.35 and melt 0.35 m/day
+Step 103 with H0:  75.12 m and L: 18825.38 m, day 515.35 and melt 0.35 m/day
+Step 104 with H0:  75.35 m and L: 18849.85 m, day 520.36 and melt 0.35 m/day
+Step 105 with H0:  75.57 m and L: 18875.37 m, day 525.36 and melt 0.35 m/day
+Step 106 with H0:  75.80 m and L: 18901.70 m, day 530.36 and melt 0.35 m/day
+Step 107 with H0:  76.02 m and L: 18928.64 m, day 535.37 and melt 0.35 m/day
+Step 108 with H0:  76.23 m and L: 18956.02 m, day 540.37 and melt 0.35 m/day
+Step 109 with H0:  76.45 m and L: 18983.68 m, day 545.37 and melt 0.35 m/day
+Step 110 with H0:  76.67 m and L: 19011.50 m, day 550.38 and melt 0.35 m/day
+Step 111 with H0:  76.88 m and L: 19039.38 m, day 555.38 and melt 0.35 m/day
+Step 112 with H0:  77.09 m and L: 19067.24 m, day 560.38 and melt 0.35 m/day
+Step 113 with H0:  77.30 m and L: 19095.00 m, day 565.39 and melt 0.35 m/day
+Step 114 with H0:  77.51 m and L: 19122.61 m, day 570.39 and melt 0.35 m/day
+Step 115 with H0:  77.72 m and L: 19150.01 m, day 575.39 and melt 0.35 m/day
+Step 116 with H0:  77.71 m and L: 19132.41 m, day 580.40 and melt 0.38 m/day
+Step 117 with H0:  77.32 m and L: 18668.52 m, day 585.40 and melt 0.44 m/day
+Step 118 with H0:  76.57 m and L: 17960.47 m, day 590.40 and melt 0.50 m/day
+Step 119 with H0:  75.45 m and L: 17193.07 m, day 595.41 and melt 0.56 m/day
+Step 120 with H0:  73.95 m and L: 16433.72 m, day 600.41 and melt 0.61 m/day
+Step 121 with H0:  72.06 m and L: 15711.28 m, day 605.41 and melt 0.65 m/day
+Step 122 with H0:  69.77 m and L: 15073.97 m, day 610.42 and melt 0.69 m/day
+Step 123 with H0:  67.12 m and L: 14515.56 m, day 615.42 and melt 0.73 m/day
+Step 124 with H0:  64.19 m and L: 14026.56 m, day 620.42 and melt 0.75 m/day
+Step 125 with H0:  61.42 m and L: 13596.97 m, day 625.43 and melt 0.78 m/day
+Step 126 with H0:  58.33 m and L: 13231.58 m, day 630.43 and melt 0.79 m/day
+Step 127 with H0:  55.49 m and L: 12907.96 m, day 635.43 and melt 0.80 m/day
+Step 128 with H0:  53.06 m and L: 12618.66 m, day 640.44 and melt 0.80 m/day
+Step 129 with H0:  51.09 m and L: 12358.99 m, day 645.44 and melt 0.80 m/day
+Step 130 with H0:  49.50 m and L: 12124.99 m, day 650.45 and melt 0.78 m/day
+Step 131 with H0:  48.19 m and L: 11913.71 m, day 655.45 and melt 0.77 m/day
+Step 132 with H0:  47.07 m and L: 11722.89 m, day 660.45 and melt 0.74 m/day
+Step 133 with H0:  46.11 m and L: 11551.35 m, day 665.46 and melt 0.71 m/day
+Step 134 with H0:  45.31 m and L: 11399.59 m, day 670.46 and melt 0.67 m/day
+Step 135 with H0:  44.69 m and L: 11298.86 m, day 675.46 and melt 0.63 m/day
+Step 136 with H0:  44.28 m and L: 11281.51 m, day 680.47 and melt 0.58 m/day
+Step 137 with H0:  44.16 m and L: 11379.16 m, day 685.47 and melt 0.53 m/day
+Step 138 with H0:  44.39 m and L: 11655.46 m, day 690.47 and melt 0.47 m/day
+Step 139 with H0:  45.08 m and L: 12280.98 m, day 695.48 and melt 0.41 m/day
+Step 140 with H0:  46.06 m and L: 12955.86 m, day 700.48 and melt 0.35 m/day
+Step 141 with H0:  47.03 m and L: 13530.21 m, day 705.48 and melt 0.35 m/day
+Step 142 with H0:  47.96 m and L: 14007.00 m, day 710.49 and melt 0.35 m/day
+Step 143 with H0:  48.83 m and L: 14387.74 m, day 715.49 and melt 0.35 m/day
+Step 144 with H0:  49.65 m and L: 14674.82 m, day 720.49 and melt 0.35 m/day
+Step 145 with H0:  50.40 m and L: 14874.44 m, day 725.50 and melt 0.35 m/day
+Step 146 with H0:  51.10 m and L: 14999.16 m, day 730.50 and melt 0.35 m/day
+Step 147 with H0:  51.74 m and L: 15067.08 m, day 735.50 and melt 0.35 m/day
+Step 148 with H0:  52.33 m and L: 15099.52 m, day 740.51 and melt 0.35 m/day
+Step 149 with H0:  52.89 m and L: 15115.93 m, day 745.51 and melt 0.35 m/day
+Step 150 with H0:  53.41 m and L: 15130.30 m, day 750.51 and melt 0.35 m/day
+Step 151 with H0:  53.90 m and L: 15151.00 m, day 755.52 and melt 0.35 m/day
+Step 152 with H0:  54.37 m and L: 15181.79 m, day 760.52 and melt 0.35 m/day
+Step 153 with H0:  54.83 m and L: 15223.45 m, day 765.52 and melt 0.35 m/day
+Step 154 with H0:  55.27 m and L: 15275.20 m, day 770.53 and melt 0.35 m/day
+Step 155 with H0:  55.70 m and L: 15335.53 m, day 775.53 and melt 0.35 m/day
+Step 156 with H0:  56.12 m and L: 15402.74 m, day 780.53 and melt 0.35 m/day
+Step 157 with H0:  56.53 m and L: 15475.22 m, day 785.54 and melt 0.35 m/day
+Step 158 with H0:  56.93 m and L: 15551.51 m, day 790.54 and melt 0.35 m/day
+Step 159 with H0:  57.33 m and L: 15630.41 m, day 795.54 and melt 0.35 m/day
+Step 160 with H0:  57.72 m and L: 15711.01 m, day 800.55 and melt 0.35 m/day
+Step 161 with H0:  58.11 m and L: 15792.42 m, day 805.55 and melt 0.35 m/day
+Step 162 with H0:  58.49 m and L: 15874.00 m, day 810.55 and melt 0.35 m/day
+Step 163 with H0:  58.87 m and L: 15955.27 m, day 815.56 and melt 0.35 m/day
+Step 164 with H0:  59.25 m and L: 16035.86 m, day 820.56 and melt 0.35 m/day
+Step 165 with H0:  59.62 m and L: 16115.50 m, day 825.57 and melt 0.35 m/day
+Step 166 with H0:  59.99 m and L: 16193.99 m, day 830.57 and melt 0.35 m/day
+Step 167 with H0:  60.35 m and L: 16271.21 m, day 835.57 and melt 0.35 m/day
+Step 168 with H0:  60.71 m and L: 16347.04 m, day 840.58 and melt 0.35 m/day
+Step 169 with H0:  61.07 m and L: 16421.44 m, day 845.58 and melt 0.35 m/day
+Step 170 with H0:  61.42 m and L: 16494.39 m, day 850.58 and melt 0.35 m/day
+Step 171 with H0:  61.77 m and L: 16565.87 m, day 855.59 and melt 0.35 m/day
+Step 172 with H0:  62.12 m and L: 16635.89 m, day 860.59 and melt 0.35 m/day
+Step 173 with H0:  62.46 m and L: 16704.47 m, day 865.59 and melt 0.35 m/day
+Step 174 with H0:  62.80 m and L: 16771.65 m, day 870.60 and melt 0.35 m/day
+Step 175 with H0:  63.14 m and L: 16837.46 m, day 875.60 and melt 0.35 m/day
+Step 176 with H0:  63.47 m and L: 16901.94 m, day 880.60 and melt 0.35 m/day
+Step 177 with H0:  63.80 m and L: 16965.12 m, day 885.61 and melt 0.35 m/day
+Step 178 with H0:  64.13 m and L: 17027.05 m, day 890.61 and melt 0.35 m/day
+Step 179 with H0:  64.46 m and L: 17087.76 m, day 895.61 and melt 0.35 m/day
+Step 180 with H0:  64.78 m and L: 17147.30 m, day 900.62 and melt 0.35 m/day
+Step 181 with H0:  65.09 m and L: 17205.69 m, day 905.62 and melt 0.35 m/day
+Step 182 with H0:  65.41 m and L: 17262.99 m, day 910.62 and melt 0.35 m/day
+Step 183 with H0:  65.72 m and L: 17319.21 m, day 915.63 and melt 0.35 m/day
+Step 184 with H0:  66.03 m and L: 17374.40 m, day 920.63 and melt 0.35 m/day
+Step 185 with H0:  66.33 m and L: 17428.58 m, day 925.63 and melt 0.35 m/day
+Step 186 with H0:  66.64 m and L: 17481.79 m, day 930.64 and melt 0.35 m/day
+Step 187 with H0:  66.94 m and L: 17534.05 m, day 935.64 and melt 0.35 m/day
+Step 188 with H0:  67.23 m and L: 17585.38 m, day 940.64 and melt 0.35 m/day
+Step 189 with H0:  67.32 m and L: 17586.46 m, day 945.65 and melt 0.38 m/day
+Step 190 with H0:  67.00 m and L: 17125.54 m, day 950.65 and melt 0.44 m/day
+Step 191 with H0:  66.29 m and L: 16429.05 m, day 955.65 and melt 0.50 m/day
+Step 192 with H0:  65.21 m and L: 15685.76 m, day 960.66 and melt 0.56 m/day
+Step 193 with H0:  63.69 m and L: 14957.45 m, day 965.66 and melt 0.61 m/day
+Step 194 with H0:  61.76 m and L: 14271.94 m, day 970.66 and melt 0.65 m/day
+Step 195 with H0:  59.42 m and L: 13675.50 m, day 975.67 and melt 0.69 m/day
+Step 196 with H0:  56.76 m and L: 13160.67 m, day 980.67 and melt 0.73 m/day
+Step 197 with H0:  53.95 m and L: 12715.19 m, day 985.67 and melt 0.75 m/day
+Step 198 with H0:  51.22 m and L: 12327.04 m, day 990.68 and melt 0.78 m/day
+Step 199 with H0:  48.81 m and L: 11982.75 m, day 995.68 and melt 0.79 m/day
+Step 200 with H0:  46.82 m and L: 11668.79 m, day 1000.68 and melt 0.80 m/day
+Step 201 with H0:  45.17 m and L: 11373.79 m, day 1005.69 and melt 0.80 m/day
+Step 202 with H0:  43.74 m and L: 11089.73 m, day 1010.69 and melt 0.80 m/day
+Step 203 with H0:  42.43 m and L: 10810.38 m, day 1015.70 and melt 0.78 m/day
+Step 204 with H0:  41.23 m and L: 10530.22 m, day 1020.70 and melt 0.77 m/day
+Step 205 with H0:  40.12 m and L: 10245.70 m, day 1025.70 and melt 0.74 m/day
+Step 206 with H0:  39.11 m and L:  9959.27 m, day 1030.71 and melt 0.71 m/day
+Step 207 with H0:  38.25 m and L:  9679.97 m, day 1035.71 and melt 0.67 m/day
+Step 208 with H0:  37.55 m and L:  9447.93 m, day 1040.71 and melt 0.63 m/day
+Step 209 with H0:  37.06 m and L:  9295.06 m, day 1045.72 and melt 0.58 m/day
+Step 210 with H0:  36.86 m and L:  9258.54 m, day 1050.72 and melt 0.53 m/day
+Step 211 with H0:  37.02 m and L:  9414.71 m, day 1055.72 and melt 0.47 m/day
+Step 212 with H0:  37.73 m and L: 10019.99 m, day 1060.73 and melt 0.41 m/day
+Step 213 with H0:  38.89 m and L: 10695.28 m, day 1065.73 and melt 0.35 m/day
+Step 214 with H0:  39.96 m and L: 11184.39 m, day 1070.73 and melt 0.35 m/day
+Step 215 with H0:  40.76 m and L: 11508.95 m, day 1075.74 and melt 0.35 m/day
+Step 216 with H0:  41.49 m and L: 11702.83 m, day 1080.74 and melt 0.35 m/day
+Step 217 with H0:  42.15 m and L: 11821.05 m, day 1085.74 and melt 0.35 m/day
+Step 218 with H0:  42.76 m and L: 11913.13 m, day 1090.75 and melt 0.35 m/day
+Step 219 with H0:  43.32 m and L: 12008.82 m, day 1095.75 and melt 0.35 m/day
+Step 220 with H0:  43.90 m and L: 12119.12 m, day 1100.75 and melt 0.35 m/day
+Step 221 with H0:  44.47 m and L: 12244.46 m, day 1105.76 and melt 0.35 m/day
+Step 222 with H0:  45.02 m and L: 12381.85 m, day 1110.76 and melt 0.35 m/day
+Step 223 with H0:  45.57 m and L: 12527.25 m, day 1115.76 and melt 0.35 m/day
+Step 224 with H0:  46.11 m and L: 12677.03 m, day 1120.77 and melt 0.35 m/day
+Step 225 with H0:  46.64 m and L: 12828.26 m, day 1125.77 and melt 0.35 m/day
+Step 226 with H0:  47.16 m and L: 12979.06 m, day 1130.77 and melt 0.35 m/day
+Step 227 with H0:  47.68 m and L: 13127.98 m, day 1135.78 and melt 0.35 m/day
+Step 228 with H0:  48.19 m and L: 13274.19 m, day 1140.78 and melt 0.35 m/day
+Step 229 with H0:  48.69 m and L: 13417.25 m, day 1145.78 and melt 0.35 m/day
+Step 230 with H0:  49.19 m and L: 13556.97 m, day 1150.79 and melt 0.35 m/day
+Step 231 with H0:  49.68 m and L: 13693.31 m, day 1155.79 and melt 0.35 m/day
+Step 232 with H0:  50.16 m and L: 13826.32 m, day 1160.79 and melt 0.35 m/day
+Step 233 with H0:  50.64 m and L: 13956.12 m, day 1165.80 and melt 0.35 m/day
+Step 234 with H0:  51.11 m and L: 14082.82 m, day 1170.80 and melt 0.35 m/day
+Step 235 with H0:  51.57 m and L: 14206.55 m, day 1175.80 and melt 0.35 m/day
+Step 236 with H0:  52.03 m and L: 14327.41 m, day 1180.81 and melt 0.35 m/day
+Step 237 with H0:  52.49 m and L: 14445.50 m, day 1185.81 and melt 0.35 m/day
+Step 238 with H0:  52.94 m and L: 14560.91 m, day 1190.82 and melt 0.35 m/day
+Step 239 with H0:  53.38 m and L: 14673.72 m, day 1195.82 and melt 0.35 m/day
+Step 240 with H0:  53.82 m and L: 14783.98 m, day 1200.82 and melt 0.35 m/day
+Step 241 with H0:  54.25 m and L: 14891.78 m, day 1205.83 and melt 0.35 m/day
+Step 242 with H0:  54.68 m and L: 14997.16 m, day 1210.83 and melt 0.35 m/day
+Step 243 with H0:  55.10 m and L: 15100.19 m, day 1215.83 and melt 0.35 m/day
+Step 244 with H0:  55.52 m and L: 15200.92 m, day 1220.84 and melt 0.35 m/day
+Step 245 with H0:  55.94 m and L: 15299.42 m, day 1225.84 and melt 0.35 m/day
+Step 246 with H0:  56.35 m and L: 15395.72 m, day 1230.84 and melt 0.35 m/day
+Step 247 with H0:  56.75 m and L: 15489.89 m, day 1235.85 and melt 0.35 m/day
+Step 248 with H0:  57.15 m and L: 15581.98 m, day 1240.85 and melt 0.35 m/day
+Step 249 with H0:  57.55 m and L: 15672.06 m, day 1245.85 and melt 0.35 m/day
+Step 250 with H0:  57.94 m and L: 15760.17 m, day 1250.86 and melt 0.35 m/day
+Step 251 with H0:  58.33 m and L: 15846.37 m, day 1255.86 and melt 0.35 m/day
+Step 252 with H0:  58.71 m and L: 15930.70 m, day 1260.86 and melt 0.35 m/day
+Step 253 with H0:  59.09 m and L: 16013.24 m, day 1265.87 and melt 0.35 m/day
+Step 254 with H0:  59.47 m and L: 16094.02 m, day 1270.87 and melt 0.35 m/day
+Step 255 with H0:  59.84 m and L: 16173.09 m, day 1275.87 and melt 0.35 m/day
+Step 256 with H0:  60.21 m and L: 16250.51 m, day 1280.88 and melt 0.35 m/day
+Step 257 with H0:  60.57 m and L: 16326.42 m, day 1285.88 and melt 0.35 m/day
+Step 258 with H0:  60.93 m and L: 16400.84 m, day 1290.88 and melt 0.35 m/day
+Step 259 with H0:  61.29 m and L: 16473.73 m, day 1295.89 and melt 0.35 m/day
+Step 260 with H0:  61.64 m and L: 16545.14 m, day 1300.89 and melt 0.35 m/day
+Step 261 with H0:  61.99 m and L: 16615.10 m, day 1305.89 and melt 0.35 m/day
+Step 262 with H0:  62.13 m and L: 16631.40 m, day 1310.90 and melt 0.38 m/day
+Step 263 with H0:  61.85 m and L: 16176.75 m, day 1315.90 and melt 0.44 m/day
+Step 264 with H0:  61.15 m and L: 15494.71 m, day 1320.90 and melt 0.50 m/day
+Step 265 with H0:  60.07 m and L: 14771.87 m, day 1325.91 and melt 0.56 m/day
+Step 266 with H0:  58.54 m and L: 14068.93 m, day 1330.91 and melt 0.61 m/day
+Step 267 with H0:  56.60 m and L: 13411.92 m, day 1335.91 and melt 0.65 m/day
+Step 268 with H0:  54.28 m and L: 12845.13 m, day 1340.92 and melt 0.69 m/day
+Step 269 with H0:  51.92 m and L: 12357.70 m, day 1345.92 and melt 0.73 m/day
+Step 270 with H0:  49.25 m and L: 11937.85 m, day 1350.92 and melt 0.75 m/day
+Step 271 with H0:  47.60 m and L: 11553.33 m, day 1355.93 and melt 0.78 m/day
+Step 272 with H0:  46.04 m and L: 11204.34 m, day 1360.93 and melt 0.79 m/day
+Step 273 with H0:  44.64 m and L: 10876.58 m, day 1365.93 and melt 0.80 m/day
+Step 274 with H0:  42.56 m and L: 10575.21 m, day 1370.94 and melt 0.80 m/day
+Step 275 with H0:  40.90 m and L: 10270.34 m, day 1375.94 and melt 0.80 m/day
+Step 276 with H0:  39.50 m and L:  9955.31 m, day 1380.95 and melt 0.78 m/day
+Step 277 with H0:  38.53 m and L:  9620.34 m, day 1385.95 and melt 0.77 m/day
+Step 278 with H0:  37.32 m and L:  9277.12 m, day 1390.95 and melt 0.74 m/day
+Step 279 with H0:  37.16 m and L:  8914.11 m, day 1395.96 and melt 0.71 m/day
+Step 280 with H0:  35.64 m and L:  8575.06 m, day 1400.96 and melt 0.67 m/day
+Step 281 with H0:  34.63 m and L:  8291.25 m, day 1405.96 and melt 0.63 m/day
+Step 282 with H0:  33.98 m and L:  8093.53 m, day 1410.97 and melt 0.58 m/day
+Step 283 with H0:  33.66 m and L:  7998.21 m, day 1415.97 and melt 0.53 m/day
+Step 284 with H0:  33.72 m and L:  8078.80 m, day 1420.97 and melt 0.47 m/day
+Step 285 with H0:  34.12 m and L:  8640.14 m, day 1425.98 and melt 0.41 m/day
+Step 286 with H0:  34.68 m and L:  9248.86 m, day 1430.98 and melt 0.35 m/day
+Step 287 with H0:  35.23 m and L:  9565.37 m, day 1435.98 and melt 0.35 m/day
+Step 288 with H0:  36.06 m and L:  9706.00 m, day 1440.99 and melt 0.35 m/day
+Step 289 with H0:  36.74 m and L:  9777.87 m, day 1445.99 and melt 0.35 m/day
+Step 290 with H0:  37.34 m and L:  9868.53 m, day 1450.99 and melt 0.35 m/day
+Step 291 with H0:  37.91 m and L:  9997.86 m, day 1456.00 and melt 0.35 m/day
+Step 292 with H0:  38.46 m and L: 10159.66 m, day 1461.00 and melt 0.35 m/day
+Step 293 with H0:  39.01 m and L: 10342.51 m, day 1466.00 and melt 0.35 m/day
+Step 294 with H0:  39.51 m and L: 10516.87 m, day 1471.01 and melt 0.35 m/day
+Step 295 with H0:  39.93 m and L: 10699.50 m, day 1476.01 and melt 0.35 m/day
+Step 296 with H0:  40.54 m and L: 10896.62 m, day 1481.01 and melt 0.35 m/day
+Step 297 with H0:  41.15 m and L: 11089.35 m, day 1486.02 and melt 0.35 m/day
+Step 298 with H0:  41.74 m and L: 11278.10 m, day 1491.02 and melt 0.35 m/day
+Step 299 with H0:  42.33 m and L: 11462.84 m, day 1496.02 and melt 0.35 m/day
+Step 300 with H0:  42.92 m and L: 11643.53 m, day 1501.03 and melt 0.35 m/day
+Step 301 with H0:  43.49 m and L: 11820.43 m, day 1506.03 and melt 0.35 m/day
+Step 302 with H0:  44.05 m and L: 11993.72 m, day 1511.03 and melt 0.35 m/day
+Step 303 with H0:  44.60 m and L: 12163.73 m, day 1516.04 and melt 0.35 m/day
+Step 304 with H0:  45.15 m and L: 12330.50 m, day 1521.04 and melt 0.35 m/day
+Step 305 with H0:  45.68 m and L: 12493.83 m, day 1526.04 and melt 0.35 m/day
+Step 306 with H0:  46.21 m and L: 12654.01 m, day 1531.05 and melt 0.35 m/day
+Step 307 with H0:  46.73 m and L: 12810.95 m, day 1536.05 and melt 0.35 m/day
+Step 308 with H0:  47.25 m and L: 12964.65 m, day 1541.05 and melt 0.35 m/day
+Step 309 with H0:  47.75 m and L: 13115.10 m, day 1546.06 and melt 0.35 m/day
+Step 310 with H0:  48.26 m and L: 13262.31 m, day 1551.06 and melt 0.35 m/day
+Step 311 with H0:  48.75 m and L: 13406.27 m, day 1556.07 and melt 0.35 m/day
+Step 312 with H0:  49.24 m and L: 13547.01 m, day 1561.07 and melt 0.35 m/day
+Step 313 with H0:  49.72 m and L: 13684.53 m, day 1566.07 and melt 0.35 m/day
+Step 314 with H0:  50.20 m and L: 13818.89 m, day 1571.08 and melt 0.35 m/day
+Step 315 with H0:  50.68 m and L: 13950.10 m, day 1576.08 and melt 0.35 m/day
+Step 316 with H0:  51.14 m and L: 14078.23 m, day 1581.08 and melt 0.35 m/day
+Step 317 with H0:  51.61 m and L: 14203.34 m, day 1586.09 and melt 0.35 m/day
+Step 318 with H0:  52.06 m and L: 14325.48 m, day 1591.09 and melt 0.35 m/day
+Step 319 with H0:  52.51 m and L: 14444.72 m, day 1596.09 and melt 0.35 m/day/storage/home/hcoda1/2/psummers8/glaciome1d/glaciome1D.py:784: RuntimeWarning: divide by zero encountered in divide
+  g_loc[y<y_c] = constant.secsYear*np.sqrt(self.pressure(H)/(constant.rho*d**2))*(mu[y<y_c]-self.param.muS)/(mu[y<y_c]*self.param.b) # local granular fluidity
+/storage/home/hcoda1/2/psummers8/glaciome1d/glaciome1D.py:784: RuntimeWarning: invalid value encountered in sqrt
+  g_loc[y<y_c] = constant.secsYear*np.sqrt(self.pressure(H)/(constant.rho*d**2))*(mu[y<y_c]-self.param.muS)/(mu[y<y_c]*self.param.b) # local granular fluidity
+
+Step 320 with H0:  52.96 m and L: 14561.12 m, day 1601.10 and melt 0.35 m/day
+Step 321 with H0:  53.40 m and L: 14674.76 m, day 1606.10 and melt 0.35 m/day
+Step 322 with H0:  53.84 m and L: 14785.71 m, day 1611.10 and melt 0.35 m/day
+Step 323 with H0:  54.27 m and L: 14894.05 m, day 1616.11 and melt 0.35 m/day
+Step 324 with H0:  54.70 m and L: 14999.85 m, day 1621.11 and melt 0.35 m/day
+Step 325 with H0:  55.12 m and L: 15103.18 m, day 1626.11 and melt 0.35 m/day
+Step 326 with H0:  55.54 m and L: 15204.11 m, day 1631.12 and melt 0.35 m/day
+Step 327 with H0:  55.95 m and L: 15302.73 m, day 1636.12 and melt 0.35 m/day
+Step 328 with H0:  56.36 m and L: 15399.09 m, day 1641.12 and melt 0.35 m/day
+Step 329 with H0:  56.76 m and L: 15493.27 m, day 1646.13 and melt 0.35 m/day
+Step 330 with H0:  57.16 m and L: 15585.33 m, day 1651.13 and melt 0.35 m/day
+Step 331 with H0:  57.56 m and L: 15675.34 m, day 1656.13 and melt 0.35 m/day
+Step 332 with H0:  57.95 m and L: 15763.36 m, day 1661.14 and melt 0.35 m/day
+Step 333 with H0:  58.34 m and L: 15849.45 m, day 1666.14 and melt 0.35 m/day
+Step 334 with H0:  58.72 m and L: 15933.67 m, day 1671.14 and melt 0.35 m/day
+Step 335 with H0:  58.89 m and L: 15961.66 m, day 1676.15 and melt 0.38 m/day
+Step 336 with H0:  58.64 m and L: 15512.78 m, day 1681.15 and melt 0.44 m/day
+Step 337 with H0:  57.97 m and L: 14843.82 m, day 1686.15 and melt 0.50 m/day
+Step 338 with H0:  56.86 m and L: 14138.26 m, day 1691.16 and melt 0.56 m/day
+Step 339 with H0:  55.42 m and L: 13456.65 m, day 1696.16 and melt 0.61 m/day
+Step 340 with H0:  53.52 m and L: 12822.37 m, day 1701.16 and melt 0.65 m/day
+Step 341 with H0:  51.18 m and L: 12277.36 m, day 1706.17 and melt 0.69 m/day
+Step 342 with H0:  48.58 m and L: 11811.75 m, day 1711.17 and melt 0.73 m/day
+Step 343 with H0:  46.03 m and L: 11406.80 m, day 1716.17 and melt 0.75 m/day
+Step 344 with H0:  43.78 m and L: 11042.78 m, day 1721.18 and melt 0.78 m/day
+Step 345 with H0:  41.89 m and L: 10700.46 m, day 1726.18 and melt 0.79 m/day
+Step 346 with H0:  40.28 m and L: 10362.64 m, day 1731.18 and melt 0.80 m/day
+Step 347 with H0:  38.81 m and L: 10013.57 m, day 1736.19 and melt 0.80 m/day
+Step 348 with H0:  37.40 m and L:  9639.03 m, day 1741.19 and melt 0.80 m/day
+Step 349 with H0:  36.03 m and L:  9228.45 m, day 1746.20 and melt 0.78 m/day
+Step 350 with H0:  34.75 m and L:  8777.16 m, day 1751.20 and melt 0.77 m/day
+Step 351 with H0:  33.99 m and L:  8285.70 m, day 1756.20 and melt 0.74 m/day
+Step 352 with H0:  32.94 m and L:  7778.86 m, day 1761.21 and melt 0.71 m/day
+Step 353 with H0:  31.80 m and L:  7275.69 m, day 1766.21 and melt 0.67 m/day
+		CFL: 4.2631
+Step 354 with H0:  30.79 m and L:  6811.77 m, day 1771.21 and melt 0.63 m/day
+		CFL: 4.7032
+Step 355 with H0:  29.94 m and L:  6399.19 m, day 1776.22 and melt 0.58 m/day
+		CFL: 5.1476
+Step 356 with H0:  29.27 m and L:  6031.68 m, day 1781.22 and melt 0.53 m/day
+		CFL: 5.5874
+Step 357 with H0:  28.78 m and L:  5714.56 m, day 1786.22 and melt 0.47 m/day
+		CFL: 5.9964
+Step 358 with H0:  28.67 m and L:  5583.72 m, day 1791.23 and melt 0.41 m/day
+		CFL: 6.1607
+Step 359 with H0:  28.85 m and L:  5446.03 m, day 1796.23 and melt 0.35 m/day
+		CFL: 6.2786
+Step 360 with H0:  28.81 m and L:  5148.88 m, day 1801.23 and melt 0.35 m/day
+		CFL: 6.6499
+Step 361 with H0:  28.83 m and L:  4986.35 m, day 1806.24 and melt 0.35 m/day
+		CFL: 6.8603
+Step 362 with H0:  28.80 m and L:  4883.21 m, day 1811.24 and melt 0.35 m/day
+		CFL: 7.0128
+Step 363 with H0:  28.80 m and L:  4820.72 m, day 1816.24 and melt 0.35 m/day
+		CFL: 7.1039
+Step 364 with H0:  28.57 m and L:  4709.50 m, day 1821.25 and melt 0.35 m/day
+		CFL: 7.3300
+Step 365 with H0:  28.48 m and L:  4603.22 m, day 1826.25 and melt 0.35 m/day
+		CFL: 7.5230
+Step 366 with H0:  28.31 m and L:  4438.72 m, day 1831.25 and melt 0.35 m/day
+		CFL: 7.8478
+Step 367 with H0:  28.11 m and L:  4219.17 m, day 1836.26 and melt 0.35 m/day
+		CFL: 8.3174
+Step 368 with H0:  28.09 m and L:  4006.21 m, day 1841.26 and melt 0.35 m/day
+		CFL: 8.7640
+Step 369 with H0:  27.46 m and L:  3582.46 m, day 1846.26 and melt 0.35 m/day
+		CFL: 10.0252
+Step 370 with H0:  27.50 m and L:  3219.36 m, day 1851.27 and melt 0.35 m/day
+		CFL: 11.1403
+Step 371 with H0:  27.53 m and L:  3033.77 m, day 1856.27 and melt 0.35 m/day
+		CFL: 11.8102
+Step 372 with H0:  27.53 m and L:  3015.71 m, day 1861.27 and melt 0.35 m/day
+		CFL: 11.8786
+Step 373 with H0:  27.55 m and L:  2998.63 m, day 1866.28 and melt 0.35 m/day
+		CFL: 11.9387
+Step 374 with H0:  27.57 m and L:  2989.21 m, day 1871.28 and melt 0.35 m/day
+		CFL: 11.9695
+Step 375 with H0:  27.58 m and L:  2964.73 m, day 1876.28 and melt 0.35 m/day
+		CFL: 12.0622
+Step 376 with H0:  27.51 m and L:  2939.85 m, day 1881.29 and melt 0.35 m/day
+		CFL: 12.1944
+Step 377 with H0:  27.39 m and L:  2854.77 m, day 1886.29 and melt 0.35 m/day
+		CFL: 12.6130
+Step 378 with H0:  27.33 m and L:  2747.86 m, day 1891.29 and melt 0.35 m/day
+		CFL: 13.1356
+Step 379 with H0:  27.32 m and L:  2687.71 m, day 1896.30 and melt 0.35 m/day
+		CFL: 13.4303
+Step 380 with H0:  27.20 m and L:  2608.38 m, day 1901.30 and melt 0.35 m/day
+		CFL: 13.8995
+Step 381 with H0:  27.13 m and L:  2506.39 m, day 1906.30 and melt 0.35 m/day
+		CFL: 14.5027
+Step 382 with H0:  27.12 m and L:  2448.40 m, day 1911.31 and melt 0.35 m/day
+		CFL: 14.8531
+Step 383 with H0:  27.12 m and L:  2431.25 m, day 1916.31 and melt 0.35 m/day
+		CFL: 14.9582
+Step 384 with H0:  27.12 m and L:  2426.68 m, day 1921.32 and melt 0.35 m/day
+		CFL: 14.9868
+Step 385 with H0:  27.12 m and L:  2427.08 m, day 1926.32 and melt 0.35 m/day
+		CFL: 14.9843
+Step 386 with H0:  27.11 m and L:  2418.13 m, day 1931.32 and melt 0.35 m/day
+		CFL: 15.0454
+Step 387 with H0:  27.09 m and L:  2402.01 m, day 1936.33 and melt 0.35 m/day
+		CFL: 15.1602
+Step 388 with H0:  27.07 m and L:  2379.79 m, day 1941.33 and melt 0.35 m/day
+		CFL: 15.3085
+Step 389 with H0:  27.00 m and L:  2325.41 m, day 1946.33 and melt 0.35 m/day
+		CFL: 15.7085
+Step 390 with H0:  26.93 m and L:  2248.10 m, day 1951.34 and melt 0.35 m/day
+		CFL: 16.2926
+Step 391 with H0:  26.93 m and L:  2212.38 m, day 1956.34 and melt 0.35 m/day
+		CFL: 16.5557
+Step 392 with H0:  26.92 m and L:  2200.41 m, day 1961.34 and melt 0.35 m/day
+		CFL: 16.6490
+Step 393 with H0:  26.92 m and L:  2197.74 m, day 1966.35 and melt 0.35 m/day
+		CFL: 16.6694
+Step 394 with H0:  26.92 m and L:  2196.64 m, day 1971.35 and melt 0.35 m/day
+		CFL: 16.6778
+Step 395 with H0:  26.92 m and L:  2196.68 m, day 1976.35 and melt 0.35 m/day
+		CFL: 16.6775
+Step 396 with H0:  26.92 m and L:  2196.68 m, day 1981.36 and melt 0.35 m/day
+		CFL: 16.6775
+Step 397 with H0:  26.92 m and L:  2196.68 m, day 1986.36 and melt 0.35 m/day
+		CFL: 16.6775
+Step 398 with H0:  26.92 m and L:  2196.68 m, day 1991.36 and melt 0.35 m/day
+		CFL: 16.6775
+Step 399 with H0:  26.92 m and L:  2196.68 m, day 1996.37 and melt 0.35 m/day
+		CFL: 16.6775
+Step 400 with H0:  26.92 m and L:  2196.68 m, day 2001.37 and melt 0.35 m/day
+		CFL: 16.6775
+Step 401 with H0:  26.92 m and L:  2196.68 m, day 2006.37 and melt 0.35 m/day
+		CFL: 16.6775
+Step 402 with H0:  26.92 m and L:  2196.68 m, day 2011.38 and melt 0.35 m/day
+		CFL: 16.6775
+Step 403 with H0:  26.92 m and L:  2196.68 m, day 2016.38 and melt 0.35 m/day
+		CFL: 16.6775
+Step 404 with H0:  26.92 m and L:  2196.68 m, day 2021.38 and melt 0.35 m/day
+		CFL: 16.6775
+Step 405 with H0:  26.92 m and L:  2196.68 m, day 2026.39 and melt 0.35 m/day
+		CFL: 16.6775
+Step 406 with H0:  26.92 m and L:  2196.68 m, day 2031.39 and melt 0.35 m/day
+		CFL: 16.6775
+Step 407 with H0:  26.92 m and L:  2196.68 m, day 2036.39 and melt 0.35 m/day
+		CFL: 16.6775
+Step 408 with H0:  26.94 m and L:  2019.24 m, day 2041.40 and melt 0.38 m/day
+		CFL: 18.1344
+Step 409 with H0:  26.95 m and L:  1778.00 m, day 2046.40 and melt 0.44 m/day
+		CFL: 20.5810
+Step 410 with H0:  26.97 m and L:  1614.95 m, day 2051.40 and melt 0.50 m/day
+		CFL: 22.6444
+Step 411 with H0:  26.01 m and L:  1048.40 m, day 2056.41 and melt 0.56 m/day
+		CFL: 36.1759
+Step 412 with H0:  25.98 m and L:   788.18 m, day 2061.41 and melt 0.61 m/day
+		CFL: 48.1606
+Step 413 with H0:  25.98 m and L:   696.10 m, day 2066.41 and melt 0.65 m/day
+		CFL: 54.5378
+Step 414 with H0:  26.02 m and L:   647.37 m, day 2071.42 and melt 0.69 m/day
+		CFL: 58.5516
+Step 415 with H0:  26.02 m and L:   610.06 m, day 2076.42 and melt 0.73 m/day
+		CFL: 62.1369
+Step 416 with H0:  26.02 m and L:   579.62 m, day 2081.42 and melt 0.75 m/day
+		CFL: 65.4042
+Step 417 with H0:  26.00 m and L:   554.01 m, day 2086.43 and melt 0.78 m/day
+		CFL: 68.4614
+Step 418 with H0:  25.98 m and L:   530.49 m, day 2091.43 and melt 0.79 m/day
+		CFL: 71.5580
+Step 419 with H0:  25.97 m and L:   511.82 m, day 2096.43 and melt 0.80 m/day
+		CFL: 74.2058
+Step 420 with H0:  25.96 m and L:   497.66 m, day 2101.44 and melt 0.80 m/day
+		CFL: 76.3490
+Step 421 with H0:  25.96 m and L:   488.82 m, day 2106.44 and melt 0.80 m/day
+		CFL: 77.7359
+Step 422 with H0:  25.89 m and L:   476.60 m, day 2111.45 and melt 0.78 m/day
+		CFL: 79.9383
+Step 423 with H0:  25.88 m and L:   468.59 m, day 2116.45 and melt 0.77 m/day
+		CFL: 81.3277
+Step 424 with H0:  25.87 m and L:   466.22 m, day 2121.45 and melt 0.74 m/day
+		CFL: 81.7674
+Step 425 with H0:  25.87 m and L:   470.19 m, day 2126.46 and melt 0.71 m/day
+		CFL: 81.0816
+Step 426 with H0:  25.80 m and L:   471.67 m, day 2131.46 and melt 0.67 m/day
+		CFL: 81.0362
+Step 427 with H0:  25.79 m and L:   479.54 m, day 2136.46 and melt 0.63 m/day
+		CFL: 79.7372
+Step 428 with H0:  25.79 m and L:   498.12 m, day 2141.47 and melt 0.58 m/day
+		CFL: 76.7740
+Step 429 with H0:  25.61 m and L:   490.60 m, day 2146.47 and melt 0.53 m/day
+		CFL: 78.5088
+Step 430 with H0:  25.60 m and L:   501.41 m, day 2151.47 and melt 0.47 m/day
+		CFL: 76.8452
+Step 431 with H0:  25.59 m and L:   615.31 m, day 2156.48 and melt 0.41 m/day
+		CFL: 62.6314
+Step 432 with H0:  25.59 m and L:   790.03 m, day 2161.48 and melt 0.35 m/day
+		CFL: 48.7876
+Step 433 with H0:  25.60 m and L:   739.45 m, day 2166.48 and melt 0.35 m/day
+		CFL: 52.1242
+Step 434 with H0:  25.59 m and L:   662.60 m, day 2171.49 and melt 0.35 m/day
+		CFL: 58.1680
+Step 435 with H0:  25.59 m and L:   686.00 m, day 2176.49 and melt 0.35 m/day
+		CFL: 56.1863
+Step 436 with H0:  25.59 m and L:   663.12 m, day 2181.49 and melt 0.35 m/day
+		CFL: 58.1300
+Step 437 with H0:  25.59 m and L:   673.55 m, day 2186.50 and melt 0.35 m/day
+		CFL: 57.2304
+Step 438 with H0:  25.59 m and L:   670.78 m, day 2191.50 and melt 0.35 m/day
+		CFL: 57.4699
+Step 439 with H0:  25.59 m and L:   670.71 m, day 2196.50 and melt 0.35 m/day
+		CFL: 57.4766
+Step 440 with H0:  25.59 m and L:   670.71 m, day 2201.51 and melt 0.35 m/day
+		CFL: 57.4766
+Step 441 with H0:  25.59 m and L:   670.71 m, day 2206.51 and melt 0.35 m/day
+		CFL: 57.4766
+Step 442 with H0:  25.59 m and L:   670.71 m, day 2211.51 and melt 0.35 m/day
+		CFL: 57.4766
+Step 443 with H0:  25.59 m and L:   670.71 m, day 2216.52 and melt 0.35 m/day
+		CFL: 57.4766
+Step 444 with H0:  25.59 m and L:   670.71 m, day 2221.52 and melt 0.35 m/day
+		CFL: 57.4766
+Step 445 with H0:  25.59 m and L:   670.71 m, day 2226.52 and melt 0.35 m/day
+		CFL: 57.4766
+Step 446 with H0:  25.59 m and L:   670.71 m, day 2231.53 and melt 0.35 m/day
+		CFL: 57.4766
+Step 447 with H0:  25.59 m and L:   670.71 m, day 2236.53 and melt 0.35 m/day
+		CFL: 57.4766
+Step 448 with H0:  25.59 m and L:   670.71 m, day 2241.53 and melt 0.35 m/day
+		CFL: 57.4766
+Step 449 with H0:  25.59 m and L:   670.71 m, day 2246.54 and melt 0.35 m/day
+		CFL: 57.4766
+Step 450 with H0:  25.59 m and L:   670.71 m, day 2251.54 and melt 0.35 m/day
+		CFL: 57.4766
+Step 451 with H0:  25.59 m and L:   670.71 m, day 2256.54 and melt 0.35 m/day
+		CFL: 57.4766
+Step 452 with H0:  25.59 m and L:   670.71 m, day 2261.55 and melt 0.35 m/day
+		CFL: 57.4766
+Step 453 with H0:  25.59 m and L:   670.71 m, day 2266.55 and melt 0.35 m/day
+		CFL: 57.4766
+Step 454 with H0:  25.59 m and L:   670.71 m, day 2271.55 and melt 0.35 m/day
+		CFL: 57.4766
+Step 455 with H0:  25.59 m and L:   670.71 m, day 2276.56 and melt 0.35 m/day
+		CFL: 57.4766
+Step 456 with H0:  25.59 m and L:   670.71 m, day 2281.56 and melt 0.35 m/day
+		CFL: 57.4766
+Step 457 with H0:  25.59 m and L:   670.71 m, day 2286.57 and melt 0.35 m/day
+		CFL: 57.4766
+Step 458 with H0:  25.59 m and L:   670.71 m, day 2291.57 and melt 0.35 m/day
+		CFL: 57.4766
+Step 459 with H0:  25.59 m and L:   670.71 m, day 2296.57 and melt 0.35 m/day
+		CFL: 57.4766
+Step 460 with H0:  25.59 m and L:   670.71 m, day 2301.58 and melt 0.35 m/day
+		CFL: 57.4766
+Step 461 with H0:  25.59 m and L:   670.71 m, day 2306.58 and melt 0.35 m/day
+		CFL: 57.4766
+Step 462 with H0:  25.59 m and L:   670.71 m, day 2311.58 and melt 0.35 m/day
+		CFL: 57.4766
+Step 463 with H0:  25.59 m and L:   670.71 m, day 2316.59 and melt 0.35 m/day
+		CFL: 57.4766
+Step 464 with H0:  25.59 m and L:   670.71 m, day 2321.59 and melt 0.35 m/day
+		CFL: 57.4766
+Step 465 with H0:  25.59 m and L:   670.71 m, day 2326.59 and melt 0.35 m/day
+		CFL: 57.4766
+Step 466 with H0:  25.59 m and L:   670.71 m, day 2331.60 and melt 0.35 m/day
+		CFL: 57.4766
+Step 467 with H0:  25.59 m and L:   670.71 m, day 2336.60 and melt 0.35 m/day
+		CFL: 57.4766
+Step 468 with H0:  25.59 m and L:   670.71 m, day 2341.60 and melt 0.35 m/day
+		CFL: 57.4766
+Step 469 with H0:  25.59 m and L:   670.71 m, day 2346.61 and melt 0.35 m/day
+		CFL: 57.4766
+Step 470 with H0:  25.59 m and L:   670.71 m, day 2351.61 and melt 0.35 m/day
+		CFL: 57.4766
+Step 471 with H0:  25.59 m and L:   670.71 m, day 2356.61 and melt 0.35 m/day
+		CFL: 57.4766
+Step 472 with H0:  25.59 m and L:   670.71 m, day 2361.62 and melt 0.35 m/day
+		CFL: 57.4766
+Step 473 with H0:  25.59 m and L:   670.71 m, day 2366.62 and melt 0.35 m/day
+		CFL: 57.4766
+Step 474 with H0:  25.59 m and L:   670.71 m, day 2371.62 and melt 0.35 m/day
+		CFL: 57.4766
+Step 475 with H0:  25.59 m and L:   670.71 m, day 2376.63 and melt 0.35 m/day
+		CFL: 57.4766
+Step 476 with H0:  25.59 m and L:   670.71 m, day 2381.63 and melt 0.35 m/day
+		CFL: 57.4766
+Step 477 with H0:  25.59 m and L:   670.71 m, day 2386.63 and melt 0.35 m/day
+		CFL: 57.4766
+Step 478 with H0:  25.59 m and L:   670.71 m, day 2391.64 and melt 0.35 m/day
+		CFL: 57.4766
+Step 479 with H0:  25.59 m and L:   670.71 m, day 2396.64 and melt 0.35 m/day
+		CFL: 57.4766
+Step 480 with H0:  25.59 m and L:   670.71 m, day 2401.64 and melt 0.35 m/day
+		CFL: 57.4766
+Step 481 with H0:  25.58 m and L:   584.52 m, day 2406.65 and melt 0.38 m/day
+		CFL: 65.9518
+Step 482 with H0:  25.59 m and L:   576.49 m, day 2411.65 and melt 0.44 m/day
+		CFL: 66.8699
+Step 483 with H0:  25.58 m and L:   486.25 m, day 2416.65 and melt 0.50 m/day
+		CFL: 79.2949
+Step 484 with H0:  25.55 m and L:   412.37 m, day 2421.66 and melt 0.56 m/day
+		CFL: 93.5180
+Step 485 with H0:  25.58 m and L:   398.34 m, day 2426.66 and melt 0.61 m/day
+		CFL: 96.8096
+Step 486 with H0:  25.50 m and L:   360.63 m, day 2431.66 and melt 0.65 m/day
+		CFL: 107.2427
+Step 487 with H0:  25.50 m and L:   330.99 m, day 2436.67 and melt 0.69 m/day
+		CFL: 116.8478
+Step 488 with H0:  25.50 m and L:   308.60 m, day 2441.67 and melt 0.73 m/day
+		CFL: 125.3302
+Step 489 with H0:  25.50 m and L:   291.39 m, day 2446.67 and melt 0.75 m/day
+		CFL: 132.7340
+Step 490 with H0:  25.48 m and L:   274.42 m, day 2451.68 and melt 0.78 m/day
+		CFL: 141.0579
+Step 491 with H0:  25.49 m and L:   284.84 m, day 2456.68 and melt 0.79 m/day
+		CFL: 135.9040
+Step 492 with H0:  25.47 m and L:   264.85 m, day 2461.68 and melt 0.80 m/day
+		CFL: 146.2022
+Step 493 with H0:  25.47 m and L:   253.63 m, day 2466.69 and melt 0.80 m/day
+		CFL: 152.6735
+Step 494 with H0:  25.46 m and L:   246.78 m, day 2471.69 and melt 0.80 m/day
+		CFL: 156.9517
+Step 495 with H0:  25.47 m and L:   257.18 m, day 2476.70 and melt 0.78 m/day
+		CFL: 150.6086
+Step 496 with H0:  25.39 m and L:   235.48 m, day 2481.70 and melt 0.77 m/day
+		CFL: 164.9533
+Step 497 with H0:  25.39 m and L:   226.33 m, day 2486.70 and melt 0.74 m/day
+		CFL: 171.6383
+Step 498 with H0:  25.39 m and L:   223.79 m, day 2491.71 and melt 0.71 m/day
+		CFL: 173.5908
+Step 499 with H0:  25.39 m and L:   225.73 m, day 2496.71 and melt 0.67 m/day
+		CFL: 172.0943
+Step 500 with H0:  25.39 m and L:   231.99 m, day 2501.71 and melt 0.63 m/day
+		CFL: 167.4616
+Step 501 with H0:  25.39 m and L:   243.06 m, day 2506.72 and melt 0.58 m/day
+		CFL: 159.8428
+Step 502 with H0:  25.39 m and L:   261.50 m, day 2511.72 and melt 0.53 m/day
+		CFL: 148.5799
+Step 503 with H0:  25.38 m and L:   294.60 m, day 2516.72 and melt 0.47 m/day
+		CFL: 131.8860
+Step 504 with H0:  25.37 m and L:   404.71 m, day 2521.73 and melt 0.41 m/day
+		CFL: 96.0460
+Step 505 with H0:  25.37 m and L:   462.17 m, day 2526.73 and melt 0.35 m/day
+		CFL: 84.1062
+Step 506 with H0:  25.37 m and L:   402.90 m, day 2531.73 and melt 0.35 m/day
+		CFL: 96.4806
+Step 507 with H0:  25.37 m and L:   462.44 m, day 2536.74 and melt 0.35 m/day
+		CFL: 84.0627
+Step 508 with H0:  25.37 m and L:   400.81 m, day 2541.74 and melt 0.35 m/day
+		CFL: 96.9898
+Step 509 with H0:  25.37 m and L:   461.76 m, day 2546.74 and melt 0.35 m/day
+		CFL: 84.1903
+Step 510 with H0:  25.37 m and L:   398.30 m, day 2551.75 and melt 0.35 m/day
+		CFL: 97.6061
+Step 511 with H0:  25.37 m and L:   459.15 m, day 2556.75 and melt 0.35 m/day
+		CFL: 84.6778
+Step 512 with H0:  25.37 m and L:   398.89 m, day 2561.75 and melt 0.35 m/day
+		CFL: 97.4689
+Step 513 with H0:  25.36 m and L:   447.92 m, day 2566.76 and melt 0.35 m/day
+		CFL: 86.8162
+Step 514 with H0:  25.36 m and L:   394.15 m, day 2571.76 and melt 0.35 m/day
+		CFL: 98.6628
+Step 515 with H0:  25.35 m and L:   427.28 m, day 2576.76 and melt 0.35 m/day
+		CFL: 91.0408
+Step 516 with H0:  25.35 m and L:   394.19 m, day 2581.77 and melt 0.35 m/day
+		CFL: 98.6811
+Step 517 with H0:  25.35 m and L:   420.91 m, day 2586.77 and melt 0.35 m/day
+		CFL: 92.4313
+Step 518 with H0:  25.35 m and L:   386.23 m, day 2591.77 and melt 0.35 m/day
+		CFL: 100.7381
+Step 519 with H0:  25.34 m and L:   404.89 m, day 2596.78 and melt 0.35 m/day
+		CFL: 96.1182
+Step 520 with H0:  25.34 m and L:   386.44 m, day 2601.78 and melt 0.35 m/day
+		CFL: 100.7067
+Step 521 with H0:  25.34 m and L:   403.78 m, day 2606.78 and melt 0.35 m/day
+		CFL: 96.3855
+Step 522 with H0:  25.34 m and L:   383.82 m, day 2611.79 and melt 0.35 m/day
+		CFL: 101.3977
+Step 523 with H0:  25.34 m and L:   399.62 m, day 2616.79 and melt 0.35 m/day
+		CFL: 97.3997
+Step 524 with H0:  25.34 m and L:   380.68 m, day 2621.79 and melt 0.35 m/day
+		CFL: 102.2463
+Step 525 with H0:  25.34 m and L:   399.47 m, day 2626.80 and melt 0.35 m/day
+		CFL: 97.4439
+Step 526 with H0:  25.34 m and L:   375.66 m, day 2631.80 and melt 0.35 m/day
+		CFL: 103.6289
+Step 527 with H0:  25.34 m and L:   387.50 m, day 2636.80 and melt 0.35 m/day
+		CFL: 100.4619
+Step 528 with H0:  25.33 m and L:   381.32 m, day 2641.81 and melt 0.35 m/day
+		CFL: 102.0959
+Step 529 with H0:  25.33 m and L:   387.10 m, day 2646.81 and melt 0.35 m/day
+		CFL: 100.5731
+Step 530 with H0:  25.33 m and L:   385.15 m, day 2651.82 and melt 0.35 m/day
+		CFL: 101.0814
+Step 531 with H0:  25.33 m and L:   381.30 m, day 2656.82 and melt 0.35 m/day
+		CFL: 102.1051
+Step 532 with H0:  25.33 m and L:   385.43 m, day 2661.82 and melt 0.35 m/day
+		CFL: 101.0122
+Step 533 with H0:  25.33 m and L:   380.28 m, day 2666.83 and melt 0.35 m/day
+		CFL: 102.3805
+Step 534 with H0:  25.33 m and L:   380.70 m, day 2671.83 and melt 0.35 m/day
+		CFL: 102.2772
+Step 535 with H0:  25.33 m and L:   379.62 m, day 2676.83 and melt 0.35 m/day
+		CFL: 102.5671
+Step 536 with H0:  25.33 m and L:   380.07 m, day 2681.84 and melt 0.35 m/day
+		CFL: 102.4474
+Step 537 with H0:  25.33 m and L:   377.53 m, day 2686.84 and melt 0.35 m/day
+		CFL: 103.1371
+Step 538 with H0:  25.33 m and L:   377.84 m, day 2691.84 and melt 0.35 m/day
+		CFL: 103.0614
+Step 539 with H0:  25.33 m and L:   377.84 m, day 2696.85 and melt 0.35 m/day
+		CFL: 103.0614
+Step 540 with H0:  25.33 m and L:   377.22 m, day 2701.85 and melt 0.35 m/day
+		CFL: 103.2311
+Step 541 with H0:  25.33 m and L:   373.50 m, day 2706.85 and melt 0.35 m/day
+		CFL: 104.2627
+Step 542 with H0:  25.33 m and L:   378.76 m, day 2711.86 and melt 0.35 m/day
+		CFL: 102.8150
+Step 543 with H0:  25.33 m and L:   374.11 m, day 2716.86 and melt 0.35 m/day
+		CFL: 104.0935
+Step 544 with H0:  25.33 m and L:   377.26 m, day 2721.86 and melt 0.35 m/day
+		CFL: 103.2256
+Step 545 with H0:  25.33 m and L:   373.98 m, day 2726.87 and melt 0.35 m/day
+		CFL: 104.1323
+Step 546 with H0:  25.33 m and L:   376.00 m, day 2731.87 and melt 0.35 m/day
+		CFL: 103.5762
+Step 547 with H0:  25.33 m and L:   370.96 m, day 2736.87 and melt 0.35 m/day
+		CFL: 104.9827
+Step 548 with H0:  25.32 m and L:   375.43 m, day 2741.88 and melt 0.35 m/day
+		CFL: 103.7383
+Step 549 with H0:  25.32 m and L:   369.79 m, day 2746.88 and melt 0.35 m/day
+		CFL: 105.3257
+Step 550 with H0:  25.32 m and L:   373.59 m, day 2751.88 and melt 0.35 m/day
+		CFL: 104.2551
+Step 551 with H0:  25.32 m and L:   368.15 m, day 2756.89 and melt 0.35 m/day
+		CFL: 105.7978
+Step 552 with H0:  25.32 m and L:   372.67 m, day 2761.89 and melt 0.35 m/day
+		CFL: 104.5167
+Step 553 with H0:  25.32 m and L:   365.49 m, day 2766.89 and melt 0.35 m/day
+		CFL: 106.5717
+Step 554 with H0:  25.32 m and L:   322.35 m, day 2771.90 and melt 0.38 m/day
+		CFL: 120.8398
+Step 555 with H0:  25.32 m and L:   287.42 m, day 2776.90 and melt 0.44 m/day
+		CFL: 135.5412
+Step 556 with H0:  25.32 m and L:   264.41 m, day 2781.90 and melt 0.50 m/day
+		CFL: 147.3416
+Step 557 with H0:  25.32 m and L:   244.89 m, day 2786.91 and melt 0.56 m/day
+		CFL: 159.0922
+Step 558 with H0:  25.31 m and L:   228.29 m, day 2791.91 and melt 0.61 m/day
+		CFL: 170.6632
+Step 559 with H0:  25.31 m and L:   213.98 m, day 2796.91 and melt 0.65 m/day
+		CFL: 182.0922
+Step 560 with H0:  25.31 m and L:   199.66 m, day 2801.92 and melt 0.69 m/day
+		CFL: 195.2017
+Step 561 with H0:  25.27 m and L:   178.12 m, day 2806.92 and melt 0.73 m/day
+		CFL: 219.0811
+Step 562 with H0:  25.27 m and L:   163.96 m, day 2811.92 and melt 0.75 m/day
+		CFL: 238.0426
+Step 563 with H0:  25.26 m and L:   151.64 m, day 2816.93 and melt 0.78 m/day
+		CFL: 257.5059
+Step 564 with H0:  25.26 m and L:   143.42 m, day 2821.93 and melt 0.79 m/day
+		CFL: 272.2852
+Step 565 with H0:  25.25 m and L:   137.60 m, day 2826.93 and melt 0.80 m/day
+		CFL: 283.8465
+Step 566 with H0:  25.25 m and L:   141.10 m, day 2831.94 and melt 0.80 m/day
+		CFL: 276.9403
+Step 567 with H0:  25.24 m and L:   135.99 m, day 2836.94 and melt 0.80 m/day
+		CFL: 287.3381
+Step 568 with H0:  25.24 m and L:   131.68 m, day 2841.95 and melt 0.78 m/day
+		CFL: 296.7474
+Step 569 with H0:  25.24 m and L:   129.65 m, day 2846.95 and melt 0.77 m/day
+		CFL: 301.3890
+Step 570 with H0:  25.23 m and L:   130.82 m, day 2851.95 and melt 0.74 m/day
+		CFL: 298.8297
+Step 571 with H0:  25.23 m and L:   130.56 m, day 2856.96 and melt 0.71 m/day
+		CFL: 299.4128
+Step 572 with H0:  25.23 m and L:   132.60 m, day 2861.96 and melt 0.67 m/day
+		CFL: 294.8190
+Step 573 with H0:  25.23 m and L:   136.57 m, day 2866.96 and melt 0.63 m/day
+		CFL: 286.2660
+Step 574 with H0:  25.24 m and L:   162.20 m, day 2871.97 and melt 0.58 m/day
+		CFL: 241.0303
+Step 575 with H0:  25.21 m and L:   161.74 m, day 2876.97 and melt 0.53 m/day
+		CFL: 241.8753
+Step 576 with H0:  25.20 m and L:   168.85 m, day 2881.97 and melt 0.47 m/day
+		CFL: 231.7751
+Step 577 with H0:  25.20 m and L:   214.23 m, day 2886.98 and melt 0.41 m/day
+		CFL: 182.6818
+Step 578 with H0:  25.20 m and L:   257.77 m, day 2891.98 and melt 0.35 m/day
+		CFL: 151.8359
+Step 579 with H0:  25.20 m and L:   211.18 m, day 2896.98 and melt 0.35 m/day
+		CFL: 185.3288
+Step 580 with H0:  25.20 m and L:   251.08 m, day 2901.99 and melt 0.35 m/day
+		CFL: 155.9090
+Step 581 with H0:  25.20 m and L:   207.68 m, day 2906.99 and melt 0.35 m/day
+		CFL: 188.4899
+Step 582 with H0:  25.18 m and L:   221.41 m, day 2911.99 and melt 0.35 m/day
+		CFL: 176.8768
+Step 583 with H0:  25.18 m and L:   205.04 m, day 2917.00 and melt 0.35 m/day
+		CFL: 190.9976
+Step 584 with H0:  25.18 m and L:   220.66 m, day 2922.00 and melt 0.35 m/day
+		CFL: 177.4890
+Step 585 with H0:  25.18 m and L:   203.03 m, day 2927.00 and melt 0.35 m/day
+		CFL: 192.8988
+Step 586 with H0:  25.18 m and L:   225.85 m, day 2932.01 and melt 0.35 m/day
+		CFL: 173.4094
+Step 587 with H0:  25.18 m and L:   197.92 m, day 2937.01 and melt 0.35 m/day
+		CFL: 197.8830
+Step 588 with H0:  25.18 m and L:   225.21 m, day 2942.01 and melt 0.35 m/day
+		CFL: 173.9193
+Step 589 with H0:  25.18 m and L:   195.77 m, day 2947.02 and melt 0.35 m/day
+		CFL: 200.0708
+Step 590 with H0:  25.18 m and L:   225.64 m, day 2952.02 and melt 0.35 m/day
+		CFL: 173.5915
+Step 591 with H0:  25.18 m and L:   192.69 m, day 2957.02 and melt 0.35 m/day
+		CFL: 203.2754
+Step 592 with H0:  25.18 m and L:   218.39 m, day 2962.03 and melt 0.35 m/day
+		CFL: 179.3840
+Step 593 with H0:  25.18 m and L:   189.48 m, day 2967.03 and melt 0.35 m/day
+		CFL: 206.7623
+Step 594 with H0:  25.17 m and L:   220.36 m, day 2972.03 and melt 0.35 m/day
+		CFL: 177.7930
+Step 595 with H0:  25.17 m and L:   186.78 m, day 2977.04 and melt 0.35 m/day
+		CFL: 209.7603
+Step 596 with H0:  25.17 m and L:   224.31 m, day 2982.04 and melt 0.35 m/day
+		CFL: 174.6660
+Step 597 with H0:  25.17 m and L:   183.52 m, day 2987.04 and melt 0.35 m/day
+		CFL: 213.4873
+Step 598 with H0:  25.17 m and L:   204.87 m, day 2992.05 and melt 0.35 m/day
+		CFL: 191.2951
+Step 599 with H0:  25.17 m and L:   180.32 m, day 2997.05 and melt 0.35 m/day
+		CFL: 217.3493
+Step 600 with H0:  25.16 m and L:   196.79 m, day 3002.05 and melt 0.35 m/day
+		CFL: 199.1840
+Step 601 with H0:  25.16 m and L:   175.47 m, day 3007.06 and melt 0.35 m/day
+		CFL: 223.4000
+Step 602 with H0:  25.16 m and L:   193.57 m, day 3012.06 and melt 0.35 m/day
+		CFL: 202.5303
+Step 603 with H0:  25.16 m and L:   172.98 m, day 3017.07 and melt 0.35 m/day
+		CFL: 226.6399
+Step 604 with H0:  25.16 m and L:   193.78 m, day 3022.07 and melt 0.35 m/day
+		CFL: 202.3082
+Step 605 with H0:  25.16 m and L:   172.15 m, day 3027.07 and melt 0.35 m/day
+		CFL: 227.7269
+Step 606 with H0:  25.16 m and L:   189.56 m, day 3032.08 and melt 0.35 m/day
+		CFL: 206.8352
+Step 607 with H0:  25.16 m and L:   169.61 m, day 3037.08 and melt 0.35 m/day
+		CFL: 231.1726
+Step 608 with H0:  25.15 m and L:   189.59 m, day 3042.08 and melt 0.35 m/day
+		CFL: 206.8159
+Step 609 with H0:  25.15 m and L:   166.27 m, day 3047.09 and melt 0.35 m/day
+		CFL: 235.8260
+Step 610 with H0:  25.15 m and L:   193.09 m, day 3052.09 and melt 0.35 m/day
+		CFL: 203.0707
+Step 611 with H0:  25.15 m and L:   166.18 m, day 3057.09 and melt 0.35 m/day
+		CFL: 235.9515
+Step 612 with H0:  25.15 m and L:   189.83 m, day 3062.10 and melt 0.35 m/day
+		CFL: 206.5652
+Step 613 with H0:  25.15 m and L:   186.42 m, day 3067.10 and melt 0.35 m/day
+		CFL: 210.3513
+Step 614 with H0:  25.15 m and L:   165.82 m, day 3072.10 and melt 0.35 m/day
+		CFL: 236.4870
+Step 615 with H0:  25.15 m and L:   185.09 m, day 3077.11 and melt 0.35 m/day
+		CFL: 211.8733
+Step 616 with H0:  25.15 m and L:   162.85 m, day 3082.11 and melt 0.35 m/day
+		CFL: 240.8121
+Step 617 with H0:  25.15 m and L:   188.18 m, day 3087.11 and melt 0.35 m/day
+		CFL: 208.4055
+Step 618 with H0:  25.15 m and L:   160.34 m, day 3092.12 and melt 0.35 m/day
+		CFL: 244.5830
+Step 619 with H0:  25.15 m and L:   183.96 m, day 3097.12 and melt 0.35 m/day
+		CFL: 213.2002
+Step 620 with H0:  25.15 m and L:   158.04 m, day 3102.12 and melt 0.35 m/day
+		CFL: 248.1800
+Step 621 with H0:  25.15 m and L:   186.94 m, day 3107.13 and melt 0.35 m/day
+		CFL: 209.8066
+Step 622 with H0:  25.15 m and L:   155.42 m, day 3112.13 and melt 0.35 m/day
+		CFL: 252.3590
+Step 623 with H0:  25.15 m and L:   191.86 m, day 3117.13 and melt 0.35 m/day
+		CFL: 204.4379
+Step 624 with H0:  25.15 m and L:   186.02 m, day 3122.14 and melt 0.35 m/day
+		CFL: 210.8493
+Step 625 with H0:  25.15 m and L:   178.67 m, day 3127.14 and melt 0.35 m/day
+		CFL: 219.5315
+Step 626 with H0:  25.15 m and L:   161.32 m, day 3132.14 and melt 0.35 m/day
+		CFL: 243.1353
+Step 627 with H0:  25.15 m and L:   153.01 m, day 3137.15 and melt 0.38 m/day
+		CFL: 256.3538
+Step 628 with H0:  25.14 m and L:   129.53 m, day 3142.15 and melt 0.44 m/day
+		CFL: 302.8203
+Step 629 with H0:  25.16 m and L:   145.51 m, day 3147.15 and melt 0.50 m/day
+		CFL: 269.5587
+Step 630 with H0:  25.15 m and L:   116.44 m, day 3152.16 and melt 0.56 m/day
+		CFL: 336.8544
+Step 631 with H0:  25.14 m and L:   105.03 m, day 3157.16 and melt 0.61 m/day
+		CFL: 373.5061
+Step 632 with H0:  25.14 m and L:    97.43 m, day 3162.16 and melt 0.65 m/day
+		CFL: 402.6842
+Variables are already dimensionless. Skipping.
+	 WARNING LOW H_L: 4.10 m
+Step 633 with H0:1791.09 m and L:556209.99 m, day 3167.17 and melt 0.69 m/day
+		CFL: 720.3466
+Variables are already dimensional. Skipping.
+	 WARNING LOW H_L: 6.13 m
+Step 634 with H0: 102.32 m and L:   317.81 m, day 3172.17 and melt 0.73 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 635 with H0: 103.10 m and L:   317.81 m, day 3177.17 and melt 0.75 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 636 with H0: 103.10 m and L:   317.81 m, day 3182.18 and melt 0.78 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 637 with H0: 103.10 m and L:   317.81 m, day 3187.18 and melt 0.79 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 638 with H0: 103.10 m and L:   317.81 m, day 3192.18 and melt 0.80 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 639 with H0: 103.10 m and L:   317.81 m, day 3197.19 and melt 0.80 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 640 with H0: 103.10 m and L:   317.81 m, day 3202.19 and melt 0.80 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 641 with H0: 103.10 m and L:   317.81 m, day 3207.20 and melt 0.78 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 642 with H0: 103.10 m and L:   317.81 m, day 3212.20 and melt 0.77 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 643 with H0: 103.10 m and L:   317.81 m, day 3217.20 and melt 0.74 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 644 with H0: 103.10 m and L:   317.81 m, day 3222.21 and melt 0.71 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 645 with H0: 103.10 m and L:   317.81 m, day 3227.21 and melt 0.67 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 646 with H0: 103.10 m and L:   317.81 m, day 3232.21 and melt 0.63 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 647 with H0: 103.10 m and L:   317.81 m, day 3237.22 and melt 0.58 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 648 with H0: 103.10 m and L:   317.81 m, day 3242.22 and melt 0.53 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 649 with H0: 103.10 m and L:   317.81 m, day 3247.22 and melt 0.47 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 650 with H0: 103.10 m and L:   317.81 m, day 3252.23 and melt 0.41 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 651 with H0: 103.10 m and L:   317.81 m, day 3257.23 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 652 with H0: 103.10 m and L:   317.81 m, day 3262.23 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 653 with H0: 103.10 m and L:   317.81 m, day 3267.24 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 654 with H0: 103.10 m and L:   317.81 m, day 3272.24 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 655 with H0: 103.10 m and L:   317.81 m, day 3277.24 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 656 with H0: 103.10 m and L:   317.81 m, day 3282.25 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 657 with H0: 103.10 m and L:   317.81 m, day 3287.25 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 658 with H0: 103.10 m and L:   317.81 m, day 3292.25 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 659 with H0: 103.10 m and L:   317.81 m, day 3297.26 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 660 with H0: 103.10 m and L:   317.81 m, day 3302.26 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 661 with H0: 103.10 m and L:   317.81 m, day 3307.26 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 662 with H0: 103.10 m and L:   317.81 m, day 3312.27 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 663 with H0: 103.10 m and L:   317.81 m, day 3317.27 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 664 with H0: 103.10 m and L:   317.81 m, day 3322.27 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 665 with H0: 103.10 m and L:   317.81 m, day 3327.28 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 666 with H0: 103.10 m and L:   317.81 m, day 3332.28 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 667 with H0: 103.10 m and L:   317.81 m, day 3337.28 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 668 with H0: 103.10 m and L:   317.81 m, day 3342.29 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 669 with H0: 103.10 m and L:   317.81 m, day 3347.29 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 670 with H0: 103.10 m and L:   317.81 m, day 3352.29 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 671 with H0: 103.10 m and L:   317.81 m, day 3357.30 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 672 with H0: 103.10 m and L:   317.81 m, day 3362.30 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 673 with H0: 103.10 m and L:   317.81 m, day 3367.30 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 674 with H0: 103.10 m and L:   317.81 m, day 3372.31 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 675 with H0: 103.10 m and L:   317.81 m, day 3377.31 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 676 with H0: 103.10 m and L:   317.81 m, day 3382.32 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 677 with H0: 103.10 m and L:   317.81 m, day 3387.32 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 678 with H0: 103.10 m and L:   317.81 m, day 3392.32 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 679 with H0: 103.10 m and L:   317.81 m, day 3397.33 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 680 with H0: 103.10 m and L:   317.81 m, day 3402.33 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 681 with H0: 103.10 m and L:   317.81 m, day 3407.33 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 682 with H0: 103.10 m and L:   317.81 m, day 3412.34 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 683 with H0: 103.10 m and L:   317.81 m, day 3417.34 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 684 with H0: 103.10 m and L:   317.81 m, day 3422.34 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 685 with H0: 103.10 m and L:   317.81 m, day 3427.35 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 686 with H0: 103.10 m and L:   317.81 m, day 3432.35 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 687 with H0: 103.10 m and L:   317.81 m, day 3437.35 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 688 with H0: 103.10 m and L:   317.81 m, day 3442.36 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 689 with H0: 103.10 m and L:   317.81 m, day 3447.36 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 690 with H0: 103.10 m and L:   317.81 m, day 3452.36 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 691 with H0: 103.10 m and L:   317.81 m, day 3457.37 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 692 with H0: 103.10 m and L:   317.81 m, day 3462.37 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 693 with H0: 103.10 m and L:   317.81 m, day 3467.37 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 694 with H0: 103.10 m and L:   317.81 m, day 3472.38 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 695 with H0: 103.10 m and L:   317.81 m, day 3477.38 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 696 with H0: 103.10 m and L:   317.81 m, day 3482.38 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 697 with H0: 103.10 m and L:   317.81 m, day 3487.39 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 698 with H0: 103.10 m and L:   317.81 m, day 3492.39 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 699 with H0: 103.10 m and L:   317.81 m, day 3497.39 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 700 with H0: 103.10 m and L:   317.81 m, day 3502.40 and melt 0.38 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 701 with H0: 103.10 m and L:   317.81 m, day 3507.40 and melt 0.44 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 702 with H0: 103.10 m and L:   317.81 m, day 3512.40 and melt 0.50 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 703 with H0: 103.10 m and L:   317.81 m, day 3517.41 and melt 0.56 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 704 with H0: 103.10 m and L:   317.81 m, day 3522.41 and melt 0.61 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 705 with H0: 103.10 m and L:   317.81 m, day 3527.41 and melt 0.65 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 706 with H0: 103.10 m and L:   317.81 m, day 3532.42 and melt 0.69 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 707 with H0: 103.10 m and L:   317.81 m, day 3537.42 and melt 0.73 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 708 with H0: 103.10 m and L:   317.81 m, day 3542.42 and melt 0.75 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 709 with H0: 103.10 m and L:   317.81 m, day 3547.43 and melt 0.78 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 710 with H0: 103.10 m and L:   317.81 m, day 3552.43 and melt 0.79 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 711 with H0: 103.10 m and L:   317.81 m, day 3557.43 and melt 0.80 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 712 with H0: 103.10 m and L:   317.81 m, day 3562.44 and melt 0.80 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 713 with H0: 103.10 m and L:   317.81 m, day 3567.44 and melt 0.80 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 714 with H0: 103.10 m and L:   317.81 m, day 3572.45 and melt 0.78 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 715 with H0: 103.10 m and L:   317.81 m, day 3577.45 and melt 0.77 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 716 with H0: 103.10 m and L:   317.81 m, day 3582.45 and melt 0.74 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 717 with H0: 103.10 m and L:   317.81 m, day 3587.46 and melt 0.71 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 718 with H0: 103.10 m and L:   317.81 m, day 3592.46 and melt 0.67 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 719 with H0: 103.10 m and L:   317.81 m, day 3597.46 and melt 0.63 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 720 with H0: 103.10 m and L:   317.81 m, day 3602.47 and melt 0.58 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 721 with H0: 103.10 m and L:   317.81 m, day 3607.47 and melt 0.53 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 722 with H0: 103.10 m and L:   317.81 m, day 3612.47 and melt 0.47 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 723 with H0: 103.10 m and L:   317.81 m, day 3617.48 and melt 0.41 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 724 with H0: 103.10 m and L:   317.81 m, day 3622.48 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 725 with H0: 103.10 m and L:   317.81 m, day 3627.48 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 726 with H0: 103.10 m and L:   317.81 m, day 3632.49 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 727 with H0: 103.10 m and L:   317.81 m, day 3637.49 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 728 with H0: 103.10 m and L:   317.81 m, day 3642.49 and melt 0.35 m/day
+		CFL: 123.1235
+	 WARNING LOW H_L: 6.13 m
+Step 729 with H0: 103.10 m and L:   317.81 m, day 3647.50 and melt 0.35 m/day
+Done!
+---------------------------------------
+Begin Slurm Epilog: Aug-18-2025 20:00:06
+Job ID:        127872
+User ID:       psummers8
+Account:       gts-arobel3-atlas
+Job name:      seasonal35_80
+Resources:     cpu=1,mem=1G,node=1
+Rsrc Used:     cput=04:10:29,vmem=0,walltime=04:10:29,mem=95852K,energy_used=0
+Partition:     cpu-small
+QOS:           inferno
+Nodes:         atl1-1-02-019-32-1
+---------------------------------------
