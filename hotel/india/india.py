@@ -97,7 +97,7 @@ if(True):
             data.X_externalGrid = X_fjord
             data.B_externalGrid = np.ones_like(X_fjord) * Bview[i] * constant.daysYear
             data.param.muS = muSview[i]
-            F = data.H0*data.pressure(data.H0)
+            F = data.force()
             data.Uc = U0 - alpha * F - beta * data.X[0]
             data.Ht = 600 - data.X[0] * 50e-3 ## meter increase in thickness for 1km of retreat 
             data.prognostic(method='hybr') # lm or hybr
