@@ -9,7 +9,8 @@ from glaciome1D import glaciome, basic_figure, plot_basic_figure, constants
 from scipy.integrate import trapz
 import pickle
 import glob
-
+sys.path.append('.')
+from localVars import *
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -97,9 +98,9 @@ plt.close()
 
 
 
-alpha =0.0e-5 #buttressing coefficient (25e-5 so far have been good) [m^2 yr^-1 N ^-1]
-beta = 50.0e-3 #reverse slope coefficient [50m meter/kilometer]
-U0 = data.Uc + alpha*data.force() + 500 #unbuttressed calving [m/yr], set slightly too fast
+# alpha =0.0e-5 #buttressing coefficient (25e-5 so far have been good) [m^2 yr^-1 N ^-1]
+# beta = 50.0e-3 #reverse slope coefficient [50m meter/kilometer]
+U0 = data.Uc + alpha*data.force() + 500 #unbuttressed calving [m/yr], set too fast
 print(f"\talpha {alpha:.2e}, beta {beta:.2e}, U0 is {U0:3.2e} m/yr")
 
 for i in iList: 
