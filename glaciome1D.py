@@ -506,7 +506,7 @@ class glaciome:
         # The model variables were non-dimensionalized prior to this step, as 
         # was the width interpolator. Therefore we need to pass a dimensionless
         # grid into the interpolator.
-        self.X = self.x*self.L # !!! assumes that the terminus position is fixed; also works if the fjord width is constant
+        self.X = self.x*self.L# !!! assumes that the terminus position is fixed; also works if the fjord width is constant
         self.X_ = (self.X[:-1]+self.X[1:])/2
         self.W = self.width_interpolator(self.X_)
     
@@ -520,10 +520,9 @@ class glaciome:
         # update it so that it is interpolated onto the staggered grid. The 
         # interpolator takes the dimensionless grid coordinates and returns the
         # dimensionless balance rate.
-        if hasattr(self, 'X_externalGrid'):
-            B_interpolator = interp1d(self.X_externalGrid/self.param.Lscale, self.B_externalGrid/self.param.Bscale, fill_value='extrapolate')  # x and B would be the coordinates and melt rate from the ocean model, in dimensional units
+        if hasattr(self, 'X_externalGrid'): #we assume this melt grid to start with the melange location
+            B_interpolator = interp1d((self.X_externalGrid - self.X_externalGrid[0])/self.param.Lscale, self.B_externalGrid/self.param.Bscale, fill_value='extrapolate')  # x and B would be the coordinates and melt rate from the ocean model, in dimensional units
             self.B = np.array([B_interpolator(x) for x in self.X_]) # creates an array of melt rates on the staggered grid
-            
         
         # compute residuals of velocity and granular fluidity differential equations
         resU = self.__calc_U(self.U) 
