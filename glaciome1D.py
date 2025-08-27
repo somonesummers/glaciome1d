@@ -146,7 +146,7 @@ class glaciome:
     def __str__(self):
         return f'''glaciome obj with L={self.L/1e3:.2f} km, H0={self.H0:.1f} m, 
                 min/avg/maxB={np.min(self.B/365.0):.2f}/{np.mean(self.B/365.0):.2f}/{np.max(self.B/365.0):.2f} m/d, 
-                W0={self.W0:.0f} m, muS={self.param.muS:.2f}, 
+                W0={self.W0:.0f} m, Ht={self.Ht:.1f} m, muS={self.param.muS:.2f}, 
                 X0={self.X[0]/1e3:.2f} km,Uc={self.Uc} m/y, Ut={self.Ut} m/y, 
                 T={np.round(self.t*365)}, dt={self.dt*365:.2f} days'''
 
