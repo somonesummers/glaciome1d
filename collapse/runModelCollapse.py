@@ -6,11 +6,10 @@ import sys
 sys.path.append('/Users/psummers8/Documents/glaciome1D')
 sys.path.append('/storage/home/hcoda1/2/psummers8/glaciome1d')
 from glaciome1D import glaciome, basic_figure, plot_basic_figure, constants
-from scipy.integrate import trapz
 import pickle
 import glob
 sys.path.append('.')
-from localVars import *
+# from localVars import *
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -24,10 +23,10 @@ from localVars import *
 
 def meltRate(strength,n):
     x = np.linspace(0,1,n)
-    baseLine = .6 -.4*x
+    baseLine = .6 -.4*x + 0.05
     arc = .5 + 50*(x-.46)**6
 
-    min = .4
+    min = .45
     max = .6587
     if(strength < min):
         return baseLine*strength/min
@@ -70,7 +69,7 @@ if(False):
     data.steadystate()
     data.save('steadystate.pickle')
 
-files = sorted(glob.glob('chkpt035uMelt.pickle'))
+files = sorted(glob.glob('../chkpt035uMelt.pickle'))
 
 for j in np.arange(0,len(files)):
     file = open(files[j], 'rb')
@@ -81,15 +80,15 @@ for j in np.arange(0,len(files)):
 
 #Reset to time = 0
 data.t = 0
-dt = 10/365.0 # [years]
+dt = 5/365.0 # [years]
 data.dt = dt
 
-yearsToSimulate = 5
+yearsToSimulate = 10
 endTime = int(yearsToSimulate/dt)
 time = np.arange(endTime)*dt
 iList = np.arange(0,endTime,1) 
 # print(iList)
-Bview = np.linspace(.4,.4,endTime)
+Bview = np.linspace(.42,.42,endTime)
 # print(Bview)
 plt.plot(time,Bview,color='red')
 plt.xlabel('Time [years]')
@@ -101,19 +100,19 @@ plt.close()
 
 # alpha =0.0e-5 #buttressing coefficient (25e-5 so far have been good) [m^2 yr^-1 N ^-1]
 # beta = 50.0e-3 #reverse slope coefficient [50m meter/kilometer]
-U0 = data.Uc + alpha*data.force() + 500 #unbuttressed calving [m/yr], set too fast
-print(f"\talpha {alpha:.2e}, beta {beta:.2e}, U0 is {U0:3.2e} m/yr")
+# U0 = data.Uc + alpha*data.force() + 500 #unbuttressed calving [m/yr], set too fast
+# print(f"\talpha {alpha:.2e}, beta {beta:.2e}, U0 is {U0:3.2e} m/yr")
 for i in iList: 
-    F = data.force()
-    data.Uc = U0 - alpha * F - beta * data.X[0] #calving rate varies with height 1 m/yr per m
-    data.Ht = 600 - data.X[0] * beta ## increase in thickness with retreat
+    # F = data.force()
+    # data.Uc = U0 - alpha * F - beta * data.X[0] #calving rate varies with height 1 m/yr per m
+    # data.Ht = 600 - data.X[0] * beta ## increase in thickness with retreat
     data.X_externalGrid = data.X
     # print(data.X)
     # print(-1*meltRate(Bview[i],n_pts) * constant.daysYear)
     data.B_externalGrid = -1*meltRate(Bview[i],n_pts) * constant.daysYear
     data.prognostic(method='lm') # lm or hybr
     if(i % 1 == 0):
-        print(f"t {data.t* constant.daysYear:5.1f} day with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, term loc/depth {data.X[0]:5.0f}/{data.Ht:5.1f} m, calving/glacier speed: {data.Uc:0.0f}/{data.Ut:0.0f} m/yr melt {np.mean(data.B/365.0):0.5f}")
+        print(f"t {data.t*constant.daysYear:5.1f} day with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, term loc/depth {data.X[0]:5.0f}/{data.Ht:5.1f} m, calving/glacier speed: {data.Uc:0.0f}/{data.Ut:0.0f} m/yr melt {np.mean(data.B/365.0):0.5f}")
         data.save(f'retreat{i:05d}.pickle')
 
 print("Done!")

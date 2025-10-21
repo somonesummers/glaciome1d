@@ -6,5 +6,6 @@ uMelt/*
 *.npz
 *.png
 *.npy
+*.gif
 .DS_Store
 *.DS_Store

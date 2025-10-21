@@ -3,8 +3,7 @@ from scipy import sparse
 from scipy.sparse import diags
 from scipy.optimize import root, fsolve
 from scipy.interpolate import interp1d
-from scipy.integrate import simpson, cumtrapz, trapz
-
+from scipy.integrate import simpson
 from matplotlib import pyplot as plt
 import matplotlib
 
@@ -832,7 +831,7 @@ class glaciome:
         
         u = np.linalg.solve(D,f)
         
-        u_mean = simpson(u,y,y[1])/y[-1]
+        u_mean = simpson(u,y,dx=y[1])/y[-1]
         
         if dimensionless==True:
             u_mean = u_mean/self.param.Uscale
