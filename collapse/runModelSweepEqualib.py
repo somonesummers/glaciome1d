@@ -135,7 +135,7 @@ if(True):
         X_ = np.concatenate(([data.X[0]], data.X_, [data.X[-1]]))
         H = np.concatenate(([data.H0], data.H, [data.HL]))
         W = np.concatenate(([data.W0], data.W, [data.WL]))
-        V = simpson(H*W, X_)*1e-9
+        V = simpson(H*W, x=X_)*1e-9
     
         dVdt = (V-V_old)/data.dt
         if((1.5*data.H[-1]-0.5*data.H[-2]) < 24):
@@ -217,7 +217,8 @@ for i in iList:
         print(f"t {data.t*constant.daysYear:5.1f} day with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, Uc:{data.Uc:5.0f} m/yr, Uf {data.U[-1]/constant.daysYear:5.1f} m/day, ∆Vol: {V-V_old:8.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/day")
         data.save(f'sweep{i:05d}.pickle')
     V_old = V
-    
+    if(data.L < 1000 or np.min(H) < 24):
+        break
 
 print("Done!")
 
