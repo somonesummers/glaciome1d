@@ -77,9 +77,9 @@ def meltFun(strength,n):
     return meltLessLinearRate(strength,n)
 
 minMelt = .35
-maxMelt = .65
-calvingRate = 6100
-yearsToSimulate = 30 #saved as years, but you input days/365.25
+maxMelt = .7
+calvingRate = 6000
+yearsToSimulate = 10 #saved as years, but you input days/365.25
 dt = 10/365.25 # [years]
 
 # Make some nice plots
@@ -102,7 +102,7 @@ plt.close()
 
 
 ## Run to steady state
-if(True):
+if(False):
     #initial mélange values
     n_pts = 21 # number of grid points
     L = 15e3 # ice melange length
@@ -115,7 +115,13 @@ if(True):
     Wt = 5600
     W_fjord = Wt + 0/10000*X_fjord
     B_const = -1*minMelt * constant.daysYear # will replace with grid later
-    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
+#    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
+    files = sorted(glob.glob('steadystate.pickle'))
+    for j in np.arange(0,len(files)):
+          file = open(files[j], 'rb')
+          data = pickle.load(file)
+          file.close()
+    data.Uc = calvingRate
     data.X_externalGrid = data.X
     data.B_externalGrid = meltFun(B_const,n_pts)
 
@@ -170,8 +176,8 @@ if(True):
                 flag += 1
             
         #update vars and meltrate
-        meltGridScale = (2*data.X[-1] - L_old)/data.X[-1]
-        data.X_externalGrid = np.linspace(0,1,50)*data.X[-1] * meltGridScale
+        meltGridScale = (2*data.L - L_old)/data.L
+        data.X_externalGrid = np.linspace(0,1,50)*data.L * meltGridScale
         data.B_externalGrid = meltFun(B_const,50) 
         L_old = data.L
         t_step_old = t_step
@@ -180,22 +186,20 @@ if(True):
         k += 1
     print(f'Converged! {data}')
     data.save('steadystate.pickle')
-# else: #direct load
-#     # files = sorted(glob.glob('../chkpt035LessLinear.pickle'))
-#     files = sorted(glob.glob('chkpt035LL6100.pickle'))
-#     # files = sorted(glob.glob('../RecoverLinear_405/recover00100.pickle'))
+else: #direct load
+     files = sorted(glob.glob('steadystate.pickle'))
 
-#     for j in np.arange(0,len(files)):
-#         file = open(files[j], 'rb')
-#         data = pickle.load(file)
-#         file.close()
+     for j in np.arange(0,len(files)):
+         file = open(files[j], 'rb')
+         data = pickle.load(file)
+         file.close()
 
 
 #Reset to time = 0, set dt
 data.t = 0
 data.dt = dt
 
-lastX = data.X[-1]
+lastX = data.L
 
 alpha = 0e-5 #buttressing coefficient (25e-5 so far have been good) [m^2 yr^-1 N ^-1]
 U0 = data.Uc + alpha*data.force() #initialize stable
@@ -203,23 +207,29 @@ print(f"\talpha {alpha:.2e}, U0 is {U0:3.2e} m/yr")
 
 V = 0
 V_old = 0
+dLdt = 100
 for i in iList: 
-    # F = data.force()
-    data.Uc = U0 - alpha * data.force() 
-    V = simpson(data.H, x=data.X_) #m^2
-    # data.Ht = 600 - data.X[0] * beta ## increase in thickness with retreat
-    meltGridScale = (2*data.X[-1] - lastX)/data.X[-1]
-    data.X_externalGrid = np.linspace(0,1,50)*data.X[-1] * meltGridScale
-    data.B_externalGrid = -1*meltFun(Bview[i],50) * constant.daysYear
-    lastX = data.X[-1]
-    data.prognostic(method='lm') # lm or hybr
+    while(np.abs(dLdt) > 10):
+        V = simpson(data.H, x=data.X_) #m^2
+        data.dt = (data.dx*data.L)/np.max(data.U) * 3.0 #target CFL
+        meltGridScale = (2*data.L - lastX)/data.L
+        data.X_externalGrid = np.linspace(0,1,50)*data.L * meltGridScale
+        data.B_externalGrid = -1*meltFun(Bview[i],50) * constant.daysYear
+        lastX = data.L
+        t_old = data.t
+        data.prognostic(method='lm') # lm or hybr
+        V_old = V 
+        if(data.L < 1000 or np.min(data.H) < 24.5):
+            break
+        dLdt = (data.L-lastX)/(data.t-t_old)
+        print(f'dt {data.dt*365.25:4.2f} days, dLdt {dLdt:4.2f}, L:{data.L:7.0f} m, L:{data.L:7.0f} m, Uf {data.U[-1]/constant.daysYear:5.1f} m/day')
     if(i % 1 == 0):
-        print(f"t {data.t*constant.daysYear:5.1f} day with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, Uc:{data.Uc:5.0f} m/yr, Uf {data.U[-1]/constant.daysYear:5.1f} m/day, ∆Vol: {V-V_old:8.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/day")
+        print(f"t {data.t*constant.daysYear:5.1f} day, index {i:05d}, with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, Uc:{data.Uc:5.0f} m/yr, Uf {data.U[-1]/constant.daysYear:5.1f} m/day, ∆Vol: {V-V_old:8.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/day ({Bview[i]*-1})")
         data.save(f'sweep{i:05d}.pickle')
-    V_old = V
-    if(data.L < 1000 or np.min(H) < 24):
-        break
 
+    if(data.L < 1000 or np.min(data.H) < 24.5):
+        break #need to kick out of both loops, but we do want to save this last case, so after save block.
+    dLdt = 100 #kick it back into while loop
 print("Done!")
 
 
