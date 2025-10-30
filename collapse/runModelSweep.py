@@ -143,7 +143,7 @@ plt.savefig('meltForcing.png',format='png',dpi=200)
 plt.show()
 plt.close()
 
-lastX = data.X[-1]
+lastX = data.L
 
 data.Uc = 6100
 alpha = 0e-5 #buttressing coefficient (25e-5 so far have been good) [m^2 yr^-1 N ^-1]
@@ -156,15 +156,15 @@ for i in iList:
     # F = data.force()
     data.Uc = U0 - alpha * data.force() 
     # data.Ht = 600 - data.X[0] * beta ## increase in thickness with retreat
-    meltGridScale = (2*data.X[-1] - lastX)/data.X[-1]
-    data.X_externalGrid = np.linspace(0,1,50)*data.X[-1] * meltGridScale
+    meltGridScale = (2*data.L - lastX)/data.L
+    data.X_externalGrid = np.linspace(0,1,50)*data.L * meltGridScale
     vol = simpson(data.H, x=data.X_) #m^2
     # print(f'scale grid by {meltGridScale:3.2f}, guess Length {data.X_externalGrid[-1]:7.0f} m')
     # print(data.X)
     # print(-1*meltRate(Bview[i],n_pts) * constant.daysYear)
 
     data.B_externalGrid = -1*meltFun(Bview[i],50) * constant.daysYear
-    lastX = data.X[-1]
+    lastX = data.L
     data.prognostic(method='lm') # lm or hybr
     if(i % 1 == 0):
         print(f"t {data.t*constant.daysYear:5.1f} day with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, Uc:{data.Uc:5.0f} m/yr, Uf {data.U[-1]/constant.daysYear:5.1f} m/day, ∆Vol: {vol-volOld:5.2g} m^2, melt {np.mean(data.B/constant.daysYear):0.5f} m/day")
