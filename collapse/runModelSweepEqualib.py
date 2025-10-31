@@ -218,17 +218,18 @@ for i in iList:
         lastX = data.L
         t_old = data.t
         data.prognostic(method='lm') # lm or hybr
+        data.save(f'zTemp{i:05d}.pickle')
         V_old = V 
         if(data.L < 1000 or np.min(data.H) < 24.5):
             break
         dLdt = (data.L-lastX)/(data.t-t_old)
         print(f'dt {data.dt*365.25:4.2f} days, dLdt {dLdt:4.2f}, L:{data.L:7.0f} m, L:{data.L:7.0f} m, Uf {data.U[-1]/constant.daysYear:5.1f} m/day')
-    if(i % 1 == 0):
-        print(f"t {data.t*constant.daysYear:5.1f} day, index {i:05d}, with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, Uc:{data.Uc:5.0f} m/yr, Uf {data.U[-1]/constant.daysYear:5.1f} m/day, ∆Vol: {V-V_old:8.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/day ({Bview[i]*-1})")
-        data.save(f'sweep{i:05d}.pickle')
-
     if(data.L < 1000 or np.min(data.H) < 24.5):
-        break #need to kick out of both loops, but we do want to save this last case, so after save block.
+        break
+    #At this point, we're at equalib on stable node. Delete temp files, save point, reset for next loop
+    os.system(f'rm -f zTemp*') 
+    print(f"t {data.t*constant.daysYear:5.1f} day, index {i:05d}, with H0:{data.H0:7.2f} m, L:{data.L:7.0f} m, Uc:{data.Uc:5.0f} m/yr, Uf {data.U[-1]/constant.daysYear:5.1f} m/day, ∆Vol: {V-V_old:8.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/day ({Bview[i]*-1})")
+    data.save(f'sweep{i:05d}.pickle')
     dLdt = 100 #kick it back into while loop
 print("Done!")
 

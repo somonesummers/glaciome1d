@@ -11,6 +11,8 @@ import pickle
 import glob
 from scipy.integrate import simpson
 sys.path.append('.')
+import warnings
+
 # from localVars import *
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
@@ -76,44 +78,45 @@ constant = constants()
 def meltFun(strength,n):
     return meltLinearRate(strength,n)
 
+verboseLevel = 2
 
-n = 10 #how long to shrink to confirm behavior 
+n_up = 5 #how long to rise to confirm behavior 
+n_down = 10 #how long to shrink to confirm
 m = 1 #how many extra collapses are needed to confirm unstable fix point
+lookBack = 3 #how much longer than last collapse do we start check
+libraryDirectory = 'BaseFiles/'
 
-targetLength = 5000
-meltToTry = [.425, .40, .38, .35, .33, .31] #L6000 collapse at  0.4283, L 10905
-# H0:  41.17 m, L:  10905 m, Uc: 6000 m/yr, Uf 213.4 m/day, ∆Vol:        0 m^2, melt -0.4250 m/day (-0.425)
-lengthsToTry = [10000,9000,8000,7000,6500,6000,5520,5100,4600,4300,3900]
-print(meltToTry)
-print(lengthsToTry)
-for targetMelt in meltToTry:
+#Load library
+files = sorted(glob.glob(f'{libraryDirectory}*.pickle'))
+lengthDict = np.zeros(len(files))
+meltDict = np.zeros(len(files))
+for i in np.arange(0,len(files)):
+    file = open(files[i], 'rb')
+    data = pickle.load(file)
+    lengthDict[i] = data.L
+    meltDict[i] = np.mean(data.B)*-1/365.25
+    file.close()
+initMelt = np.mean(meltDict) - .006 #initaly take a reasonable step away
+
+meltToTry = initMelt - np.linspace(0,.2,100)
+
+print(f'melt to try {meltToTry[:]}')
+collapseHigh = np.zeros(len(meltToTry)) #last stable length
+collapseLow = np.zeros(len(meltToTry)) #first unstable length
+libraryIndex = 0
+for j in range(len(meltToTry)):
+    targetMelt = meltToTry[j]
     collapseCount = 0
-    for targetLength in lengthsToTry:
-        # files = sorted(glob.glob('../PACE/F6000/*.pickle'))
-        files = sorted(glob.glob('BaseFiles/*.pickle'))
-        # files = sorted(glob.glob('../RecoverLinear_405/recover00100.pickle'))
-        found = False
-        minMiss = [1000,0]
-        for j in np.arange(0,len(files)):
-            file = open(files[j], 'rb')
-            data = pickle.load(file)
-            file.close()
-            err = abs(data.L - targetLength)
-            if(err < minMiss[0]):
-                minMiss[0] = err
-                minMiss[1] = data.L
-            if(err < 20):
-                found = True
-                break
-
-        if( not found):
-            raise Exception(f"no matching length found for L = {targetLength} m, closest is {minMiss[1]:.0f}")
-
-        # print(data)
-
+    growCount = 0
+    libraryIndex = np.max([libraryIndex - lookBack,0]) - 1
+    while collapseCount < (m+1):
+        libraryIndex += 1 #look at next longer melange from library
+        file = open(files[libraryIndex], 'rb')
+        data = pickle.load(file)
+        if(verboseLevel > 1):
+            print(f'load index {libraryIndex:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m')
         #Reset to time = 0, set dt
         data.t = 0
-
         lastX = data.L
         lastH = data.H0
         V = simpson(data.H, x=data.X_) #m^2
@@ -123,10 +126,11 @@ for targetMelt in meltToTry:
         i = 0
         negCounter = 0
         posCounter = 0
-        # print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
-        data.save(f'output_{targetLength}_{i:05d}.pickle')
+        if(verboseLevel > 1):
+            print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
+        data.save(f'output_{data.L:05.0f}_{i:05d}.pickle')
         i += 1
-        while(negCounter < n and posCounter < n):
+        while(negCounter < n_down and posCounter < n_up):
         # while(np.abs(dLdt) > 10 and data.L > 3000):
             data.dt = (data.dx*data.L)/np.max(data.U) * 1.0 #target CFL
             meltGridScale = (2*data.L - lastX)/data.L
@@ -140,18 +144,33 @@ for targetMelt in meltToTry:
             V = simpson(data.H, x=data.X_) #m^2
             dLdt = (data.L-lastX)/(data.t-t_old)
             dHdt = (data.H0-lastH)/(data.t-t_old)
-            # print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
-            data.save(f'output_{targetLength}_{i:05d}.pickle')
+            if(verboseLevel > 1):
+                print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
+            data.save(f'output_{data.L:05.0f}_{i:05d}.pickle')
             if(dHdt < 0 and dLdt < 0):
                 negCounter += 1
             elif(dHdt > 0 and dLdt > 0):
                 posCounter += 1
             i += 1
-        if(negCounter == n):
+        if(verboseLevel > 0):
+            print(f"  L {data.L:5.0f}, melt {targetMelt:7.4f}: neg/pos count {negCounter}/{posCounter}")
+        if(negCounter == n_down):
             collapseCount += 1
-        print(f"  L {targetLength:7.0f}, melt {targetMelt:7.4f}: neg/pos count {negCounter}/{posCounter}")
-        if(collapseCount > m):
-            break #3 collapses for a given melt rate is good enough
+    if(growCount < 1):
+        warnings.warn("Warning: Failed to find positive side of unstable fix point")
+        print("** WARN ** Failed to find positive side of unstable fix point ** WARN **")
+    collapseHigh[j] = lengthDict[libraryIndex - (m+1)]
+    collapseLow[j] = lengthDict[libraryIndex - m]
+    print(f'unstable fix point: {meltToTry[j]:7.4f}, {collapseLow[j]:7.4f}, {collapseHigh[j]:7.4f}')
+
+unstableNodes = np.zeros([len(meltToTry),3])
+for j in range(len(meltToTry)):
+    print(f'{meltToTry[j]:7.4f}: {collapseLow[j]:7.4f}, {collapseHigh[j]:7.4f}')
+    unstableNodes[j,0] = meltToTry[j]
+    unstableNodes[j,1] = collapseLow[j]
+    unstableNodes[j,2] = collapseHigh[j]
+np.save('unstableNodes',unstableNodes)
+
 
 
 
