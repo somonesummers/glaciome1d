@@ -27,7 +27,7 @@ import argparse
 
 """
 parser = argparse.ArgumentParser(description='Run model to find unstable fix points')
-parser.add_argument('-s','--shape', nargs=1, default=[0],type=int,
+parser.add_argument('-s','--shape', nargs=1, default=[1],type=int,
                     help='shape of melt profile [defaut = 0] 0 flat, 1 linear, 2 less linear, 3 U')
 parser.add_argument('-v','--verbose', action='count', default=2,
                     help='how verbose to be')
