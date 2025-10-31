@@ -111,6 +111,10 @@ for j in range(len(meltToTry)):
     libraryIndex = np.max([libraryIndex - lookBack,0]) - 1
     while collapseCount < (m+1):
         libraryIndex += 1 #look at next longer melange from library
+        if(libraryIndex >= len(lengthDict)):
+            warnings.warn("Warning: Exceeded length library range")
+            print("** WARN ** Exceeded length library range ** WARN **")
+            break
         file = open(files[libraryIndex], 'rb')
         data = pickle.load(file)
         if(verboseLevel > 1):
@@ -161,8 +165,8 @@ for j in range(len(meltToTry)):
     if(growCount < 1):
         warnings.warn("Warning: Failed to find positive side of unstable fix point")
         print("** WARN ** Failed to find positive side of unstable fix point ** WARN **")
-    collapseHigh[j] = lengthDict[libraryIndex - (m+1)]
-    collapseLow[j] = lengthDict[libraryIndex - m]
+    collapseHigh[j] = lengthDict[libraryIndex - (m+2)]
+    collapseLow[j] = lengthDict[libraryIndex - (m+1)]
     print(f'unstable fix point: {meltToTry[j]:7.4f}, {collapseLow[j]:7.4f}, {collapseHigh[j]:7.4f}')
 
 unstableNodes = np.zeros([len(meltToTry),3])
