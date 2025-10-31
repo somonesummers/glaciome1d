@@ -12,8 +12,8 @@ import glob
 import pickle
 import cmocean
 
-folders = ['LL6000_slow']
-fileEnding = 'LL6000'
+folders = ['L6000_slow']
+fileEnding = 'L6000'
 filePrefix = 'figs/Single'
 UcList = np.array([6000])
 
@@ -74,7 +74,7 @@ else:
 	UfTimeTmp = UfTime
 	bTimeTmp  = bTime
 	lengthTimeTmp = np.append(lengthTime, 0)
-print(f'Collapse at index {index} of {len(files)-1}, melt {bTime[index]:.04f}, overplot {overGrab}')
+print(f'Collapse at index {index} of {len(files)-1}, melt {bTime[index]:.04f}, L {lengthTime[index-1]:.0f} overplot {overGrab}')
 toIterate = toIterateTmp
 H0Time = H0TimeTmp
 UfTime = UfTimeTmp

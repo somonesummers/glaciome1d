@@ -74,55 +74,84 @@ constant = constants()
 
 ## You define experiment here, just these 
 def meltFun(strength,n):
-    return meltLessLinearRate(strength,n)
+    return meltLinearRate(strength,n)
+
+
+n = 10 #how long to shrink to confirm behavior 
+m = 1 #how many extra collapses are needed to confirm unstable fix point
 
 targetLength = 5000
-targetMelt = .40
-calvingRate = 6000
+meltToTry = [.425, .40, .38, .35, .33, .31] #L6000 collapse at  0.4283, L 10905
+# H0:  41.17 m, L:  10905 m, Uc: 6000 m/yr, Uf 213.4 m/day, ∆Vol:        0 m^2, melt -0.4250 m/day (-0.425)
+lengthsToTry = [10000,9000,8000,7000,6500,6000,5520,5100,4600,4300,3900]
+print(meltToTry)
+print(lengthsToTry)
+for targetMelt in meltToTry:
+    collapseCount = 0
+    for targetLength in lengthsToTry:
+        # files = sorted(glob.glob('../PACE/F6000/*.pickle'))
+        files = sorted(glob.glob('BaseFiles/*.pickle'))
+        # files = sorted(glob.glob('../RecoverLinear_405/recover00100.pickle'))
+        found = False
+        minMiss = [1000,0]
+        for j in np.arange(0,len(files)):
+            file = open(files[j], 'rb')
+            data = pickle.load(file)
+            file.close()
+            err = abs(data.L - targetLength)
+            if(err < minMiss[0]):
+                minMiss[0] = err
+                minMiss[1] = data.L
+            if(err < 20):
+                found = True
+                break
 
+        if( not found):
+            raise Exception(f"no matching length found for L = {targetLength} m, closest is {minMiss[1]:.0f}")
 
-# Make some nice plots
+        # print(data)
 
-# # print(Bview)
-# plt.subplot(211)
-# plt.plot(timePlot,Bview,color='red')
-# plt.xlabel('Time [years]')
-# plt.ylabel('Average Melt Rate [m/day]')
-# plt.subplot(212)
-# plt.plot(meltFun(Bview[0],50),color='red')
-# plt.xlabel('Distance []')
-# plt.ylabel('Average Melt Rate [m/day]')
-# plt.savefig('meltForcing.png',format='png',dpi=200)
-# # plt.show()
-# plt.close()
+        #Reset to time = 0, set dt
+        data.t = 0
 
-
-# files = sorted(glob.glob('../chkpt035LessLinear.pickle'))
-files = sorted(glob.glob('../PACE/F6000/*.pickle'))
-# files = sorted(glob.glob('../RecoverLinear_405/recover00100.pickle'))
-
-for j in np.arange(0,len(files)):
-    file = open(files[j], 'rb')
-    data = pickle.load(file)
-    file.close()
-    if(abs(data.L - targetLength) < 20):
-        break
-
-print(data)
-
-#Reset to time = 0, set dt
-data.t = 0
-
-lastX = data.L
-
-alpha = 0e-5 #buttressing coefficient (25e-5 so far have been good) [m^2 yr^-1 N ^-1]
-U0 = data.Uc + alpha*data.force() #initialize stable
-print(f"\talpha {alpha:.2e}, U0 is {U0:3.2e} m/yr")
-
-V = 0
-V_old = 0
-
-print("Done!")
+        lastX = data.L
+        lastH = data.H0
+        V = simpson(data.H, x=data.X_) #m^2
+        V_old = 0
+        dLdt = 100
+        dHdt = 100
+        i = 0
+        negCounter = 0
+        posCounter = 0
+        # print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
+        data.save(f'output_{targetLength}_{i:05d}.pickle')
+        i += 1
+        while(negCounter < n and posCounter < n):
+        # while(np.abs(dLdt) > 10 and data.L > 3000):
+            data.dt = (data.dx*data.L)/np.max(data.U) * 1.0 #target CFL
+            meltGridScale = (2*data.L - lastX)/data.L
+            data.X_externalGrid = np.linspace(0,1,50)*data.L * meltGridScale
+            data.B_externalGrid = -1*meltFun(targetMelt,50) * constant.daysYear
+            lastX = data.L
+            lastH = data.H0
+            t_old = data.t
+            V_old = V
+            data.prognostic(method='lm') # lm or hybr
+            V = simpson(data.H, x=data.X_) #m^2
+            dLdt = (data.L-lastX)/(data.t-t_old)
+            dHdt = (data.H0-lastH)/(data.t-t_old)
+            # print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
+            data.save(f'output_{targetLength}_{i:05d}.pickle')
+            if(dHdt < 0 and dLdt < 0):
+                negCounter += 1
+            elif(dHdt > 0 and dLdt > 0):
+                posCounter += 1
+            i += 1
+        if(negCounter == n):
+            collapseCount += 1
+        print(f"  L {targetLength:7.0f}, melt {targetMelt:7.4f}: neg/pos count {negCounter}/{posCounter}")
+        if(collapseCount > m):
+            break #3 collapses for a given melt rate is good enough
 
 
 
