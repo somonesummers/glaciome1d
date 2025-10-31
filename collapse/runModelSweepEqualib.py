@@ -131,7 +131,7 @@ plt.close()
 
 
 ## Run to steady state
-if(args.init == 1):
+if(args.init[0] == 1):
     #initial mélange values
     n_pts = 21 # number of grid points
     L = 15e3 # ice melange length
@@ -141,7 +141,7 @@ if(args.init == 1):
     # n = 101 # number of time steps
     # specifying fjord geometry
     X_fjord = np.linspace(-200e3,200e3,101)
-    Wt = args.Wf
+    Wt = args.Wf[0]
     W_fjord = Wt + 0/10000*X_fjord
     B_const = -1*minMelt * constant.daysYear # will replace with grid later
 #    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
