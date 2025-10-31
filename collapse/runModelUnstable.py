@@ -156,6 +156,8 @@ for j in range(len(meltToTry)):
             print(f"  L {data.L:5.0f}, melt {targetMelt:7.4f}: neg/pos count {negCounter}/{posCounter}")
         if(negCounter == n_down):
             collapseCount += 1
+        else:
+            growCount += 1
     if(growCount < 1):
         warnings.warn("Warning: Failed to find positive side of unstable fix point")
         print("** WARN ** Failed to find positive side of unstable fix point ** WARN **")
