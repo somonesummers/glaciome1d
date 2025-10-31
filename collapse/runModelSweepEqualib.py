@@ -209,6 +209,7 @@ V = 0
 V_old = 0
 dLdt = 100
 for i in iList: 
+    j = 0
     while(np.abs(dLdt) > 10):
         V = simpson(data.H, x=data.X_) #m^2
         data.dt = (data.dx*data.L)/np.max(data.U) * 3.0 #target CFL
@@ -218,7 +219,8 @@ for i in iList:
         lastX = data.L
         t_old = data.t
         data.prognostic(method='lm') # lm or hybr
-        data.save(f'zTemp{i:05d}.pickle')
+        data.save(f'zTemp{j:05d}.pickle')
+        j += 1
         V_old = V 
         if(data.L < 1000 or np.min(data.H) < 24.5):
             break

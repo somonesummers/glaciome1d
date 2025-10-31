@@ -84,7 +84,7 @@ n_up = 5 #how long to rise to confirm behavior
 n_down = 10 #how long to shrink to confirm
 m = 1 #how many extra collapses are needed to confirm unstable fix point
 lookBack = 3 #how much longer than last collapse do we start check
-libraryDirectory = 'BaseFiles/'
+libraryDirectory = 'zTemp'
 
 #Load library
 files = sorted(glob.glob(f'{libraryDirectory}*.pickle'))
