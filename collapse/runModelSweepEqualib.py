@@ -39,6 +39,8 @@ parser.add_argument('-n','--numMeltSteps', nargs=1, default=[100], type=int,
                     help='number of steps for melt range [defaut 100]')
 parser.add_argument('-v','--verbose', action='count', default=0,
                     help='how verbose to be')
+parser.add_argument('-w','--Wf', nargs=1, default=[5600], type=float,
+                    help='width of fjord [defaut 5600] m')
 args = parser.parse_args()
 
 print(f'input args: {args}')
@@ -139,7 +141,7 @@ if(args.init == 1):
     # n = 101 # number of time steps
     # specifying fjord geometry
     X_fjord = np.linspace(-200e3,200e3,101)
-    Wt = 5600
+    Wt = args.Wf
     W_fjord = Wt + 0/10000*X_fjord
     B_const = -1*minMelt * constant.daysYear # will replace with grid later
 #    data = glaciome(n_pts, dt, L, Ut, Uc, Ht, B_const, X_fjord, W_fjord)
@@ -149,6 +151,7 @@ if(args.init == 1):
           data = pickle.load(file)
           file.close()
     data.Uc = calvingRate
+    data.W_fjord = Wt + 0/10000*X_fjord
     data.X_externalGrid = data.X
     data.B_externalGrid = meltFun(B_const,n_pts)
 
@@ -159,7 +162,7 @@ if(args.init == 1):
     flag = 0
     t_step_old = time.time()
     k = 0 
-    k_step = 5
+    k_step = 10
     t_old = 0
     dt = 1 #temp fill value
     while(flag < 3):
