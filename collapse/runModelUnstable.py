@@ -12,6 +12,8 @@ import glob
 from scipy.integrate import simpson
 sys.path.append('.')
 import warnings
+import argparse
+
 
 # from localVars import *
 #!/usr/bin/env python3
@@ -24,6 +26,16 @@ import warnings
     Example of running glaciome1d, now with umelt shape
 
 """
+parser = argparse.ArgumentParser(description='Run model to find unstable fix points')
+parser.add_argument('-s','--shape', nargs=1, default=[0],type=int,
+                    help='shape of melt profile [defaut = 0] 0 flat, 1 linear, 2 less linear, 3 U')
+parser.add_argument('-v','--verbose', action='count', default=0,
+                    help='how verbose to be')
+parser.add_argument('-f','--fileSave', action='count', default=0,
+                    help='how many details to save')
+args = parser.parse_args()
+
+print(f'input args: {args}')
 
 def meltRate(strength,n):
     x = np.linspace(0,1,n)
@@ -74,11 +86,22 @@ def meltURate(strength,n):
 constant = constants()
 
 
-## You define experiment here, just these 
-def meltFun(strength,n):
-    return meltLinearRate(strength,n)
+## You define experiment in args input
+if(args.shape[0]==0):
+    def meltFun(strength,n):
+        return meltFlatRate(strength,n)
+elif(args.shape[0]==1):
+    def meltFun(strength,n):
+        return meltLinearRate(strength,n)
+elif(args.shape[0]==2):
+    def meltFun(strength,n):
+        return meltLessLinearRate(strength,n)
+elif(args.shape[0]==3):
+    def meltFun(strength,n):
+        return meltURate(strength,n)
 
-verboseLevel = 2
+
+verboseLevel = args.verbose
 
 n_up = 5 #how long to rise to confirm behavior 
 n_down = 10 #how long to shrink to confirm
@@ -117,7 +140,7 @@ for j in range(len(meltToTry)):
             break
         file = open(files[libraryIndex], 'rb')
         data = pickle.load(file)
-        if(verboseLevel > 1):
+        if(verboseLevel > 0):
             print(f'load index {libraryIndex:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m')
         #Reset to time = 0, set dt
         data.t = 0
@@ -132,7 +155,8 @@ for j in range(len(meltToTry)):
         posCounter = 0
         if(verboseLevel > 1):
             print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
-        data.save(f'output_{data.L:05.0f}_{i:05d}.pickle')
+        if(args.fileSave > 0):
+            data.save(f'output_{data.L:05.0f}_{i:05d}.pickle')
         i += 1
         while(negCounter < n_down and posCounter < n_up):
         # while(np.abs(dLdt) > 10 and data.L > 3000):
@@ -150,7 +174,8 @@ for j in range(len(meltToTry)):
             dHdt = (data.H0-lastH)/(data.t-t_old)
             if(verboseLevel > 1):
                 print(f"\tt {data.t*constant.daysYear:6.1f} d, index {i:05d}, H0{data.H0:7.2f} m, L{data.L:7.0f} m, dLdt{dLdt:10.2f} m/y, dHdt{dHdt:7.2f} m/y, Uc{data.Uc:7.0f} m/y, Uf{data.U[-1]/constant.daysYear:6.1f} m/d, ∆Vol{V-V_old:9.2g} m^2, melt {np.mean(data.B/constant.daysYear):6.4f} m/d ({targetMelt*-1})")
-            data.save(f'output_{data.L:05.0f}_{i:05d}.pickle')
+            if(args.fileSave > 0):
+                data.save(f'output_{data.L:05.0f}_{i:05d}.pickle')
             if(dHdt < 0 and dLdt < 0):
                 negCounter += 1
             elif(dHdt > 0 and dLdt > 0):

@@ -11,6 +11,8 @@ import pickle
 import glob
 from scipy.integrate import simpson
 sys.path.append('.')
+import argparse
+
 # from localVars import *
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
@@ -22,7 +24,24 @@ sys.path.append('.')
     Example of running glaciome1d, now with umelt shape
 
 """
+parser = argparse.ArgumentParser(description='Run model to find stable fix points')
+parser.add_argument('-s','--shape', nargs=1, default=[0],type=int,
+                    help='shape of melt profile [defaut = 0] 0 flat, 1 linear, 2 less linear, 3 U')
+parser.add_argument('-u','--Uc', nargs=1, default=[6000], type=int,
+                    help='calving speed [defaut 6000] m/yr')
+parser.add_argument('-m','--meltMin', nargs=1, default=[.35], type=float,
+                    help=',min melt rate [defaut .35] m/d')
+parser.add_argument('-p','--meltPos', nargs=1, default=[.7], type=float,
+                    help='max melt rate [defaut .7] m/d')
+parser.add_argument('-i','--init', nargs=1, default=[0], type=int,
+                    help='boolean for if needed to run initial steadystate [defaut 0]')
+parser.add_argument('-n','--numMeltSteps', nargs=1, default=[100], type=int,
+                    help='number of steps for melt range [defaut 100]')
+parser.add_argument('-v','--verbose', action='count', default=0,
+                    help='how verbose to be')
+args = parser.parse_args()
 
+print(f'input args: {args}')
 def meltRate(strength,n):
     x = np.linspace(0,1,n)
     baseLine = .6 -.4*x 
@@ -72,25 +91,33 @@ def meltURate(strength,n):
 constant = constants()
 
 
-## You define experiment here, just these 
-def meltFun(strength,n):
-    return meltLessLinearRate(strength,n)
+## You define experiment in args input
+if(args.shape[0]==0):
+    def meltFun(strength,n):
+        return meltFlatRate(strength,n)
+elif(args.shape[0]==1):
+    def meltFun(strength,n):
+        return meltLinearRate(strength,n)
+elif(args.shape[0]==2):
+    def meltFun(strength,n):
+        return meltLessLinearRate(strength,n)
+elif(args.shape[0]==3):
+    def meltFun(strength,n):
+        return meltURate(strength,n)
 
-minMelt = .35
-maxMelt = .7
-calvingRate = 6000
-yearsToSimulate = 10 #saved as years, but you input days/365.25
-dt = 10/365.25 # [years]
+minMelt = args.meltMin[0]
+maxMelt = args.meltPos[0]
+calvingRate = args.Uc[0]
+meltSteps = args.numMeltSteps[0]
+
 
 # Make some nice plots
-endTime = int(yearsToSimulate/dt)
-timePlot = np.arange(endTime)*dt
-iList = np.arange(0,endTime,1) 
-Bview = np.linspace(minMelt,maxMelt,endTime)
+iList = np.arange(0,meltSteps) 
+Bview = np.linspace(minMelt,maxMelt,meltSteps)
 # print(Bview)
 plt.subplot(211)
-plt.plot(timePlot,Bview,color='red')
-plt.xlabel('Time [years]')
+plt.plot(iList,Bview,color='red')
+plt.xlabel('Steps [years]')
 plt.ylabel('Average Melt Rate [m/day]')
 plt.subplot(212)
 plt.plot(meltFun(Bview[0],50),color='red')
@@ -102,7 +129,7 @@ plt.close()
 
 
 ## Run to steady state
-if(False):
+if(args.init == 1):
     #initial mélange values
     n_pts = 21 # number of grid points
     L = 15e3 # ice melange length
@@ -134,6 +161,7 @@ if(False):
     k = 0 
     k_step = 5
     t_old = 0
+    dt = 1 #temp fill value
     while(flag < 3):
         data.prognostic(method='lm')
         
@@ -197,14 +225,13 @@ else: #direct load
 
 #Reset to time = 0, set dt
 data.t = 0
-data.dt = dt
 
 lastX = data.L
 
 alpha = 0e-5 #buttressing coefficient (25e-5 so far have been good) [m^2 yr^-1 N ^-1]
 U0 = data.Uc + alpha*data.force() #initialize stable
 print(f"\talpha {alpha:.2e}, U0 is {U0:3.2e} m/yr")
-
+print(f'melt sweep {np.min(Bview)}, {np.max(Bview)}')
 V = 0
 V_old = 0
 dLdt = 100
