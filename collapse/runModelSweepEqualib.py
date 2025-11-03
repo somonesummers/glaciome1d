@@ -35,8 +35,8 @@ parser.add_argument('-p','--meltPos', nargs=1, default=[.7], type=float,
                     help='max melt rate [defaut .7] m/d')
 parser.add_argument('-i','--init', nargs=1, default=[0], type=int,
                     help='boolean for if needed to run initial steadystate [defaut 0]')
-parser.add_argument('-n','--numMeltSteps', nargs=1, default=[100], type=int,
-                    help='number of steps for melt range [defaut 100]')
+parser.add_argument('-n','--numMeltSteps', nargs=1, default=[500], type=int,
+                    help='number of steps for melt range [defaut 500]')
 parser.add_argument('-v','--verbose', action='count', default=0,
                     help='how verbose to be')
 parser.add_argument('-w','--Wf', nargs=1, default=[5600], type=float,

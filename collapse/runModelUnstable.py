@@ -119,7 +119,7 @@ for i in np.arange(0,len(files)):
     lengthDict[i] = data.L
     meltDict[i] = np.mean(data.B)*-1/365.25
     file.close()
-initMelt = np.mean(meltDict) - .006 #initaly take a reasonable step away
+initMelt = np.nanmean(meltDict) - .006 #initaly take a reasonable step away
 
 meltToTry = initMelt - np.linspace(0,.2,100)
 
@@ -137,6 +137,7 @@ for j in range(len(meltToTry)):
         if(libraryIndex >= len(lengthDict)):
             warnings.warn("Warning: Exceeded length library range")
             print("** WARN ** Exceeded length library range ** WARN **")
+            collapseCount = m+1 #ensure we kick all the way out
             break
         file = open(files[libraryIndex], 'rb')
         data = pickle.load(file)
@@ -181,6 +182,10 @@ for j in range(len(meltToTry)):
             elif(dHdt > 0 and dLdt > 0):
                 posCounter += 1
             i += 1
+            if(np.min(data.H) < 24):
+                print('Breaking due to low thickness')
+                collapseCount = m+1 #ensure we kick all the way out
+                break
         if(verboseLevel > 0):
             print(f"  L {data.L:5.0f}, melt {targetMelt:7.4f}: neg/pos count {negCounter}/{posCounter}")
         if(negCounter == n_down):
@@ -193,7 +198,9 @@ for j in range(len(meltToTry)):
     collapseHigh[j] = lengthDict[libraryIndex - (m+2)]
     collapseLow[j] = lengthDict[libraryIndex - (m+1)]
     print(f'unstable fix point: {meltToTry[j]:7.4f}, {collapseLow[j]:7.4f}, {collapseHigh[j]:7.4f}')
-
+    if(np.min(data.H) < 24):
+        print('Breaking due to low thickness')
+        break
 unstableNodes = np.zeros([len(meltToTry),3])
 for j in range(len(meltToTry)):
     print(f'{meltToTry[j]:7.4f}: {collapseLow[j]:7.4f}, {collapseHigh[j]:7.4f}')
