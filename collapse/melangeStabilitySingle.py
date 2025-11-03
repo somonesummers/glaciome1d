@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 import sys
+import os
 import numpy as np
 from matplotlib import pyplot as plt
 sys.path.append('/Users/psummers8/Documents/glaciome1D')
@@ -12,10 +13,10 @@ import glob
 import pickle
 import cmocean
 
-folders = ['L6000_slow']
-fileEnding = 'L6000'
+folders = ['F4500_slow']
+fileEnding = 'F4500'
 filePrefix = 'figs/Single'
-UcList = np.array([6000])
+UcList = np.array([4500])
 
 
 files = sorted(glob.glob(f'PACE/{folders[0]}/swee*.pickle'))
@@ -49,37 +50,38 @@ for j in toIterate:
     UfTime[j]=data.U[-1]
     bTime[j] = -1 * np.mean(data.B) /365.25
 
-#cleaning
-index = len(lengthTime)-1
-overGrab = 1
-if(np.min(lengthTime) < 1000 or np.min(H0Time) < 24):
-	print([np.argmin(abs(lengthTime-1000)), np.argmin(abs(H0Time-24))])
-	index = np.min([np.argmin(abs(lengthTime-1000)), np.argmin(abs(H0Time-24))])
-	toIterateTmp = toIterate[:index + overGrab]
-	H0TimeTmp = H0Time[:index + overGrab]
-	UfTimeTmp = UfTime[:index + overGrab]
-	bTimeTmp = bTime[:index + overGrab]
-	lengthTimeTmp = lengthTime[:index + overGrab]
-elif(False):
-	ind1 += 1
-	toIterateTmp = np.append(toIterate, toIterate[-1]+1)
-	H0TimeTmp = np.append(H0Time, 2*H0Time[-1] -   H0Time[-2]) #linear
-	UfTimeTmp = np.append(UfTime, UcList[0]*600/25 + 5*365.25)
-	bTimeTmp  = np.append(bTime,  2*bTime[-1]  -    bTime[-2]) #linear
-	lengthTimeTmp = np.append(lengthTime, 0)
-	print(f'Appending record with false post collapse at (Uf,Length): ({UfTimeTmp[-1]},{lengthTimeTmp[-1]})')
-else:
-	toIterateTmp = toIterate
-	H0TimeTmp = H0Time
-	UfTimeTmp = UfTime
-	bTimeTmp  = bTime
-	lengthTimeTmp = np.append(lengthTime, 0)
-print(f'Collapse at index {index} of {len(files)-1}, melt {bTime[index]:.04f}, L {lengthTime[index-1]:.0f} overplot {overGrab}')
-toIterate = toIterateTmp
-H0Time = H0TimeTmp
-UfTime = UfTimeTmp
-lengthTime = lengthTimeTmp
-bTime =  bTimeTmp
+#cleaning (not nedeed anymore if run if EQ finding)
+if(False):
+	index = len(lengthTime)-1
+	overGrab = 1
+	if(np.min(lengthTime) < 1000 or np.min(H0Time) < 24):
+		print([np.argmin(abs(lengthTime-1000)), np.argmin(abs(H0Time-24))])
+		index = np.min([np.argmin(abs(lengthTime-1000)), np.argmin(abs(H0Time-24))])
+		toIterateTmp = toIterate[:index + overGrab]
+		H0TimeTmp = H0Time[:index + overGrab]
+		UfTimeTmp = UfTime[:index + overGrab]
+		bTimeTmp = bTime[:index + overGrab]
+		lengthTimeTmp = lengthTime[:index + overGrab]
+	elif(False):
+		ind1 += 1
+		toIterateTmp = np.append(toIterate, toIterate[-1]+1)
+		H0TimeTmp = np.append(H0Time, 2*H0Time[-1] -   H0Time[-2]) #linear
+		UfTimeTmp = np.append(UfTime, UcList[0]*600/25 + 5*365.25)
+		bTimeTmp  = np.append(bTime,  2*bTime[-1]  -    bTime[-2]) #linear
+		lengthTimeTmp = np.append(lengthTime, 0)
+		print(f'Appending record with false post collapse at (Uf,Length): ({UfTimeTmp[-1]},{lengthTimeTmp[-1]})')
+	else:
+		toIterateTmp = toIterate
+		H0TimeTmp = H0Time
+		UfTimeTmp = UfTime
+		bTimeTmp  = bTime
+		lengthTimeTmp = np.append(lengthTime, 0)
+	print(f'Collapse at index {index} of {len(files)-1}, melt {bTime[index]:.04f}, L {lengthTime[index-1]:.0f} overplot {overGrab}')
+	toIterate = toIterateTmp
+	H0Time = H0TimeTmp
+	UfTime = UfTimeTmp
+	lengthTime = lengthTimeTmp
+	bTime =  bTimeTmp
 
 
 Ut = UcList[0] #m/yr
@@ -97,7 +99,10 @@ fluxPlug = Ht*Ut/(l/230)*Hf
 plt.figure(3,figsize=(8, 5))
 # plt.plot(l/1e3,fluxPlug/Hf/365.25,color='gray')
 plt.scatter(lengthTime[:ind1]/1e3,UfTime[:ind1]/365.25,[2],alpha=1,color=colorList[0])
-fun1 = scipy.interpolate.interp1d(lengthTime[:ind1],UfTime[:ind1]/365.25,fill_value='extrapolate')
+if(os.path.exists(f'PACE/{folders[0]}/unstableNodes.npy')):
+	fun1 = scipy.interpolate.interp1d(lengthTime[:ind1],UfTime[:ind1]/365.25,bounds_error=False,fill_value=np.nan) #don't extrap, have approx values
+else:
+	fun1 = scipy.interpolate.interp1d(lengthTime[:ind1],UfTime[:ind1]/365.25,fill_value='extrapolate')
 plt.plot(l/1e3,fun1(l),color=colorList[0],linestyle='-',alpha=.2,label=nameList[0])
 
 for i in range(len(UcList)):
@@ -109,7 +114,7 @@ for i in range(len(UcList)):
 plt.title('Fitting')
 plt.xlabel('Length [km]')
 plt.ylabel('End Speed [m/day]')
-plt.ylim([50,np.max([300,np.max(UcList)*Ht/Hf/365.25+20])])
+plt.ylim([50,np.nanmax([300,np.nanmax(UcList)*Ht/Hf/365.25+20])])
 plt.legend()
 plt.savefig(f"{filePrefix}Fitting_{fileEnding}.png", format='png', dpi=400)
 # plt.show()
@@ -158,7 +163,7 @@ plt.clim([bTime[0]*.9,bTime[-1]*1.1])
 cbar = plt.colorbar()
 cbar.set_label('Melt Rate [m/day]')
 
-plt.ylim([np.min(fun1(l))*.9*365.25*Hf,np.max(fun1(l))*1.1*365.25*Hf])
+plt.ylim([np.nanmin(fun1(l))*.9*365.25*Hf,np.nanmax(fun1(l))*1.1*365.25*Hf])
 plt.title('Flux Diagram')
 plt.xlabel('Length [km]')
 plt.ylabel('Volume Flux [m^2/year]')
@@ -167,47 +172,53 @@ plt.legend()
 plt.savefig(f"{filePrefix}FluxDiagram_{fileEnding}.png", format='png', dpi=400)
 
 
-l = np.linspace(1, 25000, 300)
+if(not os.path.exists(f'PACE/{folders[0]}/unstableNodes.npy')):
 
-# def eq(b,length,m,calvSpd):
-# 	return np.exp(m[0])*(length  + pwrShift )**(m[1])*365.25*(25) + b*365.25*length - calvSpd*600
+	l = np.linspace(1, 25000, 300)
 
-## So I originally had the wrong thing on the x/y axis, so we plot 'eqx' on the y axis below to ensure the variable we change (melt) is on the x-axis. 
-# Please forgive me, for I know I have erred, but to leave a code comment explaining this almost as good as getting it right...right?
+	# def eq(b,length,m,calvSpd):
+	# 	return np.exp(m[0])*(length  + pwrShift )**(m[1])*365.25*(25) + b*365.25*length - calvSpd*600
 
-def eq(b,length,fun,calvSpd):
-	return fun(length)*365.25*(25) + b*365.25*length - calvSpd*600
-eq1x = []
-eq1y = []
+	## So I originally had the wrong thing on the x/y axis, so we plot 'eqx' on the y axis below to ensure the variable we change (melt) is on the x-axis. 
+	# Please forgive me, for I know I have erred, but to leave a code comment explaining this almost as good as getting it right...right?
 
-print(UcList)
-# We take the product to find a zero crossing, then we a linear root finder
+	def eq(b,length,fun,calvSpd):
+		return fun(length)*365.25*(25) + b*365.25*length - calvSpd*600
+	eq1x = []
+	eq1y = []
 
-for b in np.linspace(.2,1,300):
-	for li in range(1,np.shape(l)[0]):
-		if(eq(b,l[li],fun1,UcList[0]) * eq(b,l[li-1],fun1,UcList[0]) < 0):
-			rt = l[li-1] + eq(b,l[li],fun1,UcList[0])/(eq(b,l[li-1],fun1,UcList[0]) - eq(b,l[li],fun1,UcList[0]))* (l[li]-l[li-1])
-			eq1x.append(rt)
-			eq1y.append(b)
-		# if(eqFun(b,l[li],fun1,UcList[0]) * eqFun(b,l[li-1],fun1,UcList[0]) < 0):
-		# 	rt = l[li-1] + eqFun(b,l[li],fun1,UcList[0])/(eqFun(b,l[li-1],fun1,UcList[0]) - eqFun(b,l[li],fun1,UcList[0]))* (l[li]-l[li-1])
-		# 	eq1x.append(rt)
-		# 	eq1y.append(b)
+	print(UcList)
+	# We take the product to find a zero crossing, then we a linear root finder
 
-eq1x = np.asarray(eq1x)
-eq1y = np.asarray(eq1y)
+	for b in np.linspace(.2,1,300):
+		for li in range(1,np.shape(l)[0]):
+			if(eq(b,l[li],fun1,UcList[0]) * eq(b,l[li-1],fun1,UcList[0]) < 0):
+				rt = l[li-1] + eq(b,l[li],fun1,UcList[0])/(eq(b,l[li-1],fun1,UcList[0]) - eq(b,l[li],fun1,UcList[0]))* (l[li]-l[li-1])
+				eq1x.append(rt)
+				eq1y.append(b)
+			# if(eqFun(b,l[li],fun1,UcList[0]) * eqFun(b,l[li-1],fun1,UcList[0]) < 0):
+			# 	rt = l[li-1] + eqFun(b,l[li],fun1,UcList[0])/(eqFun(b,l[li-1],fun1,UcList[0]) - eqFun(b,l[li],fun1,UcList[0]))* (l[li]-l[li-1])
+			# 	eq1x.append(rt)
+			# 	eq1y.append(b)
 
-sorted_indices = np.argsort(eq1x)
-eq1x = eq1x[sorted_indices]
-eq1y = eq1y[sorted_indices]
-maxInd1 = np.argmax(eq1y)
+	eq1x = np.asarray(eq1x)
+	eq1y = np.asarray(eq1y)
+
+	sorted_indices = np.argsort(eq1x)
+	eq1x = eq1x[sorted_indices]
+	eq1y = eq1y[sorted_indices]
+	maxInd1 = np.argmax(eq1y)
 
 plt.figure(4,figsize=(8, 5))
 ## See above comment explaining why eq1y is plotted on the x-axis. This is intentional. 
-
-plt.plot(eq1y[:maxInd1+1],eq1x[:maxInd1+1],color=colorList[0],linestyle='--')
-
-plt.plot(eq1y[maxInd1:],eq1x[maxInd1:],color=colorList[0],linestyle='-',label=nameList[0])
+if(os.path.exists(f'PACE/{folders[0]}/unstableNodes.npy')):
+	loadData = np.load(f'PACE/{folders[0]}/unstableNodes.npy')
+	# print(loadData)
+	plt.plot(np.insert(loadData[:,0],0,bTime[-1]),np.insert((loadData[:,1]+loadData[:,2])/2.0,0,lengthTime[-1]),color=colorList[0],linestyle='--')
+	plt.plot(bTime,lengthTime,color=colorList[0],linestyle='-',label=nameList[0])
+else:
+	plt.plot(eq1y[:maxInd1+1],eq1x[:maxInd1+1],color=colorList[0],linestyle='--')
+	plt.plot(eq1y[maxInd1:],eq1x[maxInd1:],color=colorList[0],linestyle='-',label=nameList[0])
 
 
 plt.legend()
